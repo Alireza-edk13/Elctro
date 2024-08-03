@@ -38,6 +38,7 @@ module.exports = {
         mainGray: "#757F95",
         mainBg:"#f4f5f9",
         mainYellow: "#fad505",
+        mainBorder: "rgba(0,0,0,.08)"
       },
     },
     boxShadow: {

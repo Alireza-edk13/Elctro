@@ -8,7 +8,7 @@ const roboto = Roboto({
 })
 
 export const metadata = {
-  title: 'Edk-Shop',
+  title: 'Elctro',
 }
 
 export default function RootLayout({ children }) {
