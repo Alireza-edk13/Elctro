@@ -82,20 +82,18 @@
     }
 
     .btn:hover svg {
-        margin-left: 1.2rem;
+        margin-left: .7rem;
     }
 
-    .btn a {
+    .btn a , .btn span {
         color: #fff;
         z-index: 2;
 
     }
 
     .btn svg {
-        width: 2rem;
-        margin-left: 0.5rem;
-        color: #fff;
         z-index: 2;
+        margin-left: 0.4rem;
         transition: .5s cubic-bezier(.25, .46, .45, .94);
     }
 

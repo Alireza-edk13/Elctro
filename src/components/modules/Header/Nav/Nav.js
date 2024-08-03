@@ -40,7 +40,7 @@ export default function Nav() {
                     <div>
                         <Link href={'/'} className=' flex-center text-2xl md:text-3xl'>
                             <PiShoppingCartSimpleFill className=' text-3xl md:text-4xl' />
-                            <h3 className=' pl-1 font-medium'>Elctro</h3>
+                            <h3 className=' pl-1 '>Elctro</h3>
                         </Link>
                     </div>
                     <Menu />
@@ -65,7 +65,7 @@ export default function Nav() {
                     {/* search Box */}
                     <div onClick={() => setIsSearchBoxOpen(prevState => !prevState)} className={`${isSearchBoxOpen ? "fixed inset-0 bg-mainBlack opacity-[0] w-screen h-screen" : "absolute"}`}></div>
                     <form className={` ${isSearchBoxOpen ? ' visible opacity-100 scale-y-100' : ' invisible opacity-0 scale-y-0'}  max-w-sm mainBoxShadow transition-all duration-[0.5s] ease-in-out mx-auto absolute left-0 right-0 w-full vsm:p-auto p-4 top-14 vsm:left-auto vsm:-bottom-20 vsm:right-9`}>
-                        <label className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                        <label className="mb-2 text-sm  text-gray-900 sr-only">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <IoIosSearch fontSize={'1.4rem'} className=' text-main' />
