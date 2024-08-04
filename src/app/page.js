@@ -1,8 +1,11 @@
 import Header from '@/components/modules/Header/Header'
-import Image from 'next/image'
+import Landding from '@/components/templates/Index/Landding/Landding'
 
 export default function Home() {
   return (
-    <Header />
+    <>
+      <Header />
+      <Landding/>
+    </>
   )
 }

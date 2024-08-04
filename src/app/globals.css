@@ -85,7 +85,8 @@
         margin-left: .7rem;
     }
 
-    .btn a , .btn span {
+    .btn a,
+    .btn span {
         color: #fff;
         z-index: 2;
 
@@ -113,6 +114,34 @@
         transform: translateX(0%) !important;
         visibility: visible !important;
     }
+
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 22px !important;
+        background-color: #7B1FA2 !important;
+        color: white !important;
+        border-radius: 100%;
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        font-size: 1rem !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #7B1FA2 !important;
+    }
+
+    /* @media only screen and (max-width: 768px) {
+
+        .swiper-button-next, .swiper-button-prev {
+            display: none !important;
+        } 
+    } */
+
 }
 
 @layer utilities {
