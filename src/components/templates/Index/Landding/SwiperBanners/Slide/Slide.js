@@ -9,7 +9,7 @@ export default function Slide({pic}) {
             <div className=' my-auto order-last md:order-first'>
                 <div class=" text-center space-y-6 ">
                     <h4 class=" text-main font-bold text-xl">UP TO 50% OFF</h4>
-                    <h2 class="font-bold text-2xl sm:text-3xl sm:leading-[3rem] 2xl:text-[2.5rem] 2xl:leading-[3.5rem]">
+                    <h2 class="font-bold text-2xl sm:text-3xl sm:leading-[3rem] xxl:text-[2.5rem] xxl:leading-[3.5rem]">
                         <span>UP TO 50% OFF</span>
                         <div><span class=" text-main">Elctro</span> Shopping</div>
                     </h2>

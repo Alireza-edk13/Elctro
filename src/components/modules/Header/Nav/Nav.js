@@ -48,25 +48,25 @@ export default function Nav() {
                     </div>
                     <div className='flex-center gap-4 sm:gap-5 md:gap-8'>
                         <div className='cursor-pointer flex-center ' onClick={() => setIsSearchBoxOpen(prevState => !prevState)}>
-                            <IoIosSearch className={`${isSearchBoxOpen ? 'rotate-180' : ''} text-2xl vsm:text-3xl transition-all duration-[.5s]`} />
+                            <IoIosSearch className={`${isSearchBoxOpen ? 'rotate-180' : ''} text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
                         <div className='cursor-pointer hidden lg:flex-center '>
-                            <IoMdHeartEmpty className={` text-2xl vsm:text-3xl transition-all duration-[.5s]`} />
+                            <IoMdHeartEmpty className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
                         <div className='cursor-pointer flex-center ' onClick={() => setIsShoppingCartOpen(prevState => !prevState)}>
-                            <IoCartOutline className={` text-2xl vsm:text-3xl transition-all duration-[.5s]`} />
+                            <IoCartOutline className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
                         <div className='cursor-pointer hidden lg:flex-center '>
-                            <AiOutlineUser className={` text-2xl vsm:text-3xl transition-all duration-[.5s]`} />
+                            <AiOutlineUser className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
                         <div className='block lg:hidden cursor-pointer' onClick={() => setIsNavMobileOpen(prevState => !prevState)}>
-                            < AiOutlineMenu className=' text-2xl vsm:text-3xl' />
+                            < AiOutlineMenu className=' text-2xl sm:text-3xl' />
                         </div>
 
                     </div>
                     {/* search Box */}
                     <div onClick={() => setIsSearchBoxOpen(prevState => !prevState)} className={`${isSearchBoxOpen ? "fixed inset-0 bg-mainBlack opacity-[0]  z-20 w-screen h-screen" : "absolute"}`}></div>
-                    <form className={` ${isSearchBoxOpen ? ' visible opacity-100 scale-y-100' : ' invisible opacity-0 scale-y-0'}  max-w-sm mainBoxShadow transition-all duration-[0.5s] ease-in-out mx-auto absolute left-0 right-0 w-full vsm:p-auto p-4 top-14 vsm:left-auto vsm:-bottom-20 vsm:right-9 z-20 h-4`}>
+                    <form className={` ${isSearchBoxOpen ? ' visible opacity-100 scale-y-100' : ' invisible opacity-0 scale-y-0'}  max-w-sm mainBoxShadow transition-all duration-[0.5s] ease-in-out mx-auto absolute left-0 right-0 w-full sm:p-auto p-4 top-14 sm:left-auto sm:-bottom-20 sm:right-9 z-20 h-4`}>
                         <label className="mb-2 text-sm  text-gray-900 sr-only">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">

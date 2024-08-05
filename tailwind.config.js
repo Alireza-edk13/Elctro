@@ -8,9 +8,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        vvsm: '380px',
-        vsm: '576px',
-        sm: '600px',
+        vsm: '380px',
+        sm: '576px',
         md: '768px',
         lg: '992px',
         xl: '1200px',
@@ -23,7 +22,7 @@ module.exports = {
           sm: '2rem',
           lg: '4rem',
           xl: '5rem',
-          '2xl': '7rem',
+          '2xl': '6rem',
         }
       },
       fontFamily: {
@@ -33,16 +32,21 @@ module.exports = {
         md: "15px"
       },
       colors: {
-        main:  "#7B1FA2",
+        main: "#7B1FA2",
         mainBlack: "#272729",
         mainGray: "#757F95",
-        mainBg:"#f4f5f9",
+        mainBg: "#f4f5f9",
         mainYellow: "#fad505",
         mainBorder: "rgba(0,0,0,.08)"
       },
     },
     boxShadow: {
-      "custom":"0 0 20px rgba(0, 0, 0, .08)",
+      "custom": "0 0 20px rgba(0, 0, 0, .08)",
+    },
+    backgroundImage: {
+        bigPoster: "url(/images/banner/big-banner.webp)",
+        dealBg1: "url(/images/banner/menu-banner-7.webp)",
+        dealBg2: "url(/images/banner/menu-banner-8.webp)",
     },
   },
   plugins: [

@@ -9,7 +9,7 @@ export default function ShoppingCart({ isShoppingCartOpen, setIsShoppingCartOpen
             <div className={`${isShoppingCartOpen ? 'mobile-nav--active' : ''} fixed top-0 left-0 w-screen h-screen z-50 translate-x-[-100%] mobile-nav-transition  invisible`}>
                 {/* Black bg */}
                 <div onClick={() => setIsShoppingCartOpen(prevState => !prevState)} className=' absolute inset-0 bg-mainBlack opacity-[0.3]'></div>
-                <div className="mobile-nav--active relative h-full w-[270px] vsm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto  translate-x-[-100%] invisible opacity-0">
+                <div className="mobile-nav--active relative h-full w-[270px] sm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto  translate-x-[-100%] invisible opacity-0">
                     <div className=" flex justify-between items-center bg-mainBg px-4 py-3">
                         <h6 className=' uppercase '>SHOPPING CART (<span>1</span>)</h6>
                         <span className=' text-xl  cursor-pointer' onClick={() => setIsShoppingCartOpen(prevState => !prevState)}>X</span>
@@ -22,7 +22,7 @@ export default function ShoppingCart({ isShoppingCartOpen, setIsShoppingCartOpen
                                 </Link>
                             </div>
                             <div>
-                                <Link href="/" className=' text-sm vsm:text-base '>
+                                <Link href="/" className=' text-sm sm:text-base '>
                                     Leather Watch Band
                                 </Link>
                                 <div className=" flex items-center mt-2">
@@ -31,7 +31,7 @@ export default function ShoppingCart({ isShoppingCartOpen, setIsShoppingCartOpen
                                         <span className="">5</span>
                                         <span className=" w-6 h-7 text-center  inline-block rounded-2xl bg-mainBg">+</span>
                                     </div>
-                                    <span className=' ml-3 text-main  text-md vsm:text-lg'>$138.45</span>
+                                    <span className=' ml-3 text-main  text-md sm:text-lg'>$138.45</span>
                                 </div>
                             </div>
                             <FaRegTrashAlt />
