@@ -8,7 +8,7 @@ export default function MobileMenu({ isNavMobileOpen, setIsNavMobileOpen }) {
 
     return (
         <>
-            <div className={`${isNavMobileOpen ? 'mobile-nav--active' : ''} fixed top-0 left-0 w-screen h-screen z-50 translate-x-[100%] mobile-nav-transition invisible`}>
+            <div className={`${isNavMobileOpen ? 'mobile-nav--active' : ''} fixed top-0 left-0 w-screen h-screen z-50 translate-x-[100%] mobile-nav-transition invisible lg:hidden`}>
                 {/* Black bg */}
                 <div onClick={() => setIsNavMobileOpen(prevState => !prevState)} className=' absolute inset-0 bg-mainBlack opacity-[0.3]'></div>
                 <div className="mobile-nav--active relative h-full w-[270px] sm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto py-8 px-4 translate-x-[100%] invisible opacity-0">

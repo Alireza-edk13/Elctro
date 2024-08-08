@@ -12,16 +12,17 @@ export default function login() {
             <div className='bg-mainBlack h-screen'>
                 <header>
                     <div className="container">
-                        <div className='flex items-center h-16 text-white'>
-                            <Link href="/" className="  ">Home</Link>
-                            <span className="mx-4 mt-1 cursor-pointer">
+                        <div className='flex items-center justify-end h-16 text-white'>
+                            <Link href="/login">ورود</Link>
+                            <span className="mx-4  cursor-pointer">
                                 <MdNavigateNext className=' text-xl' />
                             </span>
-                            <Link href="/login" className=" ">Login</Link>
+                            <Link href="/">صفحه اصلی</Link>
                         </div>
 
                     </div>
                 </header>
+
 
                 <section>
                     <div className="container">
@@ -30,11 +31,11 @@ export default function login() {
                                 className="w-[430px] p-8 xs:p-12 rounded-lg shadow-custom bg-white  text-mainBlack space-y-6">
                                 {/* <!-- logo --> */}
                                 <div className="  text-center text-4xl sm:mb-4 md:mb-0">
-                                    <Link href={'/'} className=' flex-center text-2xl md:text-4xl'>
-                                        <PiShoppingCartSimpleFill className=' text-3xl md:text-5xl text-main' />
-                                        <h3 className=' pl-1 font-semibold'>Elctro</h3>
+                                    <Link href={'/'} className=' flex-center text-main text-3xl md:text-4xl'>
+                                        <PiShoppingCartSimpleFill className=' text-4xl md:text-5xl' />
+                                        <h3 className=' font-morabba pl-1 '>الکترو</h3>
                                     </Link>
-                                    <h4 className="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba">Create your free Edk-Shop account
+                                    <h4 className="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba"> ورود به اکانت فروشگاه الکترو
                                     </h4>
                                 </div>
                                 {/* <!-- input --> */}
@@ -42,27 +43,26 @@ export default function login() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="Email"
                                         className="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="Email" autocomplete="off" />
-                                    <span className='absolute right-4 top-3 text-main'>
+                                        placeholder="ایمیل" autocomplete="off" />
+                                    <span className='absolute  left-4 top-3 text-main'>
                                         <MdEmail className=' text-2xl' />
                                     </span>
                                 </div>
                                 <div className="flex flex-col relative">
                                     <input type="text" id="password"
                                         className="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="Password" autocomplete="off" />
-                                    <span className='absolute right-4 top-3 text-main'>
+                                        placeholder="رمز عبور" autocomplete="off" />
+                                    <span className='absolute  left-4 top-3 text-main'>
                                         <FaKey className=' text-2xl' />
                                     </span>
                                 </div>
                                 <div className="flex items-center justify-between text-xs xs:text-sm text-[#687188]">
                                     <div className="flex items-center">
                                         <input className="size-md " type="checkbox" name="checkbox" id="createAccount" value="" />
-                                        <label className="relative cursor-pointer" for="createAccount"><span className="ml-1">Remeber
-                                            Me</span></label>
+                                        <label className="relative cursor-pointer" for="createAccount"><span className="mr-1">منو یادت نره</span></label>
                                     </div>
                                     <span><Link href="#">
-                                        Forgot Password?
+                                        رمز عبور فراموش کردی؟
                                     </Link></span>
                                 </div>
 
@@ -73,23 +73,23 @@ export default function login() {
                                 </button>
 
 
-                                <p className="text-sm text-[#687188] text-center">Don't have an account?
-                                    <Link href="/register" className="text-main ml-1">Register
+                                <p className="text-sm text-[#687188] text-center">اکانت نداری؟
+                                    <Link href="/register" className="text-main mr-1">ثبت نام
                                     </Link>
                                 </p>
 
                                 <div className="relative border-t border-solid border-[#f4f5f9] space-y-6">
-                                    <span className="text-[#687188] absolute -top-[13px] left-[50%]">or</span>
-                                    <p className="text-[#687188] text-center text-sm">Continue with social media</p>
+                                    <span className="text-[#687188] absolute -top-[13px] left-[50%]">یا</span>
+                                    <p className="text-[#687188] text-center text-sm">ورود از طریق شبکه های اجتماعی</p>
                                     <div
                                         className="grid grid-cols-2 xs:grid-cols-3 gap-2 xs:gap-1 text-center text-sm child:py-2 child:px-4 child:rounded-full child:border-solid child:border-2 child:flex-center child:gap-2">
                                         <Link href="#" className="border-main text-main transition-all ease-in  duration-75 hover:bg-main hover:text-white">
-                                            <FaFacebook />
                                             Facebook
+                                            <FaFacebook className=' -mt-1.5' />
                                         </Link>
                                         <Link href="#" className="border-main text-main transition-all ease-in  duration-75 hover:bg-main hover:text-white">
-                                            <FaGoogle />
                                             Google
+                                            <FaGoogle className=' -mt-1.5' />
                                         </Link>
                                     </div>
                                 </div>

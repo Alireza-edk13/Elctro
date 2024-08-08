@@ -196,7 +196,7 @@
     }
 
     .addToCart::after {
-        content: ' خرید محصول';
+        content: "افزودن به سبد";
     }
 
     .addToFav::after {
