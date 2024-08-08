@@ -33,7 +33,7 @@ export default function register() {
                                         <PiShoppingCartSimpleFill className=' text-3xl md:text-5xl text-main' />
                                         <h3 className=' pl-1 font-semibold'>Elctro</h3>
                                     </Link>
-                                    <h4 class="text-[#4f5d77] text-sm xs:text-base mt-3 font-Roboto">Create your free Edk-Shop account
+                                    <h4 class="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba">Create your free Edk-Shop account
                                     </h4>
                                 </div>
                                 {/* <!-- input --> */}

@@ -3,8 +3,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 export default function Btn({ text, style }) {
     return (
         <div className={` btn ${style}`}>
-            <span>{text}</span>
-            <IoIosArrowRoundForward className=' text-2xl' />
+            <IoIosArrowRoundForward className=' text-2xl ' />
+            <span className=' text-sm'>{text}</span>
         </div>
     )
 }

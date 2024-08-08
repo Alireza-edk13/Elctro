@@ -22,7 +22,7 @@ export default function CategoryBox({ icon, name, number }) {
                         }
                     </div>
                     <p>{name}</p>
-                    <span className=' text-mainGray'>{number} item</span>
+                    <span className=' text-mainGray'>{number} آیتم</span>
                 </div>
             </Link>
         </div>

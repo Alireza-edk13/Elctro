@@ -37,11 +37,11 @@ export default function Nav() {
         <>
             <nav className={`${isFix ? 'fix-nav-active shadow-custom' : ' block'} z-40 py-4 bg-main  top-0 left-0 w-full text-white`}>
                 <div className=' container flex justify-between items-center'>
-                    <div className=' flex-center gap-20'>
+                    <div className=' flex-center gap-10 2xl:gap-20'>
                         <div>
                             <Link href={'/'} className=' flex-center text-2xl md:text-3xl'>
                                 <PiShoppingCartSimpleFill className=' text-3xl md:text-4xl' />
-                                <h3 className=' pl-1 '>Elctro</h3>
+                                <h3 className=' font-morabba pl-1 '>الکترو</h3>
                             </Link>
                         </div>
                         <Menu />
@@ -60,20 +60,20 @@ export default function Nav() {
                             <AiOutlineUser className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
                         <div className='block lg:hidden cursor-pointer' onClick={() => setIsNavMobileOpen(prevState => !prevState)}>
-                            < AiOutlineMenu className=' text-2xl sm:text-3xl' />
+                            < AiOutlineMenu className={`${isNavMobileOpen ? " rotate-45" : ""} text-2xl sm:text-3xl transition-all duration-500`} />
                         </div>
 
                     </div>
                     {/* search Box */}
                     <div onClick={() => setIsSearchBoxOpen(prevState => !prevState)} className={`${isSearchBoxOpen ? "fixed inset-0 bg-mainBlack opacity-[0]  z-20 w-screen h-screen" : "absolute"}`}></div>
-                    <form className={` ${isSearchBoxOpen ? ' visible opacity-100 scale-y-100' : ' invisible opacity-0 scale-y-0'}  max-w-sm mainBoxShadow transition-all duration-[0.5s] ease-in-out mx-auto absolute left-0 right-0 w-full sm:p-auto p-4 top-14 sm:left-auto sm:-bottom-20 sm:right-9 z-20 h-4`}>
+                    <form className={` ${isSearchBoxOpen ? ' visible opacity-100 scale-y-100' : ' invisible opacity-0 scale-y-0'}  max-w-sm mainBoxShadow transition-all duration-[0.5s] ease-in-out mx-auto absolute left-0 right-0 w-full sm:p-auto p-4 top-14 sm:right-auto sm:-bottom-20 sm:left-20 z-20 h-4`}>
                         <label className="mb-2 text-sm  text-gray-900 sr-only">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <IoIosSearch fontSize={'1.4rem'} className=' text-main' />
                             </div>
-                            <input type="search" className="block text-mainBlack w-full p-4 ps-10 shadow-custom rounded-lg bg-white focus:ring-blue-500 outline-none" placeholder="Search..." required />
-                            <button type="button" className=' bg-main absolute rounded-md end-2.5 bottom-2 top-2 -ml-24 py-2 px-4 text-md'><span className='btn_curve'></span>Search</button>
+                            <input type="search" className="block text-mainBlack w-full p-4 ps-10 shadow-custom rounded-lg bg-white focus:ring-blue-500 outline-none" placeholder="هدفون.." required />
+                            <button type="button" className=' bg-main absolute rounded-md end-2.5 bottom-2 top-2  py-2 px-4 text-md'><span className='btn_curve'></span>جستجو</button>
                         </div>
                     </form>
 

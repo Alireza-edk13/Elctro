@@ -1,11 +1,52 @@
 import './globals.css'
-import { Roboto } from 'next/font/google'
+import localFont from 'next/font/local'
+const morabba = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Morabba/woff2/Morabba-Light.woff2',
+      style: "normal",
+      weight: "400",
+    },
+    {
+      path: '../../public/fonts/Morabba/woff2/Morabba-Medium.woff2',
+      style: "normal",
+      weight: "500"
+    },
+    {
+      path: '../../public/fonts/Morabba/woff2/Morabba-Bold.woff2',
+      style: "normal",
+      weight: "600",
+    },
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-roboto',
-})
+  ],
+  variable: "--font-morabba",
+  style: "normal",
+  display: "swap",
+});
+const dana = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Dana/woff2/DanaFaNum-Regular.woff2',
+      style: "normal",
+      weight: "400",
+    },
+    {
+      path: '../../public/fonts/Dana/woff2/DanaFaNum-Medium.woff2',
+      style: "normal",
+      weight: "500"
+    },
+    {
+      path: '../../public/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2',
+      style: "normal",
+      weight: "600",
+    },
+
+  ],
+  variable: "--font-dana",
+  style: "normal",
+  display: "swap",
+});
+
 
 export const metadata = {
   title: 'Elctro',
@@ -13,8 +54,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} font-sans text-base text-[#2a322d] font-medium`}>{children}</body>
+    <html lang="fa" dir='rtl' >
+      <body className={` ${dana.variable}  ${morabba.variable} font-dana text-base text-[#2a322d] font-medium`}>{children}</body>
     </html>
   )
 }

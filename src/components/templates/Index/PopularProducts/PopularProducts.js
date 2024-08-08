@@ -12,7 +12,7 @@ export default function PopularProduct() {
     return (
         <section className=' bg-mainBg mt-20 py-6'>
             <div className=' container'>
-                <TopSectionTitle title="Popular items" />
+                <TopSectionTitle title="محبوب ترین" />
                 <div>
                     <Swiper
                         slidesPerView={1}
@@ -24,7 +24,7 @@ export default function PopularProduct() {
                             576: {
                                 slidesPerView: 2,
                             },
-                            992: {
+                            1200: {
                                 slidesPerView: 4,
                             },
                             1400: {
@@ -34,30 +34,30 @@ export default function PopularProduct() {
                         modules={[Pagination]}
                         className="mySwiper"
                     >
-                   
+
                         <SwiperSlide>
-                            <ProductBox pic = "product-1" />
+                            <ProductBox pic="product-1" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-2" />
+                            <ProductBox pic="product-2" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-3" />
+                            <ProductBox pic="product-3" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-4" />
+                            <ProductBox pic="product-4" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-5" />
+                            <ProductBox pic="product-5" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-6" />
+                            <ProductBox pic="product-6" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-7" />
+                            <ProductBox pic="product-7" />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <ProductBox pic = "product-8" />
+                            <ProductBox pic="product-8" />
                         </SwiperSlide>
                     </Swiper>
                 </div>

@@ -192,19 +192,19 @@
     }
 
     .view::after {
-        content: 'View Details';
+        content: 'مشاهده محصول';
     }
 
     .addToCart::after {
-        content: 'View Details';
+        content: ' خرید محصول';
     }
 
     .addToFav::after {
-        content: 'Add To Fav';
+        content: 'اضافه به علاقه مندی ها';
     }
 
     .compare::after {
-        content: 'Compare';
+        content: 'مقایسه';
     }
 
     .product-btn::after {

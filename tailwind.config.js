@@ -26,7 +26,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        roboto: ['var(--font-roboto)'],
+        morabba: ['var(--font-morabba)'],
+        dana: ['var(--font-dana)']
       },
       fontSize: {
         md: "15px"

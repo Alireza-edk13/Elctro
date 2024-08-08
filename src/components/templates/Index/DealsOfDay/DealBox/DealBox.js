@@ -1,40 +1,51 @@
 import React from 'react'
 import Btn from '@/components/modules/Btn/Btn'
+import Image from 'next/image'
 
-export default function DealBox({bgPic}) {
+export default function DealBox({ bgPic ,  title , newPrice }) {
     return (
-        <div class={`${bgPic} bg-center bg-no-repeat bg-cover p-16  rounded-lg`}>
-            <h5 className=' text-main text-xl'>Deal of the Day</h5>
-            <p className=' font-normal pt-1 text-sm'>Limited quantities</p>
-            <h4 className=' text-2xl w-60  py-5'>Smart Headphone New Morden Design</h4>
-            <div className=' mb-5'>
-                <span class=" text-2xl font-semibold text-main mr-2 ">$438.45</span>
-                <span class="text-lg  line-through text-mainGray">$310.2</span>
-            </div>
-            <div>
-                <p className=' text-sm font-normal mb-4'>Hurry Up! Offer End In:</p>
-                <div class=" mb-6 flex items-center gap-6">
-                    <span className=' flex flex-col justify-center items-center '>
-                        <span class=" bg-main text-white p-3 text-lg relative rounded-lg coundown-time">03</span>
-                        <span class=" uppercase text-[12px] text-mainGray tracking-wide">days</span>
-                    </span>
-                    <span className=' flex flex-col justify-center items-center '>
-                        <span class=" bg-main text-white p-3 text-lg relative rounded-lg coundown-time">20</span>
-                        <span class=" uppercase text-[12px] text-mainGray tracking-wide">Hours</span>
-                    </span>
-                    <span className=' flex flex-col justify-center items-center '>
-                        <span class=" bg-main text-white p-3 text-lg relative rounded-lg coundown-time">12</span>
-                        <span class=" uppercase text-[12px] text-mainGray tracking-wide">Mins</span>
-                    </span>
-                    <span className=' flex flex-col justify-center items-center '>
-                        <span class=" bg-main text-white p-3 text-lg relative rounded-lg">33</span>
-                        <span class=" uppercase text-[12px] text-mainGray tracking-wide">Sec</span>
-                    </span>
+        <div class="relative rounded-lg">
+            <Image src={`/images/banner/${bgPic}`} className=' -scale-x-100 w-full rounded-lg' width={657} height={512} alt="offer-img" />
+            <div className=' absolute right-6 sm:right-14 top-8 sm:top-4 md:top-12'>
+                <h5 className=' text-main text-sm sm:text-xl'>جشنواره روزانه</h5>
+                <p className=' font-normal pt-1 text-sm hidden sm:block'>تعداد محدود</p>
+                <h4 className=' font-morabba text-lg md:text-2xl w-48 sm:w-60 pt-2 pb-8 sm:py-2  md:py-5  tracking-wide'>{title}</h4>
+                <div className=' mb-5 hidden sm:flex items-center gap-1 sm:gap-2'>
 
+                    <div class="  flex-center gap-1 text-lg  line-through text-mainGray">
+                        <span>{newPrice}</span>
+                        <span>تومان</span>
+                    </div>
+                    <div class=" text-2xl flex-center gap-1 font-semibold text-main mr-2 ">
+                        <span>{newPrice}</span>
+                        <span>تومان</span>
+                    </div>
                 </div>
-                <Btn text="Shop Now" style="text-white" />
-            </div>
+                <div>
+                    <p className=' text-sm font-normal mb-1 sm:mb-4 hidden sm:block'>عجله کن! تخفیف داره تموم میشه</p>
+                    <div class=" mb-2 md:mb-6 hidden sm:flex flex-row-reverse items-center justify-end gap-6">
+                        <span className=' flex flex-col justify-center items-center '>
+                            <span class=" bg-main text-white p-2 sm:p-3 text-sm sm:text-lg relative rounded-lg coundown-time">03</span>
+                            <span class=" uppercase text-[12px] text-mainGray tracking-wide">روز</span>
+                        </span>
+                        <span className=' flex flex-col justify-center items-center '>
+                            <span class=" bg-main text-white p-2 sm:p-3 text-sm sm:text-lg relative rounded-lg coundown-time">20</span>
+                            <span class=" uppercase text-[12px] text-mainGray tracking-wide">ساعت</span>
+                        </span>
+                        <span className=' flex flex-col justify-center items-center '>
+                            <span class=" bg-main text-white p-2 sm:p-3 text-sm sm:text-lg relative rounded-lg coundown-time">12</span>
+                            <span class=" uppercase text-[12px] text-mainGray tracking-wide">دقیقه</span>
+                        </span>
+                        <span className=' flex flex-col justify-center items-center '>
+                            <span class=" bg-main text-white p-2 sm:p-3 text-sm sm:text-lg relative rounded-lg ">33</span>
+                            <span class=" uppercase text-[12px] text-mainGray tracking-wide ">ثانیه</span>
+                        </span>
 
+                    </div>
+                    <Btn text="خرید محصول" style="text-white" />
+                </div>
+
+            </div>
         </div>
 
     )

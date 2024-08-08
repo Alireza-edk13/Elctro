@@ -6,42 +6,50 @@ export default function Menu() {
         <div className='hidden lg:flex-center  gap-16'>
             <ul className='flex-center child:cursor-pointer gap-10'>
                 <li>
-                    <Link href={'/'}>Home</Link>
+                    <Link href={'/'}>صفحه اصلی</Link>
                 </li>
                 <li className='relative group'>
-                    <div>Course</div>
-                    <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-24px] top-[80%] pt-7 transition-all ease duration-300  z-20`}>
-                        <div className='flex flex-col text-left  child:rounded-md capitalize child:transition-all text-mainBlack  shadow-custom child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white'>
-                            <Link href={'/course-list'} className='dropdown'>Courses List</Link>
-                            <Link href={'/course-detail/ai-course'} className='dropdown'>Course Details</Link>
+                    <div>محصولات</div>
+                    <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-163px] top-[80%] pt-7 transition-all ease duration-300  z-20`}>
+                        <div className='flex flex-col text-justify  child:rounded-md capitalize child:transition-all text-mainBlack  shadow-custom child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white'>
+                            <Link href={'/course-list'}>لیست محصولات</Link>
+                            <Link href={'/course-detail/ai-course'}>جزییات محصولات</Link>
                         </div>
 
                     </div>
                 </li>
                 <li className='relative group'>
-                    <div>BLog</div>
-                    <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-24px] top-[80%] pt-7 transition-all ease duration-300  z-20`}>
-                        <div className='flex flex-col text-left  child:rounded-md capitalize child:transition-all text-mainBlack  child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white shadow-custom'>
-                            <Link href={'/blog-list'} className='dropdown'>Blog List</Link>
-                            <Link href={'/blog-detail'} className='dropdown'>Blog Details</Link>
+                    <div>صفحات</div>
+                    <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-163px] top-[80%] pt-7 transition-all ease duration-300  z-20`}>
+                        <div className='flex flex-col text-justify  child:rounded-md capitalize child:transition-all child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white text-mainBlack  shadow-custom '>
+                            <Link href={'/teacher-list'}>لیست شعبات</Link>
+                            <Link href={'/teacher-detail'}>جزییات شعبه</Link>
+                            <Link href={'/login'}>ورود</Link>
+                            <Link href={'/register'}>ثبت نام</Link>
                         </div>
-
                     </div>
                 </li>
+
                 <li className='relative group'>
-                    <div>Pages</div>
-                    <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-24px] top-[80%] pt-7 transition-all ease duration-300  z-20`}>
-                        <div className='flex flex-col text-left  child:rounded-md capitalize child:transition-all child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white text-mainBlack  shadow-custom '>
-                            <Link href={'/teacher-list'} className='dropdown'>Teachers List</Link>
-                            <Link href={'/teacher-detail'} className='dropdown'>Teacher Details</Link>
-                            <Link href={'/login'} className='dropdown'>Login</Link>
-                            <Link href={'/register'} className='dropdown'>Register</Link>
+                    <div>مقاله</div>
+                    <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-163px] top-[80%] pt-7 transition-all ease duration-300  z-20`}>
+                        <div className='flex flex-col  child:rounded-md capitalize child:transition-all text-mainBlack text-justify  child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white shadow-custom'>
+                            <Link href={'/blog-list'}>لیست مقالات</Link>
+                            <Link href={'/blog-detail'}>جزییات مقاله</Link>
                         </div>
+
                     </div>
                 </li>
                 <li>
-                    <Link href={'/contact'}>Contact</Link>
+                    <Link href={'/contact'}>ارتباط با ما</Link>
                 </li>
+
+
+
+
+
+
+
             </ul>
         </div>
     )

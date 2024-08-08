@@ -8,21 +8,20 @@ export default function Category() {
         <>
             <section>
                 <div className=' container mt-20'>
-                    <TopSectionTitle title="Top Category" />
+                    <TopSectionTitle title=" دسته بندی ها" />
                     <div className=' grid grid-cols-2 md:grid-cols-3 xxl:grid-cols-6 gap-6'>
-                        <CategoryBox icon="PiPlugChargingFill" name="Accessories" number="20" />
-                        <CategoryBox icon="PiDesktopTower" name="Desktop" number="11" />
-                        <CategoryBox icon="FaHeadphones" name="Headphones" number="07" />
-                        <CategoryBox icon="FaCamera" name="Camera" number="13" />
-                        <CategoryBox icon="FaLaptop" name="Laptop" number="32" />
-                        <CategoryBox icon="FaMobile" name="Mobile" number="21" />
-                        <CategoryBox icon="FaHeadphones" name="Headphones" number="07" />
-                        <CategoryBox icon="FaLaptop" name="Laptop" number="32" />
-                        <CategoryBox icon="FaMobile" name="Mobile" number="21" />
-                        <CategoryBox icon="PiDesktopTower" name="Desktop" number="11" />
-                        <CategoryBox icon="FaCamera" name="Camera" number="13" />
-                        <CategoryBox icon="PiPlugChargingFill" name="Accessories" number="20" />
-
+                        <CategoryBox icon="PiPlugChargingFill" name="لوازم جانبی" number="20" />
+                        <CategoryBox icon="PiDesktopTower" name="کامپیوتر" number="11" />
+                        <CategoryBox icon="FaHeadphones" name="هدفون" number="07" />
+                        <CategoryBox icon="FaCamera" name="دوربین" number="13" />
+                        <CategoryBox icon="FaLaptop" name="لب تاپ" number="32" />
+                        <CategoryBox icon="FaMobile" name="موبایل" number="21" />
+                        <CategoryBox icon="FaHeadphones" name="هدفون" number="07" />
+                        <CategoryBox icon="FaCamera" name="دوربین" number="13" />
+                        <CategoryBox icon="FaLaptop" name="لب تاپ" number="32" />
+                        <CategoryBox icon="PiDesktopTower" name="کامپیوتر" number="11" />
+                        <CategoryBox icon="FaMobile" name="موبایل" number="21" />
+                        <CategoryBox icon="PiPlugChargingFill" name="لوازم جانبی" number="20" />
                     </div>
                 </div>
             </section>

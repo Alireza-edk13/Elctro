@@ -11,7 +11,7 @@ export default function TrendingProducts() {
     return (
         <section className=' bg-mainBg mt-20 py-6'>
             <div className=' container'>
-                <TopSectionTitle title="Trending items" />
+                <TopSectionTitle title="پر فروش ترین" />
                 <div>
                     <Swiper
                         slidesPerView={1}
@@ -23,7 +23,7 @@ export default function TrendingProducts() {
                             576: {
                                 slidesPerView: 2,
                             },
-                            992: {
+                            1200: {
                                 slidesPerView: 4,
                             },
                             1400: {
