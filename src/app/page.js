@@ -2,6 +2,7 @@ import Header from '@/components/modules/Header/Header'
 import BigPoster from '@/components/templates/Index/BigPoster/BigPoster'
 import Brands from '@/components/templates/Index/Brands/Brands'
 import Category from '@/components/templates/Index/Category/Category'
+import Comments from '@/components/templates/Index/Comments/Comments'
 import DealOfDay from '@/components/templates/Index/DealsOfDay/DealsOfDay'
 import InfoBoxes from '@/components/templates/Index/InfoBoxes/InfoBoxes'
 import Landding from '@/components/templates/Index/Landding/Landding'
@@ -23,6 +24,7 @@ export default function Home() {
       <DealOfDay/>
       <TrendingProducts/>
       <Brands/>
+      <Comments/>
     </>
   )
 }
