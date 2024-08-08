@@ -46,8 +46,6 @@ module.exports = {
     },
     backgroundImage: {
         bigPoster: "url(/images/banner/big-banner.webp)",
-        dealBg1: "url(/images/banner/menu-banner-7.webp)",
-        dealBg2: "url(/images/banner/menu-banner-8.webp)",
     },
   },
   plugins: [

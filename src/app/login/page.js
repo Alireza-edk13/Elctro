@@ -11,54 +11,54 @@ export default function login() {
         <>
             <div className='bg-mainBlack h-screen'>
                 <header>
-                    <div class="container">
+                    <div className="container">
                         <div className='flex items-center h-16 text-white'>
-                            <Link href="/" class="  ">Home</Link>
-                            <span class="mx-4 mt-1 cursor-pointer">
+                            <Link href="/" className="  ">Home</Link>
+                            <span className="mx-4 mt-1 cursor-pointer">
                                 <MdNavigateNext className=' text-xl' />
                             </span>
-                            <Link href="/login" class=" ">Login</Link>
+                            <Link href="/login" className=" ">Login</Link>
                         </div>
 
                     </div>
                 </header>
 
                 <section>
-                    <div class="container">
-                        <div class="flex-center">
+                    <div className="container">
+                        <div className="flex-center">
                             <form action="#"
-                                class="w-[430px] p-8 xs:p-12 rounded-lg shadow-custom bg-white  text-mainBlack space-y-6">
+                                className="w-[430px] p-8 xs:p-12 rounded-lg shadow-custom bg-white  text-mainBlack space-y-6">
                                 {/* <!-- logo --> */}
-                                <div class="  text-center text-4xl sm:mb-4 md:mb-0">
+                                <div className="  text-center text-4xl sm:mb-4 md:mb-0">
                                     <Link href={'/'} className=' flex-center text-2xl md:text-4xl'>
                                         <PiShoppingCartSimpleFill className=' text-3xl md:text-5xl text-main' />
                                         <h3 className=' pl-1 font-semibold'>Elctro</h3>
                                     </Link>
-                                    <h4 class="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba">Create your free Edk-Shop account
+                                    <h4 className="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba">Create your free Edk-Shop account
                                     </h4>
                                 </div>
                                 {/* <!-- input --> */}
 
-                                <div class="flex flex-col relative">
+                                <div className="flex flex-col relative">
                                     <input type="text" id="Email"
-                                        class="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
+                                        className="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
                                         placeholder="Email" autocomplete="off" />
                                     <span className='absolute right-4 top-3 text-main'>
                                         <MdEmail className=' text-2xl' />
                                     </span>
                                 </div>
-                                <div class="flex flex-col relative">
+                                <div className="flex flex-col relative">
                                     <input type="text" id="password"
-                                        class="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
+                                        className="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
                                         placeholder="Password" autocomplete="off" />
                                     <span className='absolute right-4 top-3 text-main'>
                                         <FaKey className=' text-2xl' />
                                     </span>
                                 </div>
-                                <div class="flex items-center justify-between text-xs xs:text-sm text-[#687188]">
-                                    <div class="flex items-center">
-                                        <input class="size-md " type="checkbox" name="checkbox" id="createAccount" value="" />
-                                        <label class="relative cursor-pointer" for="createAccount"><span class="ml-1">Remeber
+                                <div className="flex items-center justify-between text-xs xs:text-sm text-[#687188]">
+                                    <div className="flex items-center">
+                                        <input className="size-md " type="checkbox" name="checkbox" id="createAccount" value="" />
+                                        <label className="relative cursor-pointer" for="createAccount"><span className="ml-1">Remeber
                                             Me</span></label>
                                     </div>
                                     <span><Link href="#">
@@ -67,27 +67,27 @@ export default function login() {
                                 </div>
 
 
-                                <button type="submit" class="w-full">
+                                <button type="submit" className="w-full">
                                     <Btn text="Login" style="w-full text-white before:w-full" />
 
                                 </button>
 
 
-                                <p class="text-sm text-[#687188] text-center">Don't have an account?
-                                    <Link href="/register" class="text-main ml-1">Register
+                                <p className="text-sm text-[#687188] text-center">Don't have an account?
+                                    <Link href="/register" className="text-main ml-1">Register
                                     </Link>
                                 </p>
 
-                                <div class="relative border-t border-solid border-[#f4f5f9] space-y-6">
-                                    <span class="text-[#687188] absolute -top-[13px] left-[50%]">or</span>
-                                    <p class="text-[#687188] text-center text-sm">Continue with social media</p>
+                                <div className="relative border-t border-solid border-[#f4f5f9] space-y-6">
+                                    <span className="text-[#687188] absolute -top-[13px] left-[50%]">or</span>
+                                    <p className="text-[#687188] text-center text-sm">Continue with social media</p>
                                     <div
-                                        class="grid grid-cols-2 xs:grid-cols-3 gap-2 xs:gap-1 text-center text-sm child:py-2 child:px-4 child:rounded-full child:border-solid child:border-2 child:flex-center child:gap-2">
-                                        <Link href="#" class="border-main text-main transition-all ease-in  duration-75 hover:bg-main hover:text-white">
+                                        className="grid grid-cols-2 xs:grid-cols-3 gap-2 xs:gap-1 text-center text-sm child:py-2 child:px-4 child:rounded-full child:border-solid child:border-2 child:flex-center child:gap-2">
+                                        <Link href="#" className="border-main text-main transition-all ease-in  duration-75 hover:bg-main hover:text-white">
                                             <FaFacebook />
                                             Facebook
                                         </Link>
-                                        <Link href="#" class="border-main text-main transition-all ease-in  duration-75 hover:bg-main hover:text-white">
+                                        <Link href="#" className="border-main text-main transition-all ease-in  duration-75 hover:bg-main hover:text-white">
                                             <FaGoogle />
                                             Google
                                         </Link>
