@@ -14,7 +14,7 @@ export default function Slide({ pic }) {
                     <h4 className=" text-main font-bold text-xl">تا 70 درصد تخفیف</h4>
                     <h2 className="font-bold font-morabba text-2xl sm:text-3xl sm:leading-[3rem] xxl:text-[2.5rem] xxl:leading-[3.5rem]">
                         <span>تا 70 درصد تخفیف در</span>
-                        <div> فروشگاه <span className=" text-main">الکترو</span></div>
+                        <div> فروشگاه <span className=" text-main">الکتروشاپ</span></div>
                     </h2>
                     <p className=" text-mainGray text-sm font-normal">
                         یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب را در مدت زمان ی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد

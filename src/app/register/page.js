@@ -31,9 +31,9 @@ export default function register() {
                                 <div className="  text-center text-4xl sm:mb-4 md:mb-0">
                                     <Link href={'/'} className=' flex-center text-main text-3xl md:text-4xl'>
                                         <PiShoppingCartSimpleFill className=' text-4xl md:text-5xl' />
-                                        <h3 className=' font-morabba pl-1 '>الکترو</h3>
+                                        <h3 className=' font-morabba pl-1 '>الکتروشاپ</h3>
                                     </Link>
-                                    <h4 className="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba"> ساخت اکانت در فروشگاه الکترو
+                                    <h4 className="text-[#4f5d77] text-sm xs:text-base mt-3 font-morabba"> ساخت اکانت در فروشگاه الکتروشاپ
                                     </h4>
                                 </div>
                                 {/* <!-- input --> */}

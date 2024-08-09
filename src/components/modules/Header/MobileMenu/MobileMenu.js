@@ -18,7 +18,7 @@ export default function MobileMenu({ isNavMobileOpen, setIsNavMobileOpen }) {
                     <div className=" mb-8">
                         <Link href={'/'} className=' flex justify-start items-center text-main text-3xl md:text-4xl'>
                             <PiShoppingCartSimpleFill className=' text-4xl md:text-5xl' />
-                            <h3 className=' font-morabba pl-1 '>الکترو</h3>
+                            <h3 className=' font-morabba pl-1 '>الکتروشاپ</h3>
                         </Link>
                     </div>
                     {/* Menu */}

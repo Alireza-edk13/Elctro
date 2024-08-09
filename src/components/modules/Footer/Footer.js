@@ -23,7 +23,7 @@ export default function Footer() {
                         <div className=' col-span-12 lg:col-span-3'>
                             <Link href={'/'} className=' flex justify-start items-center text-main text-3xl md:text-4xl'>
                                 <PiShoppingCartSimpleFill className=' text-4xl md:text-5xl' />
-                                <h3 className=' font-morabba pl-1 '>الکترو</h3>
+                                <h3 className=' font-morabba pl-1 '>الکتروشاپ</h3>
                             </Link>
                             <p className=' text-mainGray py-4 text-sm leading-7'>
                                 یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب را در مدت زمان ی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد
@@ -66,7 +66,7 @@ export default function Footer() {
                                 <Link href="#">درباره ما</Link>
                                 <Link href="#">اهداف و تعهدهای ما</Link>
                                 <Link href="#">فروشگاه های حضوری</Link>
-                                <Link href="#">سرگذشت الکترو</Link>
+                                <Link href="#">سرگذشت الکتروشاپ</Link>
                                 <Link href="#">بلاگ</Link>
                                 <Link href="#">تماس با ما</Link>
                                 <Link href="#">سوالات متداول</Link>
@@ -79,7 +79,7 @@ export default function Footer() {
                                 <Link href="#">قوانین و مقررات</Link>
                                 <Link href="#">حریم خصوصی کاربران</Link>
                                 <Link href="#">از زبان مشتریان</Link>
-                                <Link href="#">چراالکترو؟</Link>
+                                <Link href="#">چراالکتروشاپ؟</Link>
                             </div>
                         </div>
                         <div class=" col-span-12 sm:col-span-6 lg:col-span-3">
@@ -87,7 +87,7 @@ export default function Footer() {
                                 <h4 class=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">
                                     نصب اپ موبایل
                                 </h4>
-                                <p className=' text-sm  font-semibold'>الکترو اپ از الان در گوگل پلی و اپ استور موجوده</p>
+                                <p className=' text-sm  font-semibold'>الکتروشاپ اپ از الان در گوگل پلی و اپ استور موجوده</p>
                                 <div class=" mb-10 mt-5">
                                     <div class=" flex items-center gap-4 my-6 text-white">
                                         <Link href="/" className=' flex-center gap-2 bg-main p-2 rounded-lg'>
@@ -115,7 +115,7 @@ export default function Footer() {
                     <div class="  flex justify-between flex-wrap">
                         <p class="copyright-text">
                             ©    1403
-                            تمامی حقوق مادی و معنوی این سایت متعلق به الکترو می‌باشد.
+                            تمامی حقوق مادی و معنوی این سایت متعلق به الکتروشاپ می‌باشد.
                         </p>
                         <div className=' flex-center gap-2'>
                             <span>شبکه های اجتماعی ما:</span>

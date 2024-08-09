@@ -41,7 +41,7 @@ export default function Nav() {
                         <div>
                             <Link href={'/'} className=' flex-center text-2xl md:text-3xl'>
                                 <PiShoppingCartSimpleFill className=' text-3xl md:text-4xl' />
-                                <h3 className=' font-morabba pl-1 '>الکترو</h3>
+                                <h3 className=' font-morabba pl-1 '>الکتروشاپ</h3>
                             </Link>
                         </div>
                         <Menu />

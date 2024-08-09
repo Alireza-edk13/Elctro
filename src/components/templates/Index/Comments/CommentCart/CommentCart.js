@@ -17,7 +17,7 @@ export default function CommentCart() {
         </div>
         <p class=" text-mainGray py-4 text-sm leading-7">
           یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب 
-           را در مدت زمان ی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد و من اینو تو الکترو دیدم
+           را در مدت زمان ی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد و من اینو تو الکتروشاپ دیدم
         </p>
         <div class="flex items-center justify-between">
           <div className=" flex items-center my-2 justify-start gap-1 text-main text-lg">

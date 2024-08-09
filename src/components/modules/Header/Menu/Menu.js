@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function Menu() {
     return (
-        <div className='hidden lg:flex-center  gap-16'>
-            <ul className='flex-center child:cursor-pointer gap-10'>
+        <div className='hidden lg:flex-center gap-16 '>
+            <ul className='flex-center child:cursor-pointer gap-5 2xl:gap-10'>
                 <li>
                     <Link href={'/'}>صفحه اصلی</Link>
                 </li>
