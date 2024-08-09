@@ -6,7 +6,7 @@ import React from 'react'
 export default function Slide({ pic }) {
     return (
         <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 p-10 sm:p-16">
-            <Link href="/">
+            <Link href="/" className=' flex-center sm:block'>
                 <Image src={`/images/slider/${pic}`} alt="img" width={367} height={400} />
             </Link>
             <div className=' my-auto order-last md:order-first'>
