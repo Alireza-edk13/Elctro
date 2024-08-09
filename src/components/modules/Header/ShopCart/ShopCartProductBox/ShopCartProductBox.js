@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import Image from 'next/image';
 
-export default function ShoppingCartProductBox() {
+export default function ShopCartProductBox() {
     return (
         <div className=" flex justify-evenly items-center py-4 border-b-2 border-mainBorder px-2">
             <div className=" min-w-[70px] border-[2px] border-mainBorder rounded-lg">

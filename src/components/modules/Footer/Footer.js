@@ -18,7 +18,7 @@ export default function Footer() {
         <>
             <Newsleter />
             <section>
-                <div class="container py-12  ">
+                <div className="container py-12  ">
                     <div className=' grid grid-cols-12 gap-6 mb-6 border-b-2 pb-8 border-mainBorder'>
                         <div className=' col-span-12 lg:col-span-3'>
                             <Link href={'/'} className=' flex justify-start items-center text-main text-3xl md:text-4xl'>
@@ -49,8 +49,8 @@ export default function Footer() {
 
                         </div>
                         <div className='  col-span-12 sm:col-span-6  lg:col-span-2'>
-                            <h4 class=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">دسترسی سریع</h4>
-                            <div class=" child:block child:text-sm space-y-3">
+                            <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">دسترسی سریع</h4>
+                            <div className=" child:block child:text-sm space-y-3">
                                 <Link href="#">بلاگ</Link>
                                 <Link href="#">خرید گوشی</Link>
                                 <Link href="#">گوشی سامسونگ</Link>
@@ -61,8 +61,8 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className= ' col-span-12 sm:col-span-6 lg:col-span-2'>
-                            <h4 class=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">درباره ما</h4>
-                            <div class=" child:block child:text-sm space-y-3">
+                            <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">درباره ما</h4>
+                            <div className=" child:block child:text-sm space-y-3">
                                 <Link href="#">درباره ما</Link>
                                 <Link href="#">اهداف و تعهدهای ما</Link>
                                 <Link href="#">فروشگاه های حضوری</Link>
@@ -74,22 +74,22 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className='   col-span-12 sm:col-span-6 lg:col-span-2'>
-                            <h4 class=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">قوانین و مقررات</h4>
-                            <div class=" child:block child:text-sm space-y-3">
+                            <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">قوانین و مقررات</h4>
+                            <div className=" child:block child:text-sm space-y-3">
                                 <Link href="#">قوانین و مقررات</Link>
                                 <Link href="#">حریم خصوصی کاربران</Link>
                                 <Link href="#">از زبان مشتریان</Link>
                                 <Link href="#">چراالکتروشاپ؟</Link>
                             </div>
                         </div>
-                        <div class=" col-span-12 sm:col-span-6 lg:col-span-3">
-                            <div class="footer-list-box">
-                                <h4 class=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">
+                        <div className=" col-span-12 sm:col-span-6 lg:col-span-3">
+                            <div className="footer-list-box">
+                                <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">
                                     نصب اپ موبایل
                                 </h4>
                                 <p className=' text-sm  font-semibold'>الکتروشاپ اپ از الان در گوگل پلی و اپ استور موجوده</p>
-                                <div class=" mb-10 mt-5">
-                                    <div class=" flex items-center gap-4 my-6 text-white">
+                                <div className=" mb-10 mt-5">
+                                    <div className=" flex items-center gap-4 my-6 text-white">
                                         <Link href="/" className=' flex-center gap-2 bg-main p-2 rounded-lg'>
                                             <FaGooglePlay className=' text-xl' />
                                             <div>
@@ -112,14 +112,14 @@ export default function Footer() {
                         </div>
                     </div>
                     {/* copy right */}
-                    <div class="  flex justify-between flex-wrap">
-                        <p class="copyright-text">
+                    <div className="  flex justify-between flex-wrap">
+                        <p className="copyright-text">
                             ©    1403
                             تمامی حقوق مادی و معنوی این سایت متعلق به الکتروشاپ می‌باشد.
                         </p>
                         <div className=' flex-center gap-2'>
                             <span>شبکه های اجتماعی ما:</span>
-                            <div class=" grid grid-cols-4 gap-2">
+                            <div className=" grid grid-cols-4 gap-2">
                                 <Link href={'/'} className=' bg-mainBg rounded-full p-3 transition-all duration-200 hover:text-white hover:bg-main'>
                                    <FaGoogle/>
                                 </Link>

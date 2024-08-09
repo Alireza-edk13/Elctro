@@ -9,13 +9,13 @@ import { IoCartOutline } from "react-icons/io5";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import Menu from '../Menu/Menu';
 import MobileMenu from '../MobileMenu/MobileMenu';
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import ShopCart from '../ShopCart/ShopCart';
 export default function Nav() {
 
     const [isFix, setIsFix] = useState(false);
     const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false)
     const [isNavMobileOpen, setIsNavMobileOpen] = useState(false)
-    const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false)
+    const [isShopCartOpen, setIsShopCartOpen] = useState(false)
 
     function fixNav() {
         if (document.documentElement.scrollTop > 700) {
@@ -53,7 +53,7 @@ export default function Nav() {
                         <div className='cursor-pointer hidden lg:flex-center '>
                             <IoMdHeartEmpty className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
-                        <div className='cursor-pointer flex-center ' onClick={() => setIsShoppingCartOpen(prevState => !prevState)}>
+                        <div className='cursor-pointer flex-center ' onClick={() => setIsShopCartOpen(prevState => !prevState)}>
                             <IoCartOutline className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
                         <div className='cursor-pointer hidden lg:flex-center '>
@@ -80,7 +80,7 @@ export default function Nav() {
                 </div>
             </nav>
             <MobileMenu isNavMobileOpen={isNavMobileOpen} setIsNavMobileOpen={setIsNavMobileOpen} />
-            <ShoppingCart isShoppingCartOpen={isShoppingCartOpen} setIsShoppingCartOpen={setIsShoppingCartOpen} />
+            <ShopCart isShopCartOpen={isShopCartOpen} setIsShopCartOpen={setIsShopCartOpen} />
         </>
     )
 }

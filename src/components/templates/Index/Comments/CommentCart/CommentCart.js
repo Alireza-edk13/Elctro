@@ -5,9 +5,9 @@ import { FaCommentDots } from "react-icons/fa";
 export default function CommentCart() {
   return (
 
-      <div class="bg-white rounded-lg p-6 mb-16">
-        <div class=" flex justify-start items-center gap-3 border-b-2 border-mainBorder pb-4">
-          <div class="person-img">
+      <div className="bg-white rounded-lg p-6 mb-16">
+        <div className=" flex justify-start items-center gap-3 border-b-2 border-mainBorder pb-4">
+          <div className="person-img">
             <Image src="/images/person/person3.webp" width={70} height={70} className=' rounded-full' alt="commentImg" />
           </div>
           <div>
@@ -15,11 +15,11 @@ export default function CommentCart() {
             <p  className=' text-main'>مشتری</p>
           </div>
         </div>
-        <p class=" text-mainGray py-4 text-sm leading-7">
+        <p className=" text-mainGray py-4 text-sm leading-7">
           یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب 
            را در مدت زمان ی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد و من اینو تو الکتروشاپ دیدم
         </p>
-        <div class="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <div className=" flex items-center my-2 justify-start gap-1 text-main text-lg">
             <FaStar />
             <FaStar />
@@ -27,7 +27,7 @@ export default function CommentCart() {
             <FaStar />
             <FaStar />
           </div>
-          <div class=" text-main text-4xl">
+          <div className=" text-main text-4xl">
             <FaCommentDots />
           </div>
         </div>

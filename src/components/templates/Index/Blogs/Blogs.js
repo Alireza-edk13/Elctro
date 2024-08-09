@@ -5,7 +5,7 @@ export default function Blogs() {
     return (
         <section className='py-6 mt-20'>
             <div className=' container '>
-                <div class=" mb-10 text-center">
+                <div className=" mb-10 text-center">
                     <h6 className=' uppercase'>مقاله های ما</h6>
                     <h4 className=' font-morabba font-semibold text-xl sm:text-3xl mt-2'>آخرین اخبار و<span className=' text-main'> مقالات </span>منتشر شده</h4>
                 </div>

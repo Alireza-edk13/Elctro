@@ -1,21 +1,21 @@
 import Link from 'next/link';
 import React from 'react'
-import ShoppingCartProductBox from './ShoppingCartProductBox/ShoppingCartProductBox';
-export default function ShoppingCart({ isShoppingCartOpen, setIsShoppingCartOpen }) {
+import ShopCartProductBox from './ShopCartProductBox/ShopCartProductBox';
+export default function ShopCart({ isShopCartOpen, setIsShopCartOpen }) {
 
     return (
         <>
-            <div className={`${isShoppingCartOpen ? 'mobile-nav--active' : ''} fixed top-0 left-0 w-screen h-screen z-50 translate-x-[100%] mobile-nav-transition  invisible`}>
+            <div className={`${isShopCartOpen ? 'mobile-nav--active' : ''} fixed top-0 left-0 w-screen h-screen z-50 translate-x-[100%] mobile-nav-transition  invisible`}>
                 {/* Black bg */}
-                <div onClick={() => setIsShoppingCartOpen(prevState => !prevState)} className=' absolute inset-0 bg-mainBlack opacity-[0.3]'></div>
+                <div onClick={() => setIsShopCartOpen(prevState => !prevState)} className=' absolute inset-0 bg-mainBlack opacity-[0.3]'></div>
                 <div className="mobile-nav--active relative h-full w-[270px] sm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto  translate-x-[100%] invisible opacity-0">
                     <div className=" flex justify-between items-center bg-mainBg px-5 py-2">
                         <h6 className=' uppercase font-dana '>سبد خرید(<span>1</span>)</h6>
-                        <span className=' text-2xl  cursor-pointer' onClick={() => setIsShoppingCartOpen(prevState => !prevState)}>X</span>
+                        <span className=' text-2xl  cursor-pointer' onClick={() => setIsShopCartOpen(prevState => !prevState)}>X</span>
                     </div>
                     <div className=" h-[52vh] overflow-y-auto border-[2px] border-mainBorder">
-                        <ShoppingCartProductBox/>
-                        <ShoppingCartProductBox/>
+                        <ShopCartProductBox/>
+                        <ShopCartProductBox/>
                     </div>
                     <div>
                         <div className=" text-sm sm:text-base p-4 border-b-[2px] border-mainBorder space-y-3">
