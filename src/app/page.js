@@ -1,3 +1,4 @@
+import Footer from '@/components/modules/Footer/Footer'
 import Header from '@/components/modules/Header/Header'
 import BigPoster from '@/components/templates/Index/BigPoster/BigPoster'
 import Blogs from '@/components/templates/Index/Blogs/Blogs'
@@ -27,6 +28,7 @@ export default function Home() {
       <Brands/>
       <Comments/>
       <Blogs/>
+      <Footer/>
     </>
   )
 }

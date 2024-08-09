@@ -25,9 +25,9 @@ export default function BlogCart({pic, title}) {
       </div>
       <div class=" space-y-2">
         <h5>
-          <Link href="/" className=' text-main text-xl line-clamp-1 font-bold'>{title}</Link>
+          <Link href="/" className=' text-main text-lg sm:text-xl line-clamp-1 font-bold'>{title}</Link>
         </h5>
-        <p className=' text-md text-mainGray'>
+        <p className=' text-sm sm:text-md text-mainGray'>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است که از ان استفاده میکنند
         </p>
       </div>

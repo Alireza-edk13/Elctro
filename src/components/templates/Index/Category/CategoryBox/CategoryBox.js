@@ -10,8 +10,8 @@ export default function CategoryBox({ icon, name, number }) {
     return (
         <div className=' group  rounded-lg transition-all duration-75 ease-in hover:border-x-2 hover:border-main'>
             <Link href="/">
-                <div className=" bg-mainBg space-y-1 flex-center flex-col p-3 rounded-lg ">
-                    <div className=' rounded-full text-4xl bg-main text-white p-5'>
+                <div className=" bg-mainBg space-y-1 flex-center flex-col p-2 sm:p-3 rounded-lg ">
+                    <div className=' rounded-full text-3xl sm:text-4xl bg-main text-white p-5'>
                         {
                             icon === "PiDesktopTower" && <PiDesktopTower /> ||
                             icon === "FaCamera" && <FaCamera /> ||

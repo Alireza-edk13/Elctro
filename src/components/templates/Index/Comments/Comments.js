@@ -15,7 +15,7 @@ export default function Comments() {
             <div className=' container '>
                 <div class=" mb-10 text-center">
                     <h6 className=' uppercase'>رضایت مندی کاربران</h6>
-                    <h4 className=' font-morabba font-semibold text-3xl mt-2'>مشتری ها درباره ما <span className=' text-main'>چی میگن !</span></h4>
+                    <h4 className=' font-morabba font-semibold text-xl sm:text-3xl mt-2'>مشتری ها درباره ما <span className=' text-main'>چی میگن !</span></h4>
                 </div>
                 <Swiper
                     slidesPerView={1}
