@@ -1,5 +1,6 @@
 import Header from '@/components/modules/Header/Header'
 import BigPoster from '@/components/templates/Index/BigPoster/BigPoster'
+import Blogs from '@/components/templates/Index/Blogs/Blogs'
 import Brands from '@/components/templates/Index/Brands/Brands'
 import Category from '@/components/templates/Index/Category/Category'
 import Comments from '@/components/templates/Index/Comments/Comments'
@@ -25,6 +26,7 @@ export default function Home() {
       <TrendingProducts/>
       <Brands/>
       <Comments/>
+      <Blogs/>
     </>
   )
 }

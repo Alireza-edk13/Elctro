@@ -1,0 +1,39 @@
+import Btn from '@/components/modules/Btn/Btn'
+import Image from 'next/image';
+import Link from 'next/link'
+import React from 'react'
+import { FaRegUserCircle } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
+
+export default function BlogCart({pic, title}) {
+  return (
+    <div class=" space-y-3 group">
+      <div class="blog-img">
+        <Link href="/">
+          <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg' src={`/images/blog/${pic}.webp`} alt="blogImg" />
+        </Link>
+      </div>
+      <div class=" flex items-center gap-2">
+        <Link href="/" className=' flex-center gap-1 transition-all duration-100 hover:text-main'>
+          <FaRegUserCircle className=' text-lg text-main' />
+          یاسین حیدرزاده
+        </Link>
+        <Link href="/" className=' flex-center gap-1 transition-all duration-100 hover:text-main'>
+          <MdDateRange className=' text-lg -mt-2 text-main' />
+          <span>1402/02/23</span>
+        </Link>
+      </div>
+      <div class=" space-y-2">
+        <h5>
+          <Link href="/" className=' text-main text-xl line-clamp-1 font-bold'>{title}</Link>
+        </h5>
+        <p className=' text-md text-mainGray'>
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است که از ان استفاده میکنند
+        </p>
+      </div>
+      <div className=' flex justify-end'>
+        <Btn text="خواندن مقاله" style="text-white" />
+      </div>
+    </div>
+  )
+}

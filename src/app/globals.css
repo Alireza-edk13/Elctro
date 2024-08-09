@@ -76,7 +76,7 @@
     }
 
     .btn:hover svg {
-        margin-left: .7rem;
+        margin-right: .7rem;
     }
 
     .btn a,
@@ -88,7 +88,7 @@
 
     .btn svg {
         z-index: 2;
-        margin-left: 0.4rem;
+        margin-right: 0.4rem;
         transition: .5s cubic-bezier(.25, .46, .45, .94);
     }
 
@@ -130,7 +130,7 @@
     .swiper-pagination-bullet-active {
         background: #7B1FA2 !important;
     }
-
+  
     @media only screen and (max-width: 768px) {
 
         .swiper-button-next,

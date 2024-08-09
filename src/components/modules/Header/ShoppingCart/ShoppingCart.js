@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-import { FaRegTrashAlt } from "react-icons/fa";
+import ShoppingCartProductBox from './ShoppingCartProductBox/ShoppingCartProductBox';
 export default function ShoppingCart({ isShoppingCartOpen, setIsShoppingCartOpen }) {
 
     return (
@@ -15,31 +14,8 @@ export default function ShoppingCart({ isShoppingCartOpen, setIsShoppingCartOpen
                         <span className=' text-2xl  cursor-pointer' onClick={() => setIsShoppingCartOpen(prevState => !prevState)}>X</span>
                     </div>
                     <div className=" h-[52vh] overflow-y-auto border-[2px] border-mainBorder">
-                        <div className=" flex justify-evenly items-center py-4 border-b-2 border-mainBorder">
-                            <div className=" w-[70px] border-[2px] border-mainBorder rounded-lg">
-                                <Link href="/">
-                                    <Image src="/images/product/product-5.webp" alt="productImg" className=' rounded-lg' width={70} height={70} />
-                                </Link>
-                            </div>
-                            <div>
-                                <Link href="/" className=' text-sm sm:text-base '>
-                                    Leather Watch Band
-                                </Link>
-                                <div className=" flex items-center mt-2">
-                                    <div className=" flex-center gap-1 sm:gap-2.5">
-                                        <div className=' ml-1 sm:ml-3 text-main flex-center gap-1  text-md sm:text-lg'>
-                                            <span>123</span>
-                                            <span>تومان</span>
-                                        </div>
-
-                                        <span className="  w-6 h-7 text-center  inline-block rounded-2xl bg-mainBg pt-1">-</span>
-                                        <span className="">5</span>
-                                        <span className=" w-6 h-7 text-center flex-center  inline-block rounded-2xl bg-mainBg pt-1">+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <FaRegTrashAlt />
-                        </div>
+                        <ShoppingCartProductBox/>
+                        <ShoppingCartProductBox/>
                     </div>
                     <div>
                         <div className=" text-sm sm:text-base p-4 border-b-[2px] border-mainBorder space-y-3">

@@ -5,7 +5,7 @@ import { FaCommentDots } from "react-icons/fa";
 export default function CommentCart() {
   return (
 
-      <div class="bg-white rounded-lg p-6 mb-6">
+      <div class="bg-white rounded-lg p-6 mb-16">
         <div class=" flex justify-start items-center gap-3 border-b-2 border-mainBorder pb-4">
           <div class="person-img">
             <Image src="/images/person/person3.webp" width={70} height={70} className=' rounded-full' alt="commentImg" />

@@ -36,7 +36,10 @@ export default function ProductBox({ pic }) {
                 </div>
                 <div className=" border-b z-20 mt-4 pb-3">
                     <Link href="/" className=' uppercase text-[13px] tracking-wide block text-mainGray'>هدفون</Link>
-                    <Link href="/" className=' font-morabba transition-all duration-200 ease-in hover:text-main tracking-wide '>هدفون بی سیم ایسوس</Link>
+                    <Link href="/" className=' font-morabba transition-all duration-200 ease-in hover:text-main tracking-wide line-clamp-1 '>
+                    هدفون بی سیم ایسوس                    
+                    
+                    </Link>
                 </div>
                 <div className=" flex justify-between items-center mt-3 mb-5 relative">
                     <div>
