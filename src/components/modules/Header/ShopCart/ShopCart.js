@@ -53,10 +53,10 @@ export default function ShopCart({ isShopCartOpen, setIsShopCartOpen }) {
                     </div>
                     <div className=" flex-center gap-3 mt-6 px-4 text-white">
                         <div className="btn w-[50%] text-sm sm:text-base">
-                            <Link href="shopCart.html">مشاهده سبد خرید</Link>
+                            <Link href="/cart" onClick={() => setIsShopCartOpen(prevState => !prevState)}>مشاهده سبد خرید</Link>
                         </div>
                         <div className="btn w-[50%] text-sm sm:text-base">
-                            <Link href="checkout.html">
+                            <Link href="/checkout">
                                 نهایی کردن خرید
                             </Link>
                         </div>

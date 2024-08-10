@@ -17,7 +17,7 @@ export default function Footer() {
     return (
         <>
             <Newsleter />
-            <section>
+            <footer>
                 <div className="container py-12  ">
                     <div className=' grid grid-cols-12 gap-6 mb-6 border-b-2 pb-8 border-mainBorder'>
                         <div className=' col-span-12 lg:col-span-3'>
@@ -137,7 +137,7 @@ export default function Footer() {
 
                     </div>
                 </div>
-            </section>
+            </footer>
         </>
     )
 }
