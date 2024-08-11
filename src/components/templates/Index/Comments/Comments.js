@@ -19,6 +19,7 @@ export default function Comments() {
                 </div>
                 <Swiper
                     slidesPerView={1}
+                    loop={true}
                     spaceBetween={30}
                     pagination={{
                         clickable: true,
@@ -38,15 +39,6 @@ export default function Comments() {
                     className="mySwiper"
                 >
 
-                    <SwiperSlide>
-                        <CommentCart/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CommentCart/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CommentCart/>
-                    </SwiperSlide>
                     <SwiperSlide>
                         <CommentCart/>
                     </SwiperSlide>
