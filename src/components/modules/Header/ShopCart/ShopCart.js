@@ -55,7 +55,7 @@ export default function ShopCart({ isShopCartOpen, setIsShopCartOpen }) {
                         <div className="btn w-[50%] text-sm sm:text-base">
                             <Link href="/cart" onClick={() => setIsShopCartOpen(prevState => !prevState)}>مشاهده سبد خرید</Link>
                         </div>
-                        <div className="btn w-[50%] text-sm sm:text-base">
+                        <div className="btn w-[50%] text-sm sm:text-base" onClick={() => setIsShopCartOpen(prevState => !prevState)}>
                             <Link href="/checkout">
                                 نهایی کردن خرید
                             </Link>

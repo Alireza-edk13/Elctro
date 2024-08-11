@@ -49,7 +49,7 @@ export default function cart() {
 
           </div>
           <div className=' col-span-12 xl:col-span-4'>
-            <CartSummery />
+            <CartSummery text="نهایی کردن سفارش" />
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Btn from '@/components/modules/Btn/Btn'
 
-export default function CartSummery() {
+export default function CartSummery({text}) {
     return (
         <div class=" bg-mainBg rounded-lg py-8 px-11 w-full">
             <h4 className=' text-xl mb-9 font-semibold'>فاکتور خرید</h4>
@@ -28,7 +28,7 @@ export default function CartSummery() {
                 <span className=' font-semibold'>مجموع :</span>
                 <span className='font-semibold text-main'>199.7 تومان</span>
             </div>
-            <Btn text="نهایی کردن خرید" style=" text-white  w-full" />
+            <Btn text={text} style=" text-white  w-full before:w-full" />
         </div>
     )
 }
