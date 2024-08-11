@@ -8,16 +8,16 @@ import { VscGitCompare } from "react-icons/vsc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 
-export default function ProductBox({ pic }) {
+export default function ProductBox({ pic , isProductBoxForProductsList }) {
     return (
-        <div className=" group hover:shadow-custom transition-all duration-200 ease-in mb-16">
+        <div className={` group hover:shadow-custom transition-all duration-200 ease-in  ${ isProductBoxForProductsList ? " border border-mainBorder rounded-lg" : "mb-16"}`}>
             <div className=" bg-white overflow-hidden rounded-lg px-6">
                 <div className=' relative'>
                     <span className=" absolute text-sm font-normal flex-center top-3 left-0 bg-main text-white px-3.5 py-1 rounded-full z-20">جدید</span>
                     <Link href="/" className="product-img">
                         <Image src={`/images/product/${pic}.webp`} className=' sm:group-hover:scale-110 transition-all duration-200 ease-in' width={352} height={352} alt="product" />
                     </Link>
-                    <div className=" flex flex-col justify-center items-center sm:flex-row sm:opacity-0 transition-all duration-200 ease-in sm:group-hover:opacity-100 z-20 absolute right-0 top-8 left-auto sm:inset-0 xxl:bottom-auto xxl:right-auto xxl:top-24 xxl:left-7  gap-2">
+                    <div className={`flex flex-col justify-center items-center sm:flex-row sm:opacity-0 transition-all duration-200 ease-in sm:group-hover:opacity-100 z-20 absolute right-0 top-8 left-auto sm:inset-0 gap-2 ${ isProductBoxForProductsList ? "" : "xxl:bottom-auto xxl:right-auto xxl:top-24 xxl:left-7"}`}>
                         <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl shadow-custom rounded-lg product-btn compare">
                             <VscGitCompare />
                         </div>
