@@ -2,7 +2,9 @@ import React from 'react'
 import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
 import ProductBox from '@/components/modules/ProductBox/ProductBox'
 import { MdNavigateNext } from 'react-icons/md'
-import NewProduct from '@/components/templates/ProductList/NewProduct/NewProduct'
+import NewProduct from '@/components/templates/ProductsList/NewProduct/NewProduct'
+import Category from '@/components/templates/ProductsList/Category/Category'
+import Brands from '@/components/templates/ProductsList/Brands/Brands'
 
 
 export default function page() {
@@ -37,64 +39,9 @@ export default function page() {
                         </div>
                     </div>
                     <div className=' col-span-12 lg:col-span-3'>
-                        <div className=' bg-mainBg rounded-lg p-10 mt-[6.8rem]'>
-                            <h5 className=' font-semibold border-b pb-4 border-mainBorder mb-8'>دسته بندی ها</h5>
-                            <ul className=' space-y-4'>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>هدفون</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>لب تاب</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>کامپیوتر</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>موبایل</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>لوازم جانبی</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>گیمینگ</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-                                <li className=' flex justify-between border-mainBorder items-center text-main text-sm'>
-                                    <span>دسته بازی</span>
-                                    <span className=' text-mainGray'>(125)</span>
-                                </li>
-
-                            </ul>
-                        </div>
+                        <Category />
                         <NewProduct />
-                        <div className=' bg-mainBg rounded-lg p-10'>
-                            <h5 className=' font-semibold border-b pb-4 border-mainBorder mb-8'>برند ها</h5>
-                            <ul className=' space-y-4'>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>سامسونگ</span>
-                                    <span className=' text-mainGray'>(12)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>اپل</span>
-                                    <span className=' text-mainGray'>(15)</span>
-                                </li>
-                                <li className=' flex justify-between border-b pb-4 border-mainBorder items-center text-main text-sm'>
-                                    <span>هوآوی</span>
-                                    <span className=' text-mainGray'>(05)</span>
-                                </li>
-                                
-                                <li className=' flex justify-between border-mainBorder items-center text-main text-sm'>
-                                    <span>ال جی</span>
-                                    <span className=' text-mainGray'>(21)</span>
-                                </li>
-
-                            </ul>
-                        </div>
+                        <Brands />
                     </div>
                 </div>
             </section>

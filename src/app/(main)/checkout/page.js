@@ -95,17 +95,6 @@ export default function checkout() {
               </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
         <h4 className=' text-main mb-16'>جزئیات صورتحساب :</h4>
