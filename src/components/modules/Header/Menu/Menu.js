@@ -22,10 +22,10 @@ export default function Menu() {
                     <div>صفحات</div>
                     <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-163px] top-full pt-7 transition-all ease duration-300  z-20`}>
                         <div className='flex flex-col text-justify  child:rounded-md capitalize child:transition-all child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white text-mainBlack  shadow-custom '>
-                            <Link href={'/teacher-list'}>لیست شعبات</Link>
-                            <Link href={'/teacher-detail'}>جزییات شعبه</Link>
-                            <Link href={'/login'}>ورود</Link>
                             <Link href={'/register'}>ثبت نام</Link>
+                            <Link href={'/login'}>ورود</Link>
+                            <Link href={'/cart'}>سبد خرید</Link>
+                            <Link href={'/checkout'}>تسویه حساب</Link>
                         </div>
                     </div>
                 </li>

@@ -1,5 +1,5 @@
 "use client";
-import Btn from '@/components/modules/Btn/Btn';
+import Button from '@/components/modules/Button/Button';
 import React, { useState } from 'react'
 import { FaGem } from "react-icons/fa";
 
@@ -30,7 +30,7 @@ export default function DiscountCode() {
             </span>
           </div>
           <div className=' flex justify-end'>
-            <Btn text="اعمال کردن" style="text-white" />
+            <Button text="اعمال کردن"/>
           </div>
         </div>
       </div>

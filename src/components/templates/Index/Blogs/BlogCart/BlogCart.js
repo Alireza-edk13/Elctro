@@ -32,7 +32,7 @@ export default function BlogCart({pic, title}) {
         </p>
       </div>
       <div className=' flex justify-end'>
-        <Btn text="خواندن مقاله" style="text-white" />
+        <Btn href={'/blog-details'} text="خواندن مقاله"/>
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import Btn from '@/components/modules/Btn/Btn'
+import Button from '../Button/Button'
 
 export default function CartSummery({text}) {
     return (
@@ -28,7 +28,7 @@ export default function CartSummery({text}) {
                 <span className=' font-semibold'>مجموع :</span>
                 <span className='font-semibold text-main'>199.7 تومان</span>
             </div>
-            <Btn text={text} style=" text-white  w-full before:w-full" />
+            <Button text={text} style=" w-full before:w-full" />
         </div>
     )
 }

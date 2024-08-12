@@ -1,4 +1,3 @@
-import Btn from '@/components/modules/Btn/Btn';
 import Link from 'next/link'
 import React from 'react'
 import { FaKey } from 'react-icons/fa';
@@ -6,6 +5,7 @@ import { MdEmail, MdNavigateNext } from "react-icons/md";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import Button from '@/components/modules/Button/Button';
 export default function login() {
     return (
         <>
@@ -68,7 +68,7 @@ export default function login() {
 
 
                                 <button type="submit" className="w-full">
-                                    <Btn text="ورود" style="w-full text-white before:w-full" />
+                                    <Button text="ورود" style="w-full before:w-full" />
 
                                 </button>
 

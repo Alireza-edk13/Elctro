@@ -6,9 +6,9 @@ import { MdNavigateNext } from 'react-icons/md'
 import { CgSandClock } from "react-icons/cg";
 import { GrSend } from "react-icons/gr";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
-import Btn from '@/components/modules/Btn/Btn'
 import RelatedProducts from '@/components/templates/ProductDetails/RelatedProducts/RelatedProducts';
 import Tabs from '@/components/templates/ProductDetails/Tabs/Tabs';
+import Button from '@/components/modules/Button/Button'
 export default function page({ params }) {
 
 
@@ -97,7 +97,7 @@ export default function page({ params }) {
                                     </ul>
                                 </div>
                                 <div className=' border-b border-b-mainBorder pb-8'>
-                                    <Btn text="اضافه کردن به سبد خرید" style=" w-full md:w-48" />
+                                    <Button text="اضافه کردن به سبد خرید" style=" w-full md:w-48" />
 
                                 </div>
                                 <ul class=" space-y-2">

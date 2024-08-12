@@ -6,7 +6,7 @@ import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
-import Btn from '@/components/modules/Btn/Btn';
+import Button from '@/components/modules/Button/Button';
 export default function register() {
     return (
         <>
@@ -82,7 +82,7 @@ export default function register() {
                                 </div>
                                 {/* <!-- btn --> */}
                                 <button type="submit" className=' w-full' >
-                                    <Btn text="ثبت نام" style="w-full text-white before:w-full" />
+                                    <Button text="ثبت نام" style="w-full text-white before:w-full" />
                                 </button>
                                 {/* <!-- have account --> */}
                                 <p className="text-sm text-[#687188] text-center">قبلا اکانت داشتی؟

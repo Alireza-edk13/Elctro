@@ -20,7 +20,7 @@ export default function Slide({ pic }) {
                         یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب را در مدت زمان ی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد
                     </p>
                     <div className=' flex-center'>
-                        <Btn text="محصولات" style=" text-white mb-4" />
+                        <Btn href={'/products-list'} text="محصولات" style=" mb-4" />
                     </div>
                 </div>
             </div>

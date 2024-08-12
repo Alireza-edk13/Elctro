@@ -49,7 +49,7 @@ export default function DealBox({ pic, title, newPrice }) {
                         </span>
 
                     </div>
-                    <Btn text="خرید محصول" style="text-white" />
+                    <Btn text="خرید محصول" href={'/products-list'}/>
                 </div>
 
             </div>

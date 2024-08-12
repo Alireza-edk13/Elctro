@@ -1,5 +1,5 @@
 "use client";
-import Btn from '@/components/modules/Btn/Btn';
+import Button from '@/components/modules/Button/Button';
 import React, { useState } from 'react'
 import { FaKey } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
@@ -48,7 +48,7 @@ export default function Login() {
                         <span className=' text-sm'>فراموشی رمز عبور</span>
                     </div>
                     <div className=' flex justify-end'>
-                        <Btn text="ورود" style="text-white" />
+                        <Button text="ورود" />
 
                     </div>
                 </div>
