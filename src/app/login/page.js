@@ -43,7 +43,7 @@ export default function login() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="Email"
                                         className="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="ایمیل" autocomplete="off" />
+                                        placeholder="ایمیل" autoComplete="off" />
                                     <span className='absolute  left-4 top-3 text-main'>
                                         <MdEmail className=' text-2xl' />
                                     </span>
@@ -51,7 +51,7 @@ export default function login() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="password"
                                         className="  text-sm h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="رمز عبور" autocomplete="off" />
+                                        placeholder="رمز عبور" autoComplete="off" />
                                     <span className='absolute  left-4 top-3 text-main'>
                                         <FaKey className=' text-2xl' />
                                     </span>

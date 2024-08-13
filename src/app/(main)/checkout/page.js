@@ -29,7 +29,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="Name"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="نام و نام خانوادگی" autocomplete="off" />
+                    placeholder="نام و نام خانوادگی" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <FaUser className=' text-2xl' />
                   </span>
@@ -39,7 +39,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="email"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="ایمیل" autocomplete="off" />
+                    placeholder="ایمیل" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <MdEmail className=' text-2xl' />
                   </span>
@@ -49,7 +49,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="phone"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="شماره همراه" autocomplete="off" />
+                    placeholder="شماره همراه" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <FaPhone className=' text-2xl' />
                   </span>
@@ -59,7 +59,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="phone"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="استان" autocomplete="off" />
+                    placeholder="استان" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <MdLocationOn className=' text-2xl' />
                   </span>
@@ -69,7 +69,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="phone"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="شهر" autocomplete="off" />
+                    placeholder="شهر" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <MdLocationOn className=' text-2xl' />
                   </span>
@@ -79,7 +79,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="phone"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="کد پستی" autocomplete="off" />
+                    placeholder="کد پستی" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <MdOutlinePostAdd className=' text-2xl' />
                   </span>
@@ -89,7 +89,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <input type="text" id="phone"
                     className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="آدرس دقیق" autocomplete="off" />
+                    placeholder="آدرس دقیق" autoComplete="off" />
                   <span className='absolute left-4 top-5 text-main'>
                     <MdLocationOn className=' text-2xl' />
                   </span>
@@ -99,7 +99,7 @@ export default function checkout() {
                 <div className="flex flex-col relative">
                   <textarea id="phone"
                     className="border-none outline-none text-md min-h-32 max-h-40 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                    placeholder="اطلاعات بیشتر" autocomplete="off" />
+                    placeholder="اطلاعات بیشتر" autoComplete="off" />
                 </div>
               </div>
             </div>

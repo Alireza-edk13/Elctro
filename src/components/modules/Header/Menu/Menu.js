@@ -34,8 +34,8 @@ export default function Menu() {
                     <div>مقاله</div>
                     <div className={`invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-[-163px] top-full pt-7 transition-all ease duration-300  z-20`}>
                         <div className='flex flex-col  child:rounded-md capitalize child:transition-all text-mainBlack text-justify  child-hover:text-white  child-hover:bg-main bg-main-black child:w-[13rem] py-4 px-2 child:py-2 child:px-4 rounded-lg bg-white shadow-custom'>
-                            <Link href={'/blog-list'}>لیست مقالات</Link>
-                            <Link href={'/blog-detail'}>جزییات مقاله</Link>
+                            <Link href={'/blogs-list'}>لیست مقالات</Link>
+                            <Link href={'/blog-details'}>جزییات مقاله</Link>
                         </div>
 
                     </div>

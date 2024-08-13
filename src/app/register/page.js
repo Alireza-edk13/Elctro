@@ -40,7 +40,7 @@ export default function register() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="Name"
                                         className="border-none outline-none text-md  h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="اسم" autocomplete="off" />
+                                        placeholder="اسم" autoComplete="off" />
                                     <span className='absolute left-4 top-3 text-main'>
                                         <FaUser className=' text-2xl' />
                                     </span>
@@ -48,7 +48,7 @@ export default function register() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="email"
                                         className="border-none outline-none text-md  h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="ایمیل" autocomplete="off" />
+                                        placeholder="ایمیل" autoComplete="off" />
                                     <span className='absolute left-4 top-3 text-main'>
                                         <FaPhone className=' text-2xl' />
                                     </span>
@@ -56,7 +56,7 @@ export default function register() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="phone"
                                         className="border-none outline-none text-md  h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="شماره همراه" autocomplete="off" />
+                                        placeholder="شماره همراه" autoComplete="off" />
                                     <span className='absolute left-4 top-3 text-main'>
                                         <MdEmail className=' text-2xl' />
                                     </span>
@@ -64,7 +64,7 @@ export default function register() {
                                 <div className="flex flex-col relative">
                                     <input type="text" id="password"
                                         className="border-none outline-none text-md  h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                                        placeholder="رمز عبور" autocomplete="off" />
+                                        placeholder="رمز عبور" autoComplete="off" />
                                     <span className='absolute left-4 top-3 text-main'>
                                         <FaKey className=' text-2xl' />
                                     </span>

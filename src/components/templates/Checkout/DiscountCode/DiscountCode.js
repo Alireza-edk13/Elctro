@@ -24,7 +24,7 @@ export default function DiscountCode() {
           <div className="flex flex-col relative">
             <input type="text" id="email"
               className="border-none outline-none text-md  h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-              placeholder="کد تخفیف" autocomplete="off" />
+              placeholder="کد تخفیف" autoComplete="off" />
             <span className='absolute left-4 top-3 text-main'>
               <FaGem className=' text-2xl' />
             </span>

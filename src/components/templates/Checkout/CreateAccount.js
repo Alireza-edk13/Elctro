@@ -17,7 +17,7 @@ export default function CreateAccount() {
                 <div className={`flex ${isUserWantToCreateAccount ? 'h-full' : 'h-0'} transition-all duration-500 overflow-hidden flex-col relative`}>
                     <input type="text" id="email"
                         className="border-none outline-none text-md  h-full w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
-                        placeholder="رمز عبور" autocomplete="off" />
+                        placeholder="رمز عبور" autoComplete="off" />
                     <span className='absolute left-4 top-5 text-main'>
                         <MdEmail className=' text-2xl' />
                     </span>
