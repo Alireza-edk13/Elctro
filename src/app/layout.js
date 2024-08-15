@@ -1,5 +1,9 @@
+import ReduxProvider from '@/redux/ReduxProvider';
 import './globals.css'
 import localFont from 'next/font/local'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 const morabba = localFont({
   src: [
     {
@@ -55,7 +59,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir='rtl' >
-      <body className={` ${dana.variable}  ${morabba.variable} font-dana text-base text-[#2a322d] font-medium`}>{children}</body>
+      <ReduxProvider>
+        <body className={` ${dana.variable}  ${morabba.variable} font-dana text-base text-[#2a322d] font-medium`}>
+          {children}
+          <ToastContainer rtl bodyClassName={"font-morabba"} />
+        </body>
+      </ReduxProvider>
     </html>
+
   )
 }

@@ -40,7 +40,7 @@ export default function Login() {
                     <div className=' flex items-center justify-between'>
                         <div class=" flex items-center text-sm  gap-1">
                             <input class=" cursor-pointer" type="checkbox" name="checkbox" id='remeberme' />
-                            <label class=" text-mainGray cursor-pointer" for="remeberme"><span>
+                            <label class=" text-mainGray cursor-pointer" htmlFor="remeberme"><span>
 
                                 منو فراموش نکن
                             </span></label>

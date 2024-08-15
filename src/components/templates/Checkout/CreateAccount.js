@@ -11,7 +11,7 @@ export default function CreateAccount() {
                 <input class=" cursor-pointer" type="checkbox" name="checkbox" id='createAccount' onChange={() => {
                     setIsUserWantToCreateAccount(prevState => !prevState)
                 }} />
-                <label class=" text-mainGray cursor-pointer" for="createAccount"><span>میخوای اکانت بسازی؟</span></label>
+                <label class=" text-mainGray cursor-pointer" htmlFor="createAccount"><span>میخوای اکانت بسازی؟</span></label>
             </div>
             <div className='h-16'>
                 <div className={`flex ${isUserWantToCreateAccount ? 'h-full' : 'h-0'} transition-all duration-500 overflow-hidden flex-col relative`}>

@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema(
     phone: {
       type: String,
       required: true,
+      unique: true,
     },
     password: {
       type: String,
@@ -34,7 +35,9 @@ const userSchema = new mongoose.Schema(
 userSchema.statics.registerValidation = function (body) {
   return registerValidator.validate(body)
 };
-
+userSchema.statics.loginValidation = function (body) {
+  return loginValidator.validate(body);
+};
 
 const model = mongoose.models.Users || mongoose.model("Users", userSchema);
 
