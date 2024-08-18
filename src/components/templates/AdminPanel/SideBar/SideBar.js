@@ -24,18 +24,18 @@ export default function SideBar({ isNavCmsMobileOpen, setIsNavCmsMobileOpen }) {
 
     return (
         <>
-            <div onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)} className={`${isNavCmsMobileOpen ? '' : ' hidden'} fixed inset-0 bg-mainBlack z-30 h-screen opacity-[0.2] lg:hidden`}></div>
-            <aside className={`${isNavCmsMobileOpen ? 'mobile-nav--active' : ''} fixed  z-30 w-48  xl:w-60 top-0 right-0  h-screen pt-[4.5rem]  bg-main translate-x-[-100%] lg:translate-x-0 lg:visible lg:opacity-100 mobile-nav-transition invisible`}>
+            <div className={`${isNavCmsMobileOpen ? '' : ' hidden'} fixed inset-0 bg-mainBlack z-30 h-screen opacity-[0.2] lg:hidden`}></div>
+            <aside className={`${isNavCmsMobileOpen ? 'mobile-nav--active' : ''} fixed  z-30 w-48  xl:w-60 top-0 right-0  h-screen pt-[4.5rem]  bg-main translate-x-[-100%] lg:translate-x-0 lg:visible lg:opacity-100 mobile-nav-transition border-l-4 border-mainBlack invisible`}>
                 <div className='overflow-y-auto py-3 px-3 h-full   bg-mainWhite'>
                     <ul className=' space-y-4 child:cursor-pointer'>
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
-                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                        <li>
+                            <Link href={'/admin-panel'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <IoHomeSharp className=' text-2xl text-white' />
                                 صفحه اصلی
                             </Link>
                         </li>
 
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'course-list'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <IoHeadset className=' text-2xl text-white' />
                                 محصولات
@@ -43,15 +43,15 @@ export default function SideBar({ isNavCmsMobileOpen, setIsNavCmsMobileOpen }) {
                         </li>
 
 
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
-                            <Link href={'user-list'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                        <li>
+                            <Link href={'admin-panel/users'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaUser className=' text-2xl text-white' />
                                 کاربران
                             </Link>
                         </li>
 
 
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'user-list'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaCartShopping className=' text-2xl text-white' />
                                 سفارشات
@@ -59,20 +59,20 @@ export default function SideBar({ isNavCmsMobileOpen, setIsNavCmsMobileOpen }) {
                         </li>
 
                        
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'message'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <LuMessagesSquare className=' text-2xl text-white' />
                                 پیام
                             </Link>
                         </li>
 
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'comments'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaComment className=' text-2xl text-white' />
                                   کامنت
                             </Link>
                         </li>
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'category'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <TbCategory2 className=' text-2xl text-white' />
                                 دسته بندی
@@ -82,13 +82,13 @@ export default function SideBar({ isNavCmsMobileOpen, setIsNavCmsMobileOpen }) {
 
 
 
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'blog'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaBloggerB className=' text-2xl text-white' />
                                 مقاله
                             </Link>
                         </li>
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
+                        <li>
                             <Link href={'ticket'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <IoTicket className=' text-2xl text-white' />
                                 تیکت
@@ -102,8 +102,8 @@ export default function SideBar({ isNavCmsMobileOpen, setIsNavCmsMobileOpen }) {
               </Link>
             </li> */}
 
-                        <li onClick={() => setIsNavCmsMobileOpen(prevState => !prevState)}>
-                            <div onClick={() => setIsShowDeleteModal(true)} className='flex cursor-pointer items-center text-md gap-2 p-2 rounded-lg text-white'>
+                        <li>
+                            <div className='flex cursor-pointer items-center text-md gap-2 p-2 rounded-lg text-white'>
                                 <ImExit className=' text-2xl rotate-180 text-white' />
                                 خروج
                             </div>

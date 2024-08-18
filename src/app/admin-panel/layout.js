@@ -8,10 +8,12 @@ export default async function AdminPanelLayout({ children }) {
             <NavBar />
             <div className='grid grid-cols-12  bg-FooterBg min-h-screen mx-auto bg-cover'>
                 <div className="md:col-span-2">
-                    <SideBar/>
+                    <SideBar />
                 </div>
                 <div className=" col-span-12 lg:col-span-10">
-                    {children}
+                    <div className=' mt-28 px-4 sm:px-8 space-y-10 mb-9'>
+                        {children}
+                    </div>
                 </div>
             </div>
 

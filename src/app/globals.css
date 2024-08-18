@@ -295,6 +295,11 @@
 
 
     }
+
+
+    .recharts-responsive-container {
+        direction: ltr;
+    }
 }
 
 @layer utilities {

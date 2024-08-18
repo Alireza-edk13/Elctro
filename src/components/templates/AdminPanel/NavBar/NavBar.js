@@ -9,7 +9,7 @@ import { PiShoppingCartSimpleFill } from 'react-icons/pi';
 export default function NavBar({ onActive }) {
     return (
         <>
-            <nav className="bg-main border-b-2 p-2 fixed left-0 right-0 top-0 z-40 ">
+            <nav className="bg-main border-b-4 border-mainBlack p-3 fixed left-0 right-0 top-0 z-40 ">
                 <div className=' flex justify-between items-center'>
                     <div className=' flex-center gap-6'>
                         <Link href={'/'} className=' flex justify-start items-center text-white text-xl md:text-3xl'>
