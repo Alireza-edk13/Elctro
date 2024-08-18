@@ -1,11 +1,13 @@
 import React from 'react'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 
-export default function Button({style,text}) {
+export default function Button({ style, text, isIconNeed = true }) {
     return (
-        <div className={` btn ${style || ""} text-white`}>
+        <button className={` btn ${style || ""} text-white`}>
             <span className=' text-sm '>{text}</span>
-            <IoIosArrowRoundForward className=' text-2xl rotate-180' />
-        </div>
+            {isIconNeed &&
+                <IoIosArrowRoundForward className=' text-2xl rotate-180' />}
+
+        </button>
     )
 }

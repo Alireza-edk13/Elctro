@@ -3,7 +3,7 @@ import Btn from '@/components/modules/Btn/Btn'
 
 export default function RecentUsers() {
     return (
-        <div className=' col-span-12 overflow-auto xl:col-span-4 bg-mainWhite border rounded-lg shadow'>
+        <div className=' col-span-12 overflow-auto xl:col-span-5 bg-mainWhite border rounded-lg shadow'>
             <div className="flex justify-between items-center px-4 py-2 mb-2 border-b-2 ">
                 <h3 className='tracking-wider font-morabba'>آخرین ثبت نامی ها</h3>
                 <Btn href='users' style=' text-xs w-[100px] h-[30px]' text='دیدن همه' />

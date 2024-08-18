@@ -11,7 +11,7 @@ export default async function AdminPanelLayout({ children }) {
                     <SideBar />
                 </div>
                 <div className=" col-span-12 lg:col-span-10">
-                    <div className=' mt-28 px-4 sm:px-8 space-y-10 mb-9'>
+                    <div className=' mt-24 px-4 sm:px-8 space-y-10 mb-9'>
                         {children}
                     </div>
                 </div>
