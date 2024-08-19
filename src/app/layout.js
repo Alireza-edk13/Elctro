@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
       <ReduxProvider>
         <body className={` ${dana.variable}  ${morabba.variable} font-dana text-base text-[#2a322d] font-medium`}>
           {children}
-          <ToastContainer rtl bodyClassName={"font-morabba"} />
+          <ToastContainer rtl bodyClassName={"font-morabba"} autoClose={3000} />
         </body>
       </ReduxProvider>
     </html>

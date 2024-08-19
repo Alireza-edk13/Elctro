@@ -9,7 +9,7 @@ import Link from 'next/link'
 export default function page() {
   return (
     <>
-      <h4 className=' font-morabba text-main text-xl sm:text-2xl'>علیرضا خوش اومدی !</h4>
+      <h4 className=' font-morabba text-main text-2xl'>علیرضا خوش اومدی !</h4>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <InfoBox title="بازدید سایت" count={5230} />
         <InfoBox title="ثبت نامی‌ها" count={1230} />
@@ -17,10 +17,10 @@ export default function page() {
         <InfoBox title="مقالات" count={20} />
       </div>
       <div className=' grid grid-cols-12'>
-        <div className=' col-span-4'>
+        <div className=' md:col-span-12 xl:col-span-4'>
           <PieChartBox />
         </div>
-        <div className=' col-span-8'>
+        <div className=' col-span-12 xl:col-span-8'>
           <SimpleLineChart />
         </div>
       </div>

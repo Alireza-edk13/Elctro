@@ -4,12 +4,12 @@ import React from 'react'
 
 export default function RecentProduct() {
     return (
-        <div className=' col-span-12 overflow-auto xl:col-span-7 bg-mainWhite border rounded-lg shadow'>
+        <div className=' col-span-12 xl:col-span-7 bg-mainWhite border rounded-lg shadow'>
             <div className="flex justify-between items-center px-4 py-2 mb-2 border-b-2 ">
                 <h3 className='tracking-wider font-morabba'>محصولات اخیر</h3>
                 <Btn href='users' style=' text-xs w-[100px] h-[30px]' text='دیدن همه' />
             </div>
-            <div className=' px-4'>
+            <div className=' px-4 overflow-auto '>
                 <table className="table-fixed min-w-full divide-y divide-gray-200">
                     <thead>
                         <tr className=' child:pr-4'>
@@ -34,7 +34,7 @@ export default function RecentProduct() {
                                 </span>
                             </td>
                             <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن همه</Link>
+                                <Link href={'admin-panel/course-list'}>دیدن</Link>
                             </td>
                         </tr>
                         <tr className=' child:pr-4'>
@@ -48,7 +48,7 @@ export default function RecentProduct() {
                                 </span>
                             </td>
                             <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن همه</Link>
+                                <Link href={'admin-panel/course-list'}>دیدن</Link>
                             </td>
                         </tr>
                         <tr className=' child:pr-4'>
@@ -62,7 +62,7 @@ export default function RecentProduct() {
                                 </span>
                             </td>
                             <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن همه</Link>
+                                <Link href={'admin-panel/course-list'}>دیدن</Link>
                             </td>
                         </tr>
                         <tr className=' child:pr-4'>
@@ -76,7 +76,7 @@ export default function RecentProduct() {
                                 </span>
                             </td>
                             <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن همه</Link>
+                                <Link href={'admin-panel/course-list'}>دیدن</Link>
                             </td>
                         </tr>
                         <tr className=' child:pr-4'>
@@ -90,7 +90,7 @@ export default function RecentProduct() {
                                 </span>
                             </td>
                             <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن همه</Link>
+                                <Link href={'admin-panel/course-list'}>دیدن</Link>
                             </td>
                         </tr>
 

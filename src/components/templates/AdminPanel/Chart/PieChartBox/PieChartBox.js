@@ -31,10 +31,9 @@ const data = [
 
 export default function PieChartBox() {
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minHeight={0} minWidth={0} aspect={undefined}>
             <BarChart
-                width={500}
-                height={500}
+               
                 data={data}
             >
                 <Bar  dataKey="همین ماه" fill="#7B1FA2"/>

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { IoIosNotifications } from "react-icons/io";
@@ -5,8 +6,14 @@ import { FaUser } from "react-icons/fa6";
 import { AiOutlineMenu } from "react-icons/ai";
 import Link from 'next/link';
 import { PiShoppingCartSimpleFill } from 'react-icons/pi';
+import { useDispatch } from 'react-redux';
+import { openSideBar } from '@/redux/slice/sideBarAdminPanelSlice';
 
-export default function NavBar({ onActive }) {
+export default function NavBar() {
+
+    const dispatch = useDispatch();
+
+    
     return (
         <>
             <nav className="bg-main border-b-4 border-mainBlack p-3 fixed left-0 right-0 top-0 z-40 ">
@@ -29,7 +36,7 @@ export default function NavBar({ onActive }) {
                             <IoIosNotifications className=' text-2xl sm:text-3xl' />
 
                         </Link>
-                        < AiOutlineMenu className=' text-xl sm:text-2xl lg:hidden block' />
+                        < AiOutlineMenu className=' text-xl sm:text-2xl 2xl:hidden block' onClick={() => dispatch(openSideBar())} />
                     </div>
                 </div>
             </nav>
