@@ -23,7 +23,7 @@ export async function POST(req) {
         });
 
         if (isUserExist) {
-            return Response.json({ message: "اکانتی با شماره همراه یا ایمیل درج شده از وجود دارد" }, { status: 409 });
+            return Response.json({ message: "شماره یا ایمیل درج شده از قبل اکانت دارد" }, { status: 409 });
         }
 
         const hashedPassword = await hashPassword(password);

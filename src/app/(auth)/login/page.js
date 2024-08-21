@@ -43,12 +43,8 @@ export default function login() {
     const form = useFormik({
         initialValues: { password: "", phone: "" },
 
-        onSubmit: (values, { setSubmitting }) => {
+        onSubmit: (values) => {
             onSubmitHandler(values);
-            setTimeout(() => {
-                setSubmitting(false);
-            }, 4000);
-
         },
 
         validationSchema: loginValidator,

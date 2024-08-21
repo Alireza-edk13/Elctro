@@ -20,7 +20,6 @@ export default function SideBar() {
 
     const isSideBarOpen = useSelector((store) => store.sideBarAdminPanelSlice.isSideBarOpen)
 
-    console.log("side bar",isSideBarOpen);
     const dispatch = useDispatch();
     
 

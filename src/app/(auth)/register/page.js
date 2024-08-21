@@ -38,12 +38,8 @@ export default function register() {
     const form = useFormik({
         initialValues: { name: "", email: "", password: "", phone: "" },
 
-        onSubmit: (values, { setSubmitting }) => {
+        onSubmit: (values) => {
             onSubmitHandler(values)
-            setTimeout(() => {
-                setSubmitting(false);
-            }, 4000);
-
         },
 
         validationSchema: registerValidator,
@@ -164,13 +160,13 @@ export default function register() {
 
                                 {/* <!-- btn --> */}
 
-                                <button type="submit" className=' w-full' disabled={form.isSubmitting}  >
-                                    <div className={` btn w-full before:w-full ${form.isSubmitting && "bg-mainBlack"} text-white`}>
+                                <button type="submit" className=' w-full' disabled={isLoading}  >
+                                    <div className={` btn w-full before:w-full ${isLoading && "bg-mainBlack"} text-white`}>
                                         <span className=' text-sm '>
-                                            {form.isSubmitting ? "لطفا منتظر بمانید ..." : "ثبت نام"}
+                                            {isLoading ? "لطفا منتظر بمانید ..." : "ثبت نام"}
                                         </span>
                                         {
-                                            !form.isSubmitting &&
+                                            !isLoading &&
                                             <IoIosArrowRoundForward className=' text-2xl rotate-180' />
                                         }
                                     </div>
