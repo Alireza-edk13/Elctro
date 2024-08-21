@@ -29,7 +29,7 @@ export default function DeleteModal({ onClose, onSubmit, title }) {
                                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                             ></path>
                         </svg>
-                        <h3 className="text-xl font-normal text-gray-500 mt-5 mb-6">کاربر {title} شود؟</h3>
+                        <h3 className="text-xl font-normal text-gray-500 mt-5 mb-6">{title}</h3>
                         <button onClick={onSubmit} className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center ml-4">
                             اره مطمئنم
                         </button>

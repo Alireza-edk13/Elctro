@@ -109,7 +109,7 @@ export default function UsersTable({ users }) {
             {isShowDeleteModal &&
                 <DeleteModal onClose={() => setIsShowDeleteModal(false)} onSubmit={() => {
                     // removeUserHandler(userId)
-                }} title="حدف" />
+                }} title="محصول حذف شود؟" />
             }
         </>
     )

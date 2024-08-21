@@ -11,8 +11,6 @@ import Tabs from '@/components/templates/ProductDetails/Tabs/Tabs';
 import Button from '@/components/modules/Button/Button'
 export default function page({ params }) {
 
-
-
     return (
         <>
 
@@ -23,11 +21,7 @@ export default function page({ params }) {
                         <span className=" mx-0.5 xs:mx-3  cursor-pointer">
                             <MdNavigateNext className=' text-xl rotate-180 text-mainGray' />
                         </span>
-                        <Link href={'/'} className=' text-main'>{params.slug[0]}</Link>
-                        <span className=" mx-0.5 xs:mx-3  cursor-pointer">
-                            <MdNavigateNext className=' text-xl rotate-180 text-mainGray' />
-                        </span>
-                        <Link href={'/'} className=' text-main'>{params.slug[1]}</Link>
+                        <Link href={'/'} className=' text-main'>{params.name}</Link>
 
                     </div>
 
@@ -97,7 +91,7 @@ export default function page({ params }) {
                                     </ul>
                                 </div>
                                 <div className=' border-b border-b-mainBorder pb-8'>
-                                    <Button text="اضافه کردن به سبد خرید" style=" w-full md:w-48" />
+                                    <Button text="اضافه کردن به سبد خرید" style=" w-full md:w-48 bg-main" />
 
                                 </div>
                                 <ul class=" space-y-2">

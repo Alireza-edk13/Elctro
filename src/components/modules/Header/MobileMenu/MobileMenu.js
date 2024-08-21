@@ -30,7 +30,7 @@ export default function MobileMenu({ isNavMobileOpen, setIsNavMobileOpen }) {
                         </li>
                         <MobileMenuItem title="مصولات">
                             <MobileSubMenuItem title="لیست محصولات" href="/product-list" />
-                            <MobileSubMenuItem title="جزییات محصولات" href="product-details/headphone/headphone-asus" />
+                            <MobileSubMenuItem title="جزییات محصولات" href="product-details/headphone-asus" />
                         </MobileMenuItem>
                         <MobileMenuItem title="مقاله">
                             <MobileSubMenuItem title="لیست مقالات" href="blog-list" />

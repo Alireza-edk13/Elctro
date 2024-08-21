@@ -75,7 +75,7 @@ export default function SideBar() {
                             </Link>
                         </li>
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/admin-panel/category'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <TbCategory2 className=' text-2xl text-white' />
                                 دسته بندی
                             </Link>
