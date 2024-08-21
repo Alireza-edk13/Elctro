@@ -3,10 +3,13 @@ import Button from '@/components/modules/Button/Button';
 import DeleteModal from '@/components/modules/DeleteModal/DeleteModal';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
-import { FaUser } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
-import { GrUserAdmin } from "react-icons/gr";
+import { useDeleteCategoryMutation, useEditCategoryMutation } from '@/redux/api/categoryApi';
+import { useFormik } from 'formik';
+import categoryValidator from '@/validators/category';
+import AddModal from '@/components/modules/AddModal/AddModal';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 export default function CategoryTable({ categories }) {
 
 
@@ -17,23 +20,60 @@ export default function CategoryTable({ categories }) {
     const [categoryId, setCategoryId] = useState(null)
     const [mainCategoryInfo, setMainCategoryInfo] = useState({})
 
-    // const [removeUser, { isLoading }] = useRemoveUserMutation();
-    // const router = useRouter();
+    const [deleteCategory] = useDeleteCategoryMutation();
+    const [editCategory, { isLoading }] = useEditCategoryMutation();
+    const router = useRouter();
 
-    // const removeUserHandler = async (id) => {
-    //     try {
-    //         const result = await removeUser({ id }).unwrap();
-    //         console.log(result);
-    //         toast.success(result.message)
-    //         router.refresh()
-    //         setIsShowDeleteModal(false)
+    const deleteCategoryHandler = async (id) => {
+        try {
+            const result = await deleteCategory({ id }).unwrap();
+            console.log(result);
+            toast.success(result.message)
+            router.refresh()
+            setIsShowDeleteModal(false)
 
-    //     } catch (err) {
-    //         console.error(err);
-    //         toast.error('خطای سمت سرور !')
-    //         setIsShowDeleteModal(false)
-    //     }
-    // }
+        } catch (err) {
+            console.error(err);
+            toast.error(err?.data?.message)
+            setIsShowDeleteModal(false)
+        }
+    }
+    const editCategoryHandler = async ({title}) => {
+        try {
+            const result = await editCategory({id: categoryId , title}).unwrap();
+            console.log(result);
+            if (!isLoading) {
+                toast.success(result.message)
+                router.refresh()
+                setIsShowEditModal(false)
+                editForm.setValues({ title: "" })
+            }
+        } catch (err) {
+            console.error(err);
+            toast.error(err?.data?.message)
+            setIsShowEditModal(false)
+        }
+    }
+
+    const editForm = useFormik({
+        initialValues: { title: "" },
+
+
+        onSubmit: (values) => {
+            editCategoryHandler(values)
+            setIsShowEditModal(false)
+        },
+
+        validationSchema: categoryValidator,
+    });
+
+    useEffect(() => {
+        if (isShowEditModal) {
+            editForm.setValues({
+                title: mainCategoryInfo.title || "",
+            });
+        }
+    }, [isShowEditModal, mainCategoryInfo]);
 
     return (
         <>
@@ -75,8 +115,41 @@ export default function CategoryTable({ categories }) {
             {/* delete modal */}
             {isShowDeleteModal &&
                 <DeleteModal onClose={() => setIsShowDeleteModal(false)} onSubmit={() => {
-                    removeCategoryHandler(categoryId)
+                    deleteCategoryHandler(categoryId)
                 }} title="دسته بندی حذف شود ؟" />
+            }
+
+            {/* edit modal */}
+
+            {
+                isShowEditModal && <AddModal title="ویرایش دسته بندی" onClose={() => setIsShowEditModal(false)}>
+                    <form onSubmit={editForm.handleSubmit}>
+                        <div className="grid grid-cols-6 gap-6">
+                            <div className="col-span-6">
+                                <label htmlFor="name" className="text-sm font-medium text-gray-900 block mb-2">عنوان</label>
+                                <input type="text" name="title" id="title" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-main block w-full p-2.5" placeholder="عنوان جدید"
+                                    value={editForm.values.title}
+                                    onChange={editForm.handleChange}
+                                    onBlur={editForm.handleBlur}
+                                />
+                                {
+                                    editForm.errors.title && editForm.touched.title && <label htmlFor="title" className='text-red-500 text-[13px] block mt-2 ml-1'>{editForm.errors.title}</label>
+                                }
+                            </div>
+                        </div>
+                        <button type="submit" className=' w-full mt-8' disabled={isLoading}  >
+                            <div className={` btn w-full before:w-full ${isLoading && "bg-mainBlack"} text-white`}>
+                                <span className=' text-sm '>
+                                    {isLoading ? "لطفا منتظر بمانید ..." : "اضافه کردن"}
+                                </span>
+                                {
+                                    !isLoading &&
+                                    <IoIosArrowRoundForward className=' text-2xl rotate-180' />
+                                }
+                            </div>
+                        </button>
+                    </form>
+                </AddModal>
             }
         </>
     )

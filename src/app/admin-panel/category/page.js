@@ -1,10 +1,10 @@
 import TopSectionPanel from '@/components/modules/AdminPanel/TopSectionPanel/TopSectionPanel'
 import React from 'react'
-import Button from '@/components/modules/Button/Button'
 import { IoIosSearch } from 'react-icons/io'
 import CategoryModel from "@/models/Category";
 import CategoryTable from '@/components/templates/AdminPanel/Category/CategoryTable/CategoryTable';
 import connectToDB from '@/configs/db';
+import AddCategory from '@/components/templates/AdminPanel/Category/AddCategory/AddCategory';
 
 export default async function page() {
 
@@ -15,7 +15,7 @@ export default async function page() {
 
   return (
     <>
-      <TopSectionPanel title="لیست دسته بندی ها" spanTitle="دسته بندی ها" />
+      <TopSectionPanel title="دسته بندی" spanTitle="دسته بندی" />
       <div className=" mt-0 lg:mt-8">
         <div className="p-4 rounded-md">
           <div className="flex justify-between flex-wrap gap-6  border-b-2 border-mainBlack pb-10">
@@ -28,7 +28,7 @@ export default async function page() {
               </form>
             </div>
             <div className=' size-fit' >
-              <Button style=' w-[160px] bg-green-500' text="اضافه کردن دسته بندی +" isIconNeed={false} />
+              <AddCategory />
             </div>
           </div>
           <div className=' overflow-auto'>

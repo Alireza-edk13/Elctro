@@ -12,7 +12,7 @@ export async function POST(req) {
         const isAdmin = await authAdmin();
 
         if (!isAdmin) {
-            throw new Error("This api protected and you can't access it !!");
+            throw new Error("شما دسترسی لازم به عنوان ادمین ندارید");
         }
 
         const validationResult = await CategoryModel.categoryValidation(body).catch((err) => {
@@ -62,7 +62,7 @@ export async function DELETE(req) {
         const isAdmin = await authAdmin();
 
         if (!isAdmin) {
-            throw new Error("This api protected and you can't access it !!");
+            throw new Error("شما دسترسی لازم به عنوان ادمین ندارید");
         }
 
         const deletedCategory = await CategoryModel.findOneAndDelete({
@@ -94,10 +94,13 @@ export async function PUT(req) {
         const body = await req.json();
         const { id, title } = body;
 
+        console.log(id,title);
+        
+
         const isAdmin = await authAdmin();
 
         if (!isAdmin) {
-            throw new Error("This api protected and you can't access it !!");
+            throw new Error("شما دسترسی لازم به عنوان ادمین ندارید");
         }
 
         const validationResult = await CategoryModel.categoryValidation(body).catch((err) => {
