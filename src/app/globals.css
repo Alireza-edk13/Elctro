@@ -55,6 +55,8 @@
         cursor: pointer;
         position: relative;
         overflow: hidden;
+        color: #fff;
+
     }
 
     .btn::before {
@@ -81,7 +83,6 @@
 
     .btn a,
     .btn span {
-        color: #fff;
         z-index: 2;
 
     }

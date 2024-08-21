@@ -27,6 +27,7 @@ export default function login() {
             console.log(result);
             toast.success(result.message)
             router.replace("/");
+            router.refresh()
             // console.log("error =>",error?.data);
             // console.log("data =>",data);
             // console.log(" is loading =>",isLoading);

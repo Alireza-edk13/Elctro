@@ -26,6 +26,7 @@ export default function register() {
             console.log(result);
             toast.success(result.message)
             router.replace("/");
+            router.refresh()
 
             
         } catch (err) {

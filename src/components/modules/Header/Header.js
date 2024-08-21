@@ -1,11 +1,16 @@
 import React from 'react'
 import Nav from './Nav/Nav'
+import { authUser } from '@/utils/serverHelpers';
 
-export default function Header() {
+export default async function Header() {
+
+  const user = await authUser();
+  
+
   return (
     <>
       <header>
-        <Nav />
+        <Nav isLogin={user ? true : false} />
       </header>
     </>
   )

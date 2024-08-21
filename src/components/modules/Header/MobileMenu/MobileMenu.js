@@ -29,16 +29,16 @@ export default function MobileMenu({ isNavMobileOpen, setIsNavMobileOpen }) {
                             </Link>
                         </li>
                         <MobileMenuItem title="مصولات">
-                            <MobileSubMenuItem title="لیست محصولات" href="course-list" />
-                            <MobileSubMenuItem title="جزییات محصولات" href="course-detail/ai-course" />
+                            <MobileSubMenuItem title="لیست محصولات" href="/product-list" />
+                            <MobileSubMenuItem title="جزییات محصولات" href="product-details/headphone/headphone-asus" />
                         </MobileMenuItem>
                         <MobileMenuItem title="مقاله">
                             <MobileSubMenuItem title="لیست مقالات" href="blog-list" />
-                            <MobileSubMenuItem title="جزییات مقالات" href="blog-detail" />
+                            <MobileSubMenuItem title="جزییات مقالات" href="blog-details" />
                         </MobileMenuItem>
                         <MobileMenuItem title="صفحات">
-                            <MobileSubMenuItem title="تمام شعبه ها" href="teacher-list" />
-                            <MobileSubMenuItem title="جزییات شعبه" href="teacher-detail" />
+                            <MobileSubMenuItem title="سبد خرید" href="/cart" />
+                            <MobileSubMenuItem title="تسویه حساب" href="/checkout" />
                             <MobileSubMenuItem title="ورود" href="login" />
                             <MobileSubMenuItem title="ثبت نام" href="register" />
                         </MobileMenuItem>

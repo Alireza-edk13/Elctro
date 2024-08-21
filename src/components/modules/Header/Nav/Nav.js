@@ -10,7 +10,7 @@ import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import Menu from '../Menu/Menu';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import ShopCart from '../ShopCart/ShopCart';
-export default function Nav() {
+export default function Nav({ isLogin }) {
 
     const [isFix, setIsFix] = useState(false);
     const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false)
@@ -50,17 +50,33 @@ export default function Nav() {
                         <div className='cursor-pointer flex-center ' onClick={() => setIsSearchBoxOpen(prevState => !prevState)}>
                             <IoIosSearch className={`${isSearchBoxOpen ? 'rotate-180' : ''} text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
-                        <div className='cursor-pointer hidden lg:flex-center '>
+                        <div className=' relative cursor-pointer hidden lg:flex-center '>
                             <IoMdHeartEmpty className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
+                            <span className=' absolute font-semibold px-[0.4rem]  py-0  text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>2</span>
                         </div>
-                        <div className='cursor-pointer flex-center ' onClick={() => setIsShopCartOpen(prevState => !prevState)}>
+                        <div className=' relative cursor-pointer flex-center ' onClick={() => setIsShopCartOpen(prevState => !prevState)}>
                             <IoCartOutline className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
+                            <span className=' absolute font-semibold px-[0.3rem] sm:px-[0.4rem]  py-0 text-xs  sm:text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>2</span>
                         </div>
-                        <div className='cursor-pointer hidden lg:flex-center '>
-                            <AiOutlineUser className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
-                        </div>
+
+                        {
+                            isLogin ?
+
+                                <Link href={'/user-panel'} className='hidden lg:flex-center '>
+                                    <AiOutlineUser className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
+                                </Link>
+
+                                :
+
+                                <Link href={"/login"} className="btn bg-white text-white group hidden lg:flex">
+                                    <span className=' font-semibold text-sm text-mainBlack group-hover:text-white '>ورود / ثبت نام</span>
+                                </Link>
+                        }
+
+
+
                         <div className='block lg:hidden cursor-pointer' onClick={() => setIsNavMobileOpen(prevState => !prevState)}>
-                            < AiOutlineMenu className={`${isNavMobileOpen ? " rotate-45" : ""} text-2xl sm:text-3xl transition-all duration-500`} />
+                            < AiOutlineMenu className={`text-xl sm:text-3xl`} />
                         </div>
 
                     </div>
