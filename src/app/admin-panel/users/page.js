@@ -10,14 +10,14 @@ export default async function page() {
 
   connectToDB();
   const users = await UserModel.find({},
-    "-password -refreshToken -__v").lean();
+    "-password -refreshToken -__v").sort({ _id: -1 }).lean();
 
   return (
     <>
       <TopSectionPanel title='لیست کابران' spanTitle="کابران" />
       <div className=" mt-0 lg:mt-8">
         <div className="p-4 rounded-md">
-          <div className="flex justify-between flex-wrap gap-6  border-b border-mainBlack pb-10">
+          <div className="flex justify-between flex-wrap gap-6  border-b-2 border-mainBlack pb-10">
             <div>
               <form className=' relative'>
                 <button className=' absolute left-3 top-2 border-none'>

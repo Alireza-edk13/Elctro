@@ -54,7 +54,7 @@ export default function SideBar() {
 
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/orders'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaCartShopping className=' text-2xl text-white' />
                                 سفارشات
                             </Link>
@@ -62,20 +62,20 @@ export default function SideBar() {
 
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/messages'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <LuMessagesSquare className=' text-2xl text-white' />
                                 پیام
                             </Link>
                         </li>
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/comments'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaComment className=' text-2xl text-white' />
                                 کامنت
                             </Link>
                         </li>
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/category'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <TbCategory2 className=' text-2xl text-white' />
                                 دسته بندی
                             </Link>
@@ -85,20 +85,20 @@ export default function SideBar() {
 
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/blog'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaBloggerB className=' text-2xl text-white' />
                                 مقاله
                             </Link>
                         </li>
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/tickets'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <IoTicket className=' text-2xl text-white' />
                                 تیکت
                             </Link>
                         </li>
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/discount-code'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <RiDiscountPercentFill className=' text-2xl text-white' />
                                 کد تخفیف
                             </Link>

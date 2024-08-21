@@ -14,7 +14,7 @@ export default function ProductBox({ pic, isProductBoxForProductsList, isProduct
             <div className=" bg-white overflow-hidden rounded-lg px-6">
                 <div className=' relative'>
                     <span className=" absolute text-sm font-normal flex-center top-3 left-0 bg-main text-white px-3.5 py-1 rounded-full z-20">جدید</span>
-                    <Link href="/" className="product-img">
+                    <Link href="/product-details/headphone/asus-30G12" className="product-img">
                         <Image src={`/images/product/${pic}.webp`} className=' sm:group-hover:scale-110 transition-all duration-200 ease-in' width={352} height={352} alt="product" />
                     </Link>
                     <div className={`flex flex-col justify-center items-center sm:flex-row sm:opacity-0 transition-all duration-200 ease-in sm:group-hover:opacity-100 z-20 absolute right-0 top-8 left-auto sm:inset-0 gap-2 ${isProductBoxForProductsList ? "" : "xxl:bottom-auto xxl:right-auto xxl:top-24 xxl:left-7"}`}>
@@ -26,17 +26,17 @@ export default function ProductBox({ pic, isProductBoxForProductsList, isProduct
                             <IoMdHeartEmpty />
                         </div>
 
-                        <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl shadow-custom rounded-lg product-btn view">
+                        <Link href="/product-details/headphone/asus-30G12" className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl shadow-custom rounded-lg product-btn view">
                             <MdOutlineRemoveRedEye />
-                        </div>
+                        </Link>
 
 
                     </div>
 
                 </div>
                 <div className=" border-b z-20 mt-4 pb-3">
-                    <Link href="/" className=' uppercase text-[13px] tracking-wide block text-mainGray'>هدفون</Link>
-                    <Link href="/" className=' font-morabba transition-all duration-200 ease-in hover:text-main tracking-wide line-clamp-1 '>
+                    <Link href="/products-list" className=' uppercase text-[13px] tracking-wide block text-mainGray'>هدفون</Link>
+                    <Link href="/product-details/headphone/asus-30G12" className=' font-morabba transition-all duration-200 ease-in hover:text-main tracking-wide line-clamp-1 '>
                         هدفون بی سیم ایسوس
 
                     </Link>

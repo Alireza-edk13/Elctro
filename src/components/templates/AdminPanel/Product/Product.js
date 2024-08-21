@@ -20,27 +20,27 @@ export default function UsersTable({ users }) {
     const [userId, setUserId] = useState(null)
     const [mainUserInfo, setMainUserInfo] = useState({})
 
-    const [removeUser, { isLoading }] = useRemoveUserMutation();
-    const router = useRouter();
+    // const [removeUser, { isLoading }] = useRemoveUserMutation();
+    // const router = useRouter();
 
-    const removeUserHandler = async (id) => {
-        try {
-            const result = await removeUser({ id }).unwrap();
-            console.log(result);
-            toast.success(result.message)
-            router.refresh()
-            setIsShowDeleteModal(false)
+    // const removeUserHandler = async (id) => {
+    //     try {
+    //         const result = await removeUser({ id }).unwrap();
+    //         console.log(result);
+    //         toast.success(result.message)
+    //         router.refresh()
+    //         setIsShowDeleteModal(false)
 
-        } catch (err) {
-            console.error(err);
-            toast.error('خطای سمت سرور !')
-            setIsShowDeleteModal(false)
-        }
-    }
+    //     } catch (err) {
+    //         console.error(err);
+    //         toast.error('خطای سمت سرور !')
+    //         setIsShowDeleteModal(false)
+    //     }
+    // }
 
     return (
         <>
-            <table className="w-full mt-10 text-gray-500 overflow-auto">
+            {/* <table className="w-full mt-10 text-gray-500 overflow-auto">
                 <thead className="border-b child:whitespace-nowrap">
                     <tr className='child:text-right child:p-4 text-gray-600'>
                         <th>نقش</th>
@@ -53,7 +53,7 @@ export default function UsersTable({ users }) {
                     {users?.map((user, index) => (
                         <tr key={user._id} className=' child:p-4'>
                             <td>
-                                <div className="text-lg flex-center text-white h-10 rounded-full bg-main">
+                                <div className="text-lg flex-center text-white p-2 rounded-full bg-main">
                                     {
                                         user.role === "USER" ?
                                             <FaUser />
@@ -104,11 +104,11 @@ export default function UsersTable({ users }) {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table> */}
             {/* delete modal */}
             {isShowDeleteModal &&
                 <DeleteModal onClose={() => setIsShowDeleteModal(false)} onSubmit={() => {
-                    removeUserHandler(userId)
+                    // removeUserHandler(userId)
                 }} title="حدف" />
             }
         </>
