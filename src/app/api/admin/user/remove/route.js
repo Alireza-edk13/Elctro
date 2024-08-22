@@ -1,5 +1,6 @@
 import connectToDB from "@/configs/db";
 import UserModel from "@/models/User";
+import { authAdmin } from "@/utils/serverHelpers";
 // import { authUser } from "@/utils/serverHelpers";
 
 // export async function POST(req) {
@@ -36,10 +37,15 @@ export async function DELETE(req) {
         connectToDB();
         const body = await req.json();
 
-        console.log(body);
-        
-        
         const { id } = body;
+
+
+        const isAdmin = await authAdmin();
+
+        if (!isAdmin) {
+            throw new Error("شما دسترسی لازم به عنوان ادمین ندارید");
+        }
+
 
         const validationResult = await UserModel.removeUserValidation(body).catch((err) => {
             err.statusCode = 400;

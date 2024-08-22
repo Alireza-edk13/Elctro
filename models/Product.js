@@ -1,4 +1,7 @@
+import { createProductValidator, removeProductValidator } from "@/validators/product";
+
 const mongoose = require("mongoose");
+require("./Category");
 
 const schema = new mongoose.Schema(
   {
@@ -6,7 +9,7 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {
+    shortName: {
       type: String,
       required: true,
     },
@@ -14,13 +17,14 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    oldPrice: {
+    orginalPrice: {
       type: Number,
       required: true,
     },
     discount: {
       type: Number,
       required: true,
+      default: 0
     },
     stock: {
       type: Number,
@@ -30,10 +34,23 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    categoryId: {
+      type: mongoose.Types.ObjectId,
+      ref: "Category",
+      require: true,
+    },
 
   },
   { timestamps: true }
 );
+
+schema.statics.createProductValidation = function (body) {
+  return createProductValidator.validate(body);
+};
+schema.statics.removeProductValidation = function (body) {
+  return removeProductValidator.validate(body);
+};
+
 
 const model = mongoose.models.Product || mongoose.model("Product", schema);
 

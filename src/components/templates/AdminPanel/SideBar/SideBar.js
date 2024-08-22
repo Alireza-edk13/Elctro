@@ -11,7 +11,6 @@ import { LuMessagesSquare } from "react-icons/lu";
 import { ImExit } from "react-icons/im";
 import Link from 'next/link';
 import { FaCartShopping } from "react-icons/fa6";
-// import DeleteModal from '../DeleteModal/DeleteModal';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { closeSideBar } from '@/redux/slice/sideBarAdminPanelSlice';
@@ -53,13 +52,14 @@ export default function SideBar() {
                         </li>
 
 
+
+
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
-                                <FaCartShopping className=' text-2xl text-white' />
-                                سفارشات
+                            <Link href={'/admin-panel/category'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                                <TbCategory2 className=' text-2xl text-white' />
+                                دسته بندی
                             </Link>
                         </li>
-
 
                         <li onClick={() => dispatch(closeSideBar())}>
                             <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
@@ -70,16 +70,18 @@ export default function SideBar() {
 
                         <li onClick={() => dispatch(closeSideBar())}>
                             <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                                <FaCartShopping className=' text-2xl text-white' />
+                                سفارشات
+                            </Link>
+                        </li>
+
+                        <li onClick={() => dispatch(closeSideBar())}>
+                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <FaComment className=' text-2xl text-white' />
                                 کامنت
                             </Link>
                         </li>
-                        <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/admin-panel/category'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
-                                <TbCategory2 className=' text-2xl text-white' />
-                                دسته بندی
-                            </Link>
-                        </li>
+
 
 
 

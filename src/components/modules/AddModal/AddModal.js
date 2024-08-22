@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function AddModal({ children, title, onClose }) {
     return (
-        <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center sm:h-full flex">
+        <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center flex">
             <div onClick={onClose} className=" fixed inset-0 bg-mainBlack opacity-[0.7]"></div>
-            <div className="relative w-full rounded-lg bg-white max-w-2xl px-4 h-screen md:h-auto">
+            <div className="relative w-full rounded-lg bg-white max-w-2xl p-0 sm:px-4 h-screen sm:h-auto">
 
-                <div className="bg-mainWhite rounded-lg shadow relative">
+                <div className="bg-white rounded-lg shadow relative">
 
                     <div className="flex items-center justify-between p-5 border-b rounded-t">
                         <h3 className="text-xl font-semibold">

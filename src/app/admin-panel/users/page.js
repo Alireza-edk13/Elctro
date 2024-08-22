@@ -31,7 +31,11 @@ export default async function page() {
             </div>
           </div>
           <div className=' overflow-auto'>
-            <UsersTable users={JSON.parse(JSON.stringify(users))} />
+            {
+              users.length ?
+                <UsersTable users={JSON.parse(JSON.stringify(users))} />
+                : <div className=' mt-8 bg-mainBg rounded-lg p-3 text-sm'>کاربری یافت نشد !</div>
+            }
           </div>
         </div>
 

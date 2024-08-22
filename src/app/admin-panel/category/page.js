@@ -32,7 +32,13 @@ export default async function page() {
             </div>
           </div>
           <div className=' overflow-auto'>
-            <CategoryTable categories={JSON.parse(JSON.stringify(categories))} />
+
+            {
+              categories.length ?
+                <CategoryTable categories={JSON.parse(JSON.stringify(categories))} />
+
+                : <div className=' mt-8 bg-mainBg rounded-lg p-3 text-sm'>دسته بندی وجود ندارد!</div>
+            }
           </div>
         </div>
 
