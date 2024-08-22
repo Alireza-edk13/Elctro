@@ -64,7 +64,7 @@ export default function AddProduct({categories}) {
 
         <>
             <div onClick={() => setIsShowAddModal(true)}>
-                <Button style=' w-[160px] bg-green-500' text="اضافه کردن دسته بندی +" isIconNeed={false} />
+                <Button style=' w-[160px] bg-green-500' text="اضافه کردن محصول +" isIconNeed={false} />
             </div>
             {
                 isShowAddModal && <AddModal title="اضافه کردن محصول" onClose={() => setIsShowAddModal(false)}>

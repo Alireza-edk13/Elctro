@@ -7,11 +7,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
-export default function TrendingProducts({products}) {
+
+export default function LastestProduct({ products }) {
     return (
         <section className=' bg-mainBg mt-20 py-6'>
             <div className=' container'>
-                <TopSectionTitle title="پرفروش ترین محصولات" />
+                <TopSectionTitle title="جدیدترین محصولات" />
                 <div>
                     <Swiper
                         slidesPerView={1}
@@ -33,13 +34,13 @@ export default function TrendingProducts({products}) {
                         modules={[Pagination]}
                         className="mySwiper"
                     >
-
                         {products.map((product) => (
                             <SwiperSlide key={product._id}>
                                 <ProductBox {...product} />
                             </SwiperSlide>
 
                         ))}
+
                     </Swiper>
                 </div>
             </div>

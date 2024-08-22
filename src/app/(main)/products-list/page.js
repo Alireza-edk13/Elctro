@@ -5,9 +5,13 @@ import { MdNavigateNext } from 'react-icons/md'
 import NewProduct from '@/components/templates/ProductsList/NewProduct/NewProduct'
 import Category from '@/components/templates/ProductsList/Category/Category'
 import Brands from '@/components/templates/ProductsList/Brands/Brands'
+import connectToDB from '@/configs/db'
+import ProductModel from "@/models/Product";
 
+export default async function page() {
+    connectToDB()
+    const products = await ProductModel.find({}).populate("categoryId", "title -_id").lean();
 
-export default function page() {
     return (
         <>
             <Breadcrumbs destination="لیست محصولات" />
@@ -25,17 +29,10 @@ export default function page() {
                             </div>
                         </div>
                         <div className=' grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6'>
-                            <ProductBox isProductBoxForProductsList={true} pic="product-1" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-9" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-5" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-6" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-2" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-7" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-8" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-10" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-3" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-11" />
-                            <ProductBox isProductBoxForProductsList={true} pic="product-4" />
+                            {products.map((product) => (
+                                <ProductBox {...product} isProductBoxForProductsList={true} key={product._id} />
+                            ))}
+
                         </div>
                     </div>
                     <div className=' col-span-12 lg:col-span-3'>

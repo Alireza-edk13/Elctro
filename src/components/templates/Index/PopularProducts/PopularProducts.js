@@ -8,11 +8,11 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 
-export default function PopularProduct() {
+export default function PopularProduct({products}) {
     return (
         <section className=' bg-mainBg mt-20 py-6'>
             <div className=' container'>
-                <TopSectionTitle title="محبوب ترین" />
+                <TopSectionTitle title="محبوب ترین محصولات" />
                 <div>
                     <Swiper
                         slidesPerView={1}
@@ -34,31 +34,12 @@ export default function PopularProduct() {
                         modules={[Pagination]}
                         className="mySwiper"
                     >
+                        {products.map((product) => (
+                            <SwiperSlide key={product._id}>
+                                <ProductBox {...product} />
+                            </SwiperSlide>
 
-                        <SwiperSlide>
-                            <ProductBox pic="product-1" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-2" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-3" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-4" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-5" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-6" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-7" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ProductBox pic="product-8" />
-                        </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>

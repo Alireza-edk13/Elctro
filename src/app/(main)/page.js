@@ -1,4 +1,3 @@
-import Footer from '@/components/modules/Footer/Footer'
 import BigPoster from '@/components/templates/Index/BigPoster/BigPoster'
 import Blogs from '@/components/templates/Index/Blogs/Blogs'
 import Brands from '@/components/templates/Index/Brands/Brands'
@@ -7,22 +6,29 @@ import Comments from '@/components/templates/Index/Comments/Comments'
 import DealOfDay from '@/components/templates/Index/DealsOfDay/DealsOfDay'
 import InfoBoxes from '@/components/templates/Index/InfoBoxes/InfoBoxes'
 import Landding from '@/components/templates/Index/Landding/Landding'
+import LastestProduct from '@/components/templates/Index/lastestProduct/lastestProduct'
 import OfferBoxes from '@/components/templates/Index/OfferBoxes/OfferBoxes'
 import PopularProducts from '@/components/templates/Index/PopularProducts/PopularProducts'
 import TrendingProducts from '@/components/templates/Index/TrendingProducts/TrendingProducts'
+import connectToDB from '@/configs/db'
+import ProductModel from "@/models/Product";
 
-export default function Home() {
+export default async function Home() {
+    connectToDB()
+    const lastestProducts = await ProductModel.find({}).populate("categoryId","title -_id").sort({ _id: -1 }).limit(12);
+    const popularProducts = await ProductModel.find({}).populate("categoryId","title -_id").limit(12);
+
     return (
         <>
             <Landding />
             <InfoBoxes />
             <OfferBoxes />
             <Category />
-            <TrendingProducts />
+            <LastestProduct products={JSON.parse(JSON.stringify(lastestProducts))} />
             <BigPoster />
-            <PopularProducts />
+            <PopularProducts products={JSON.parse(JSON.stringify(popularProducts))} />
             <DealOfDay />
-            <TrendingProducts />
+            <TrendingProducts products={JSON.parse(JSON.stringify(lastestProducts))} />
             <Brands />
             <Comments />
             <Blogs />
