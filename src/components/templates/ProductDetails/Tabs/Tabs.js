@@ -13,7 +13,7 @@ export default function Tabs() {
     return (
         <section className='my-14 h-full md:h-96'>
 
-            <ul class=" flex items-center gap-4 sm:gap-8 border-b-2 text-sm sm:text-base border-mainBorder pb-2 child:cursor-pointer ">
+            <ul className=" flex items-center gap-4 sm:gap-8 border-b-2 text-sm sm:text-base border-mainBorder pb-2 child:cursor-pointer ">
                 <li onClick={() => toggleTab(1)} className={`${toggleState === 1 ? "relative before:absolute before:w-full before:h-[2px] before:bg-main before:-bottom-[10px]" : ""}`}>توضیحات</li>
                 <li onClick={() => toggleTab(2)} className={`${toggleState === 2 ? "relative before:absolute before:w-full before:h-[2px] before:bg-main before:-bottom-[10px]" : ""}`}>اطلاعات بیشتر</li>
                 <li onClick={() => toggleTab(3)} className={`${toggleState === 3 ? "relative before:absolute before:w-full before:h-[2px] before:bg-main before:-bottom-[10px]" : ""}`} >کامنت ها (4)</li>

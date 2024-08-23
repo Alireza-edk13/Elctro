@@ -6,12 +6,12 @@ export default function CreateAccount() {
   const [isUserWantToCreateAccount, setIsUserWantToCreateAccount] = useState(false)
 
     return (
-        <div class=" mt-6">
-            <div class=" flex items-center gap-1 mb-6">
-                <input class=" cursor-pointer" type="checkbox" name="checkbox" id='createAccount' onChange={() => {
+        <div className=" mt-6">
+            <div className=" flex items-center gap-1 mb-6">
+                <input className=" cursor-pointer" type="checkbox" name="checkbox" id='createAccount' onChange={() => {
                     setIsUserWantToCreateAccount(prevState => !prevState)
                 }} />
-                <label class=" text-mainGray cursor-pointer" htmlFor="createAccount"><span>میخوای اکانت بسازی؟</span></label>
+                <label className=" text-mainGray cursor-pointer" htmlFor="createAccount"><span>میخوای اکانت بسازی؟</span></label>
             </div>
             <div className='h-16'>
                 <div className={`flex ${isUserWantToCreateAccount ? 'h-full' : 'h-0'} transition-all duration-500 overflow-hidden flex-col relative`}>

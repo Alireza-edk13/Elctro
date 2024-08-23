@@ -31,22 +31,22 @@ export default function ProductDetailsSlider({cover}) {
                 className="mySwiper2"
             >
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src={`/uploads/${cover}`} />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src={`/uploads/${cover}`} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-2.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-2.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-3.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-3.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-4.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-4.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-5.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-5.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-6.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg border-mainBorder border ' src="/images/product/product-6.webp" />
                 </SwiperSlide>
                 
                 
@@ -62,22 +62,22 @@ export default function ProductDetailsSlider({cover}) {
                 className="mySwiper3"
             >
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src={`/uploads/${cover}`} />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src={`/uploads/${cover}`} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-2.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-2.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-3.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-3.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-4.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-4.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-5.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-5.webp" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-6.webp" />
+                    <Image width={0} height={0} alt='product-img' sizes='100vw' className=' w-full h-auto rounded-lg mt-2 border-mainBorder border ' src="/images/product/product-6.webp" />
                 </SwiperSlide>
               
             </Swiper>

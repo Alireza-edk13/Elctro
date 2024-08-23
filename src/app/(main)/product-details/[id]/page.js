@@ -45,13 +45,13 @@ export default async function page({ params }) {
                         <ProductDetailsSlider cover={product.cover} />
                     </div>
                     <div className=' col-span-12 lg:col-span-7'>
-                        <div class=" p-4">
+                        <div className=" p-4">
 
                             <h2 className=' text-main text-xl sm:text-2xl mb-2 font-bold'>
                                 {product.name}
                             </h2>
 
-                            <div class="flex justify-between items-center border-b border-mainBorder pb-4">
+                            <div className="flex justify-between items-center border-b border-mainBorder pb-4">
                                 <span className=' text-xs sm:text-sm'>برند: <Link href={'/'} className=''>{product.brand}</Link></span>
                                 <div className=' flex-center text-xs sm:text-sm gap-1'>
                                     <div className=" flex items-center my-2 justify-start gap-1 text-main ">
@@ -65,20 +65,20 @@ export default async function page({ params }) {
                                 </div>
 
                             </div>
-                            <div class=" flex items-center gap-2 sm:gap-5 mt-4 border-b border-mainBorder pb-4">
-                                <span class=" text-main font-bold text-xl sm:text-2xl">
+                            <div className=" flex items-center gap-2 sm:gap-5 mt-4 border-b border-mainBorder pb-4">
+                                <span className=" text-main font-bold text-xl sm:text-2xl">
                                     {
                                         Math.floor(product.orginalPrice - ((product.orginalPrice * product.discount) / 100)).toLocaleString()
                                     }
                                     تومان
                                 </span>
-                                <span class=" line-through text-mainGray text-sm">
+                                <span className=" line-through text-mainGray text-sm">
                                     {product.orginalPrice.toLocaleString()} تومان
                                 </span>
-                                <span class=" text-sm text-main">{product.discount}% تخفیف</span>
+                                <span className=" text-sm text-main">{product.discount}% تخفیف</span>
                             </div>
-                            <div class=" mt-6 space-y-10">
-                                <div class="shop-single-descrip">
+                            <div className=" mt-6 space-y-10">
+                                <div className="shop-single-descrip">
                                     <p className=' text-xs sm:text-md leading-6 tracking-wide'>
                                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
 
@@ -98,9 +98,9 @@ export default async function page({ params }) {
                                         <span>امکان پرداخت درب منزل</span>
                                     </li>
                                 </ul>
-                                <div class=" flex items-center gap-2">
-                                    <span class=" text-sm">رنگ  ها: </span>
-                                    <ul class=" flex items-center gap-2 child:cursor-pointer">
+                                <div className=" flex items-center gap-2">
+                                    <span className=" text-sm">رنگ  ها: </span>
+                                    <ul className=" flex items-center gap-2 child:cursor-pointer">
                                         <li className=' relative rounded-full bg-red-500 border p-3'>
                                             <span className=' rounded-full p-1 top-0 right-0 absolute bg-main'></span>
                                         </li>
@@ -113,7 +113,7 @@ export default async function page({ params }) {
                                     <Button text="اضافه کردن به سبد خرید" style=" w-full md:w-48 bg-main" />
 
                                 </div>
-                                <ul class=" space-y-2">
+                                <ul className=" space-y-2">
                                     <li className='flex items-center gap-1 text-xs'>
                                         <span>ایدی:</span>
                                         <span className=' text-main'>{product._id}</span>

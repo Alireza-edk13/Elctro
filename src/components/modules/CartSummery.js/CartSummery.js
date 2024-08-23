@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 
 export default function CartSummery({text}) {
     return (
-        <div class=" bg-mainBg rounded-lg py-8 px-11 w-full">
+        <div className=" bg-mainBg rounded-lg py-8 px-11 w-full">
             <h4 className=' text-xl mb-9 font-semibold'>فاکتور خرید</h4>
             <ul className=' space-y-6  child:flex child:justify-between child:items-center '>
                 <li>
@@ -24,7 +24,7 @@ export default function CartSummery({text}) {
                 </li>
 
             </ul>
-            <div class=" my-9 border-t-2 pt-6 border-mainBorder flex justify-between items-center">
+            <div className=" my-9 border-t-2 pt-6 border-mainBorder flex justify-between items-center">
                 <span className=' font-semibold'>مجموع :</span>
                 <span className='font-semibold text-main'>199.7 تومان</span>
             </div>
