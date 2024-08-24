@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaStar } from "react-icons/fa6";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { VscGitCompare } from "react-icons/vsc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import AddProductToCart from './AddProductToCart/AddProductToCart';
 
 
 export default function ProductBox(
@@ -77,9 +77,7 @@ export default function ProductBox(
 
                         </div>
                     </div>
-                    <div className="p-3 bg-mainBg cursor-pointer transition-all duration-200 ease-in hover:text-white hover:bg-main sm:hover:-translate-y-1 text-xl rounded-lg absolute left-0 bottom-0 product-btn addToCart">
-                        <HiOutlineShoppingBag />
-                    </div>
+                    <AddProductToCart id={_id} cover={cover} orginalPrice={orginalPrice} name={name} discount={discount} brand={brand} />
                 </div>
             </div>
         </div>

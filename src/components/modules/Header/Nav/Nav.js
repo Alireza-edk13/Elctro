@@ -10,6 +10,8 @@ import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import Menu from '../Menu/Menu';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import ShopCart from '../ShopCart/ShopCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCart } from '@/redux/slice/cartSlice';
 export default function Nav({ isLogin }) {
 
     const [isFix, setIsFix] = useState(false);
@@ -31,6 +33,15 @@ export default function Nav({ isLogin }) {
             window.removeEventListener('scroll', fixNav);
         };
     },);
+
+
+    const cart = useSelector(state => state.cart.items);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+        dispatch(setCart(storedCart));
+    }, [dispatch]);
 
 
     return (
@@ -56,7 +67,7 @@ export default function Nav({ isLogin }) {
                         </div>
                         <div className=' relative cursor-pointer flex-center ' onClick={() => setIsShopCartOpen(prevState => !prevState)}>
                             <IoCartOutline className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
-                            <span className=' absolute font-semibold px-[0.3rem] sm:px-[0.4rem]  py-0 text-xs  sm:text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>2</span>
+                            <span className=' absolute font-semibold px-[0.3rem] sm:px-[0.4rem]  py-0 text-xs  sm:text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>{cart.length}</span>
                         </div>
 
                         {

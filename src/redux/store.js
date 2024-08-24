@@ -5,6 +5,7 @@ import { sideBarAdminPanelSlice } from "./slice/sideBarAdminPanelSlice";
 import { userApi } from "./api/userApi";
 import { categoryApi } from "./api/categoryApi";
 import { productApi } from "./api/productApi";
+import { cartSlice } from "./slice/cartSlice";
 
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
         [userApi.reducerPath]: userApi.reducer,
         [categoryApi.reducerPath]: categoryApi.reducer,
         [productApi.reducerPath]: productApi.reducer,
+        [cartSlice.name]: cartSlice.reducer,
         [sideBarAdminPanelSlice.name]: sideBarAdminPanelSlice.reducer,
     },
     middleware: (d) =>
@@ -20,7 +22,7 @@ export const store = configureStore({
             authApi.middleware,
             userApi.middleware,
             categoryApi.middleware,
-            productApi.middleware
+            productApi.middleware,
         ),
 })
 

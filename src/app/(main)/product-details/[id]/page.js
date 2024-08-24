@@ -8,17 +8,21 @@ import { GrSend } from "react-icons/gr";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import RelatedProducts from '@/components/templates/ProductDetails/RelatedProducts/RelatedProducts';
 import Tabs from '@/components/templates/ProductDetails/Tabs/Tabs';
-import Button from '@/components/modules/Button/Button'
 import ProductModel from "@/models/Product";
 import connectToDB from "@/configs/db";
+import { VscGitCompare } from 'react-icons/vsc'
+import { IoMdHeartEmpty } from 'react-icons/io'
+import ProdcutActions from '@/components/modules/ProdcutActions/ProdcutActions'
+
 export default async function page({ params }) {
 
     connectToDB();
     const id = params.id;
     const product = await ProductModel.findOne({ _id: id }).populate(
         "categoryId", "title -_id"
-    );
-    const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5);
+    ).lean();
+    const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5).lean();
+    
 
 
     return (
@@ -41,13 +45,21 @@ export default async function page({ params }) {
             <section className=' container mt-8'>
 
                 <section className=' grid grid-cols-12 gap-6'>
-                    <div className=' col-span-12 lg:col-span-5'>
+                    <div className=' relative col-span-12 lg:col-span-5'>
                         <ProductDetailsSlider cover={product.cover} />
+                        <div className=' absolute top-4 z-20 right-4 flex flex-col gap-4'>
+                            <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl border border-mainBorder rounded-lg product-btn addToFav">
+                                <IoMdHeartEmpty />
+                            </div>
+                            <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl border border-mainBorder rounded-lg product-btn compare">
+                                <VscGitCompare />
+                            </div>
+                        </div>
                     </div>
                     <div className=' col-span-12 lg:col-span-7'>
                         <div className=" p-4">
 
-                            <h2 className=' text-main text-xl sm:text-2xl mb-2 font-bold'>
+                            <h2 className=' text-main font-morabba text-xl sm:text-2xl mb-2 font-semibold'>
                                 {product.name}
                             </h2>
 
@@ -79,7 +91,7 @@ export default async function page({ params }) {
                             </div>
                             <div className=" mt-6 space-y-10">
                                 <div className="shop-single-descrip">
-                                    <p className=' text-xs sm:text-md leading-6 tracking-wide'>
+                                    <p className=' text-xs sm:text-sm leading-6 tracking-wide'>
                                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
 
                                     </p>
@@ -110,13 +122,12 @@ export default async function page({ params }) {
                                     </ul>
                                 </div>
                                 <div className=' border-b border-b-mainBorder pb-8'>
-                                    <Button text="اضافه کردن به سبد خرید" style=" w-full md:w-48 bg-main" />
-
+                                    <ProdcutActions product={JSON.parse(JSON.stringify(product))} />
                                 </div>
                                 <ul className=" space-y-2">
                                     <li className='flex items-center gap-1 text-xs'>
                                         <span>ایدی:</span>
-                                        <span className=' text-main'>{product._id}</span>
+                                        <span className=' text-main'>{product._id.toString()}</span>
                                     </li>
                                     <li className='flex items-center gap-1 text-xs'>
                                         <span>دسته بندی :</span>

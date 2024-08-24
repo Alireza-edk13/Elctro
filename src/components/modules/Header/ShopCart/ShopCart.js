@@ -1,7 +1,21 @@
+"use client"
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect } from 'react'
 import ShopCartProductBox from './ShopCartProductBox/ShopCartProductBox';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCart } from '@/redux/slice/cartSlice';
 export default function ShopCart({ isShopCartOpen, setIsShopCartOpen }) {
+
+    const cart = useSelector(state => state.cart.items);
+    const totalPrice = useSelector(state => state.cart.totalPrice);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+        dispatch(setCart(storedCart));
+    }, [dispatch]);
+    
+
 
     return (
         <>
@@ -10,22 +24,25 @@ export default function ShopCart({ isShopCartOpen, setIsShopCartOpen }) {
                 <div onClick={() => setIsShopCartOpen(prevState => !prevState)} className=' absolute inset-0 bg-mainBlack opacity-[0.3]'></div>
                 <div className="mobile-nav--active relative h-full w-[270px] sm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto  translate-x-[100%] invisible opacity-0">
                     <div className=" flex justify-between items-center bg-mainBg px-5 py-2">
-                        <h6 className=' uppercase font-dana '>سبد خرید(<span>1</span>)</h6>
+                        <h6 className=' uppercase font-dana '>سبد خرید(<span>{cart.length}</span>)</h6>
                         <span className=' text-2xl  cursor-pointer' onClick={() => setIsShopCartOpen(prevState => !prevState)}>X</span>
                     </div>
                     <div className=" h-[52vh] overflow-y-auto border-[2px] border-mainBorder">
-                        <ShopCartProductBox/>
-                        <ShopCartProductBox/>
+                        {
+                            cart.map((product) => (
+                                <ShopCartProductBox key={product.id} {...product} />
+                            ))
+                        }
                     </div>
                     <div>
-                        <div className=" text-sm sm:text-base p-4 border-b-[2px] border-mainBorder space-y-3">
+                        <div className=" text-xs sm:text-sm p-4 border-b-[2px] border-mainBorder space-y-3">
                             <div className='  flex justify-between items-center '>
                                 <div className='flex-center gap-1'>
-                                    <span>12</span>
+                                    <span>{cart.length}</span>
                                     <span>محصول</span>
                                 </div>
                                 <div className=' text-main flex-center gap-1'>
-                                    <span>123</span>
+                                    <span>{totalPrice.toLocaleString()}</span>
                                     <span>تومان</span>
                                 </div>
                             </div>
@@ -34,18 +51,18 @@ export default function ShopCart({ isShopCartOpen, setIsShopCartOpen }) {
                                 <span className=' text-main'>رایگان</span>
                             </div>
                         </div>
-                        <div className="p-4 border-b-[2px] text-sm sm:text-base border-mainBorder space-y-3">
+                        <div className="p-4 border-b-[2px] text-xs sm:text-sm border-mainBorder space-y-3">
                             <div className=' flex justify-between items-center '>
                                 <span>مجموع خرید بدون مالیات</span>
                                 <div className=' text-main flex-center gap-1'>
-                                    <span>123</span>
+                                    <span>{totalPrice.toLocaleString()}</span>
                                     <span>تومان</span>
                                 </div>
                             </div>
                             <div className=' flex justify-between items-center '>
                                 <span>مجموع خرید با مالیات</span>
                                 <div className=' text-main flex-center gap-1'>
-                                    <span>123</span>
+                                    <span>{totalPrice.toLocaleString()}</span>
                                     <span>تومان</span>
                                 </div>
                             </div>
