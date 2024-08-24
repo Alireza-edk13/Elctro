@@ -4,6 +4,7 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { removeItem, incrementItemCount, decrementItemCount} from '@/redux/slice/cartSlice';
+import { closeShopCart } from '@/redux/slice/shopCartSlice';
 
 export default function ShopCartProductBox({ id, name, cover, price, count }) {
 
@@ -30,13 +31,13 @@ export default function ShopCartProductBox({ id, name, cover, price, count }) {
     return (
         <div className=" flex justify-evenly items-center py-4 border-b-2 border-mainBorder px-2">
             <div className=" min-w-[70px] border-[2px] border-mainBorder rounded-lg">
-                <Link href="/">
+                <Link onClick={() => dispatch(closeShopCart())} href={`/product-details/${id}`}>
                     <Image src={`/uploads/${cover}`} alt="productImg" className=' rounded-lg' width={70} height={70} />
                 </Link>
             </div>
             <div className=' px-2'>
                 <div className=' flex items-center justify-between'>
-                    <Link href="/" className=' text-xs sm:text-sm line-clamp-1 pl-2 '>
+                    <Link onClick={() => dispatch(closeShopCart())} href={`/product-details/${id}`} className=' text-xs sm:text-sm line-clamp-1 pl-2 '>
                         {name}
                     </Link>
                     <div className=' cursor-pointer' onClick={removeFromCart}>

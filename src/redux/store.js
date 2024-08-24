@@ -6,6 +6,7 @@ import { userApi } from "./api/userApi";
 import { categoryApi } from "./api/categoryApi";
 import { productApi } from "./api/productApi";
 import { cartSlice } from "./slice/cartSlice";
+import { shopCartSlice } from "./slice/shopCartSlice";
 
 
 export const store = configureStore({
@@ -16,6 +17,7 @@ export const store = configureStore({
         [productApi.reducerPath]: productApi.reducer,
         [cartSlice.name]: cartSlice.reducer,
         [sideBarAdminPanelSlice.name]: sideBarAdminPanelSlice.reducer,
+        [shopCartSlice.name]: shopCartSlice.reducer,
     },
     middleware: (d) =>
         d().concat(

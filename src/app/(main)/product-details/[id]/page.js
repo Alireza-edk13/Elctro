@@ -13,16 +13,23 @@ import connectToDB from "@/configs/db";
 import { VscGitCompare } from 'react-icons/vsc'
 import { IoMdHeartEmpty } from 'react-icons/io'
 import ProdcutActions from '@/components/modules/ProdcutActions/ProdcutActions'
+import mongoose from 'mongoose'
+import { redirect } from "next/navigation";
 
 export default async function page({ params }) {
 
     connectToDB();
     const id = params.id;
+    if (!mongoose.isValidObjectId(id)) {
+        redirect("/")
+    }
     const product = await ProductModel.findOne({ _id: id }).populate(
         "categoryId", "title -_id"
     ).lean();
-    const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5).lean();
+
     
+    const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5).lean();
+
 
 
     return (

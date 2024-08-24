@@ -12,12 +12,14 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 import ShopCart from '../ShopCart/ShopCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '@/redux/slice/cartSlice';
+import { openShopCart } from '@/redux/slice/shopCartSlice';
 export default function Nav({ isLogin }) {
 
     const [isFix, setIsFix] = useState(false);
     const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false)
     const [isNavMobileOpen, setIsNavMobileOpen] = useState(false)
-    const [isShopCartOpen, setIsShopCartOpen] = useState(false)
+
+
 
     function fixNav() {
         if (document.documentElement.scrollTop > 700) {
@@ -33,7 +35,6 @@ export default function Nav({ isLogin }) {
             window.removeEventListener('scroll', fixNav);
         };
     },);
-
 
     const cart = useSelector(state => state.cart.items);
     const dispatch = useDispatch();
@@ -65,7 +66,7 @@ export default function Nav({ isLogin }) {
                             <IoMdHeartEmpty className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                             <span className=' absolute font-semibold px-[0.4rem]  py-0  text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>2</span>
                         </div>
-                        <div className=' relative cursor-pointer flex-center ' onClick={() => setIsShopCartOpen(prevState => !prevState)}>
+                        <div className=' relative cursor-pointer flex-center ' onClick={() => dispatch(openShopCart())}>
                             <IoCartOutline className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                             <span className=' absolute font-semibold px-[0.3rem] sm:px-[0.4rem]  py-0 text-xs  sm:text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>{cart.length}</span>
                         </div>
@@ -107,7 +108,7 @@ export default function Nav({ isLogin }) {
                 </div>
             </nav>
             <MobileMenu isNavMobileOpen={isNavMobileOpen} setIsNavMobileOpen={setIsNavMobileOpen} />
-            <ShopCart isShopCartOpen={isShopCartOpen} setIsShopCartOpen={setIsShopCartOpen} />
+            <ShopCart />
         </>
     )
 }
