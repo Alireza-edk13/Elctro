@@ -7,24 +7,27 @@ export async function GET(req) {
     try {
         connectToDB();
         const token = cookies().get("token");
-        console.log(token);
-        
+
         let user = null;
 
+
         if (token) {
-            const tokenPayload = verifyAccessToken(token.value);
-            console.log(tokenPayload);
-            
+            const tokenPayload = await verifyAccessToken(token.value);
+
             if (tokenPayload) {
                 user = await UserModel.findOne(
                     { phone: tokenPayload.phone },
-                    "-password -refreshToken -__v"
+                    "name phone email province city address postalCode"
                 );
+                if (!user) {
+                    return Response.json(
+                        { message: "کاریری یافت نشد" },
+                        {
+                            status: 404,
+                        }
+                    );
+                }
             }
-            
-            console.log(user);
-            
-
             return Response.json(user);
         } else {
             return Response.json(

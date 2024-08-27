@@ -27,7 +27,7 @@ export default async function page({ params }) {
         "categoryId", "title -_id"
     ).lean();
 
-    
+
     const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5).lean();
 
 
@@ -84,15 +84,17 @@ export default async function page({ params }) {
                                 </div>
 
                             </div>
-                            <div className=" flex items-center gap-2 sm:gap-5 mt-4 border-b border-mainBorder pb-4">
-                                <span className=" text-main font-bold text-xl sm:text-2xl">
-                                    {
-                                        Math.floor(product.orginalPrice - ((product.orginalPrice * product.discount) / 100)).toLocaleString()
-                                    }
-                                    تومان
-                                </span>
+                            <div className=" flex items-center gap-4 sm:gap-5 mt-4 border-b border-mainBorder pb-4">
+                                <div className=' flex-center gap-2 text-main font-bold text-xl sm:text-2xl'>
+                                    <span>
+                                        {
+                                            Math.floor(product.orginalPrice - ((product.orginalPrice * product.discount) / 100)).toLocaleString()
+                                        }
+                                    </span>
+                                    <span>تومان</span>
+                                </div>
                                 <span className=" line-through text-mainGray text-sm">
-                                    {product.orginalPrice.toLocaleString()} تومان
+                                    {product.orginalPrice.toLocaleString()}
                                 </span>
                                 <span className=" text-sm text-main">{product.discount}% تخفیف</span>
                             </div>

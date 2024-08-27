@@ -32,12 +32,12 @@ export default function ProductBoxForCart({ id, name, cover, price, count, brand
         <div className=' border-b border-mainBorder pb-2'>
             <div className=' grid grid-cols-12 gap-4 sm:gap-6 items-center'>
                 <div className=' col-span-6 md:col-span-2'>
-                    <Link href="/">
+                    <Link href={`/product-details/${id}`}>
                         <Image src={`/uploads/${cover}`} alt="productImg" className=' rounded-lg' width={122} height={122} />
                     </Link>
                 </div>
                 <div className=' col-span-6 md:col-span-3'>
-                    <Link href="/" className=' text-sm sm:text-base line-clamp-1 '>
+                    <Link href={`/product-details/${id}`} className=' text-sm sm:text-base line-clamp-1 '>
                         {name}
                     </Link>
                     <span className=' my-2 text-mainGray text-sm sm:text-base'>برند: {brand}</span>
@@ -46,14 +46,14 @@ export default function ProductBoxForCart({ id, name, cover, price, count, brand
                     <span className='text-sm sm:text-base'>{discount}%</span>
                 </div>
                 <div className=' col-span-3 md:col-span-2 flex-center gap-1 sm:gap-3'>
-                    <span className="  w-6 h-7 text-center  inline-block rounded-2xl bg-mainBg pt-1">-</span>
+                    <button onClick={reduceProduct} className="  w-6 h-7 text-center  inline-block rounded-2xl bg-mainBg pt-1">-</button>
                     <span className="">{count}</span>
-                    <span className=" w-6 h-7 text-center flex-center  inline-block rounded-2xl bg-mainBg pt-1">+</span>
+                    <button onClick={increaseProduct} className=" w-6 h-7 text-center flex-center  inline-block rounded-2xl bg-mainBg pt-1">+</button>
                 </div>
                 <div className=' col-span-3 md:col-span-3'>
                     <span className=' text-main text-sm sm:text-base'>{price.toLocaleString()} تومان</span>
                 </div>
-                <div className=' col-span-1 md:col-span-1'>
+                <div className=' col-span-1 md:col-span-1 cursor-pointer' onClick={removeFromCart}>
                     <FaRegTrashAlt className=' min-w-5' />
 
                 </div>

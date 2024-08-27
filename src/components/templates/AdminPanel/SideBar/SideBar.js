@@ -62,7 +62,7 @@ export default function SideBar() {
                         </li>
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={''} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/admin-panel/messages'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
                                 <LuMessagesSquare className=' text-2xl text-white' />
                                 پیام
                             </Link>

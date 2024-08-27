@@ -33,6 +33,20 @@ const userSchema = new mongoose.Schema(
       default: "USER",
     },
     refreshToken: String,
+
+    province: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+    postalCode: {
+      type: String,
+    },
+
   },
   { timestamps: true }
 );

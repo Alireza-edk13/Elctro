@@ -9,12 +9,34 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { closeSideBar } from '@/redux/slice/sideBarUserPanelSlice';
 import { HiHeart } from 'react-icons/hi2';
+import { useLogoutUserMutation } from '@/redux/api/authApi';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
+import { FaUser } from 'react-icons/fa';
 
 export default function SideBar() {
 
     const isSideBarOpen = useSelector((store) => store.sideBarUserPanelSlice.isSideBarOpen)
 
     const dispatch = useDispatch();
+    const router = useRouter()
+
+    const [logoutUser] = useLogoutUserMutation()
+
+    const logoutUserHandler = async () => {
+        try {
+            const result = await logoutUser().unwrap();
+            toast.success(result.message)
+            router.replace("/")
+            router.refresh()
+            dispatch(closeSideBar())
+
+        } catch (err) {
+            console.error(err);
+            dispatch(closeSideBar())
+            toast.error('خطای سمت سرور !')
+        }
+    }
 
 
     return (
@@ -42,6 +64,12 @@ export default function SideBar() {
                                 سفارشات
                             </Link>
                         </li>
+                        <li onClick={() => dispatch(closeSideBar())}>
+                            <Link href={'/user-panel/info'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                                <FaUser className=' text-2xl text-white' />
+                                جزئیات حساب
+                            </Link>
+                        </li>
 
                         <li onClick={() => dispatch(closeSideBar())}>
                             <Link href={'/user-panel/tickets'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
@@ -50,7 +78,8 @@ export default function SideBar() {
                             </Link>
                         </li>
 
-                        <li onClick={() => dispatch(closeSideBar())}>
+                        <li onClick={() => logoutUserHandler()}>
+
                             <div className='flex cursor-pointer items-center text-md gap-2 p-2 rounded-lg text-white'>
                                 <ImExit className=' text-2xl rotate-180 text-white' />
                                 خروج

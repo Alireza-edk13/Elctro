@@ -8,6 +8,8 @@ import { productApi } from "./api/productApi";
 import { cartSlice } from "./slice/cartSlice";
 import { shopCartSlice } from "./slice/shopCartSlice";
 import { sideBarUserPanelSlice } from "./slice/sideBarUserPanelSlice";
+import { contactApi } from "./api/contatcApi";
+import { userPanelApi } from "./api/userPanelApi";
 
 
 export const store = configureStore({
@@ -16,6 +18,8 @@ export const store = configureStore({
         [userApi.reducerPath]: userApi.reducer,
         [categoryApi.reducerPath]: categoryApi.reducer,
         [productApi.reducerPath]: productApi.reducer,
+        [contactApi.reducerPath]: contactApi.reducer,
+        [userPanelApi.reducerPath]: userPanelApi.reducer,
         [cartSlice.name]: cartSlice.reducer,
         [sideBarAdminPanelSlice.name]: sideBarAdminPanelSlice.reducer,
         [sideBarUserPanelSlice.name]: sideBarUserPanelSlice.reducer,
@@ -27,6 +31,8 @@ export const store = configureStore({
             userApi.middleware,
             categoryApi.middleware,
             productApi.middleware,
+            contactApi.middleware,
+            userPanelApi.middleware,
         ),
 })
 

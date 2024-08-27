@@ -9,7 +9,7 @@ const authUser = async () => {
   let user = null;
 
   if (token) {
-    const tokenPayload = verifyAccessToken(token.value);
+    const tokenPayload = await verifyAccessToken(token.value);
     if (tokenPayload) {
       user = await UserModel.findOne({ phone: tokenPayload.phone });
     }
@@ -24,7 +24,7 @@ const authAdmin = async () => {
   let user = null;
 
   if (token) {
-    const tokenPayload = verifyAccessToken(token.value);
+    const tokenPayload = await verifyAccessToken(token.value);
     if (tokenPayload) {
       user = await UserModel.findOne({ phone: tokenPayload.phone });
       if (user.role === "ADMIN") {

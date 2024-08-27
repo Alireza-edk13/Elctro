@@ -29,7 +29,7 @@ export async function POST(req) {
             return Response.json({ message: "کاربری با این اطلاعات یافت نشد" }, { status: 422 });
         }
 
-        
+
         const isPasswordValid = await verifyPassword(password, user.password);
 
 
@@ -40,8 +40,8 @@ export async function POST(req) {
             );
         }
 
-        const accessToken = generateAccessToken({ phone });
-        const refreshToken = generateRefreshToken({ phone });
+        const accessToken = await generateAccessToken({ phone });
+        const refreshToken = await generateRefreshToken({ phone });
 
         await UserModel.findOneAndUpdate(
             { phone },
@@ -53,14 +53,28 @@ export async function POST(req) {
         );
 
         const headers = new Headers();
-        headers.append("Set-Cookie", `token=${accessToken};path=/;httpOnly=true;`);
+
+        const cookieOptions = [
+            'path=/',
+            'httpOnly=true',
+            'secure=true', // فقط از طریق HTTPS ارسال می‌شود
+            'sameSite=lax', // به محافظت در برابر حملات CSRF کمک می‌کند
+        ];
+
+        const accessTokenExpiration = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 روز
         headers.append(
             "Set-Cookie",
-            `refresh-token=${refreshToken};path=/;httpOnly=true;`
+            `token=${accessToken};${cookieOptions.join(';')};expires=${accessTokenExpiration.toUTCString()}`
+        );
+
+        const refreshTokenExpiration = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000); // 15 روز
+        headers.append(
+            "Set-Cookie",
+            `refresh-token=${refreshToken};${cookieOptions.join(';')};expires=${refreshTokenExpiration.toUTCString()}`
         );
 
         return Response.json(
-            { message: "با موفقیت وارد شدید" , status: 201 },
+            { message: "با موفقیت وارد شدید", status: 201 },
             {
                 status: 200,
                 headers,

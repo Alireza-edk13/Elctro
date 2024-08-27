@@ -25,7 +25,7 @@ export default function ShopCart() {
             <div className={`${isShopCartOpen ? 'mobile-nav--active' : ''} fixed top-0 left-0 w-screen h-screen z-50 translate-x-[100%] mobile-nav-transition  invisible`}>
                 {/* Black bg */}
                 <div onClick={() => dispatch(closeShopCart())} className=' absolute inset-0 bg-mainBlack opacity-[0.3]'></div>
-                <div className="mobile-nav--active relative h-full w-[270px] sm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto  translate-x-[100%] invisible opacity-0">
+                <div className="mobile-nav--active relative h-full w-[270px] sm:w-[350px] text-mainBlack bg-white z-10 overflow-y-auto  translate-x-[100%] invisible opacity-0 ">
                     <div className=" flex justify-between items-center bg-mainBg px-5 py-2">
                         <h6 className=' uppercase font-dana '>سبد خرید(<span>{cart.length}</span>)</h6>
                         <span className=' text-2xl  cursor-pointer' onClick={() => dispatch(closeShopCart())}>X</span>
@@ -70,18 +70,19 @@ export default function ShopCart() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className=" flex-center gap-3 mt-6 px-4 text-white">
-                        <div className="btn w-[50%] text-sm sm:text-base">
-                            <Link href="/cart" onClick={() => dispatch(closeShopCart())}>مشاهده سبد خرید</Link>
-                        </div>
-                        <div className="btn w-[50%] text-sm sm:text-base" onClick={() => dispatch(closeShopCart())}>
-                            <Link href="/checkout">
-                                نهایی کردن خرید
-                            </Link>
-                        </div>
+                        <div className=" flex-center flex-col gap-3 mt-3 px-4 text-white">
+                            <div className="btn w-full before:w-full text-sm sm:text-base">
+                                <Link href="/cart" onClick={() => dispatch(closeShopCart())}>مشاهده سبد خرید</Link>
+                            </div>
+                            <div className="btn w-full before:w-full text-sm sm:text-base" onClick={() => dispatch(closeShopCart())}>
+                                <Link href="/checkout">
+                                    نهایی کردن خرید
+                                </Link>
+                            </div>
 
+                        </div>
                     </div>
+
                 </div>
 
             </div>

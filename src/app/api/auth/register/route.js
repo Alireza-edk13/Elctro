@@ -9,6 +9,8 @@ export async function POST(req) {
         const body = await req.json();
         const { name, phone, email, password } = body;
 
+
+
         const validationResult = await UserModel.registerValidation(body).catch((err) => {
             err.statusCode = 400
             return err;
@@ -27,8 +29,9 @@ export async function POST(req) {
         }
 
         const hashedPassword = await hashPassword(password);
-        const accessToken = generateAccessToken({ phone });
-        const refreshToken = generateRefreshToken({ phone });
+        const accessToken = await generateAccessToken({ phone });
+        const refreshToken = await generateRefreshToken({ phone });
+
 
         const users = await UserModel.find({});
 
@@ -42,12 +45,25 @@ export async function POST(req) {
         });
 
         const headers = new Headers();
-        headers.append("Set-Cookie", `token=${accessToken};path=/;httpOnly=true;`);
+
+        const cookieOptions = [
+            'path=/',
+            'httpOnly=true',
+            'secure=true', // فقط از طریق HTTPS ارسال می‌شود
+            'sameSite=lax', // به محافظت در برابر حملات CSRF کمک می‌کند
+        ];
+
+        const accessTokenExpiration = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 روز
         headers.append(
             "Set-Cookie",
-            `refresh-token=${refreshToken};path=/;httpOnly=true;`
+            `token=${accessToken};${cookieOptions.join(';')};expires=${accessTokenExpiration.toUTCString()}`
         );
 
+        const refreshTokenExpiration = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000); // 15 روز
+        headers.append(
+            "Set-Cookie",
+            `refresh-token=${refreshToken};${cookieOptions.join(';')};expires=${refreshTokenExpiration.toUTCString()}`
+        );
 
         return Response.json(
             { message: "ثبت نام با موفقیت انجام شد", status: 201 },
