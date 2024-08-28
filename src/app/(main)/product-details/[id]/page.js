@@ -15,11 +15,15 @@ import { IoMdHeartEmpty } from 'react-icons/io'
 import ProdcutActions from '@/components/modules/ProdcutActions/ProdcutActions'
 import mongoose from 'mongoose'
 import { redirect } from "next/navigation";
+import AddProductToFav from '@/components/modules/AddProductToFav/AddProductToFav'
+import WishlistModel from "@/models/Wishlist";
+import { authUser } from '@/utils/serverHelpers'
 
 export default async function page({ params }) {
 
+    const user = await authUser()
     connectToDB();
-    const id = params.id;
+    const id = await params.id;
     if (!mongoose.isValidObjectId(id)) {
         redirect("/")
     }
@@ -30,6 +34,7 @@ export default async function page({ params }) {
 
     const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5).lean();
 
+    const isInWishlist = await WishlistModel.findOne({ user: user._id, product: id });
 
 
     return (
@@ -55,9 +60,8 @@ export default async function page({ params }) {
                     <div className=' relative col-span-12 lg:col-span-5'>
                         <ProductDetailsSlider cover={product.cover} />
                         <div className=' absolute top-4 z-20 right-4 flex flex-col gap-4'>
-                            <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl border border-mainBorder rounded-lg product-btn addToFav">
-                                <IoMdHeartEmpty />
-                            </div>
+                            <AddProductToFav id={id} isAddFavForProductDetails={true}
+                                isInWishlist={isInWishlist ? true : false} />
                             <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl border border-mainBorder rounded-lg product-btn compare">
                                 <VscGitCompare />
                             </div>

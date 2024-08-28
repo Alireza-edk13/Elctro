@@ -12,8 +12,8 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 import ShopCart from '../ShopCart/ShopCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '@/redux/slice/cartSlice';
-import { openShopCart } from '@/redux/slice/shopCartSlice';
-export default function Nav({ isLogin }) {
+import { closeShopCart, openShopCart } from '@/redux/slice/shopCartSlice';
+export default function Nav({ isLogin, wishlistLength }) {
 
     const [isFix, setIsFix] = useState(false);
     const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false)
@@ -44,7 +44,9 @@ export default function Nav({ isLogin }) {
         dispatch(setCart(storedCart));
     }, [dispatch]);
 
-
+    if (!cart.length) {
+        dispatch(closeShopCart())
+    }
     return (
         <>
             <nav className={`${isFix ? 'fix-nav-active shadow-custom' : ' block'} z-40 py-4 bg-main  top-0 left-0 w-full text-white`}>
@@ -62,11 +64,13 @@ export default function Nav({ isLogin }) {
                         <div className='cursor-pointer flex-center ' onClick={() => setIsSearchBoxOpen(prevState => !prevState)}>
                             <IoIosSearch className={`${isSearchBoxOpen ? 'rotate-180' : ''} text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                         </div>
-                        <div className=' relative cursor-pointer hidden lg:flex-center '>
+                        <Link href={'/user-panel/fav'} className=' relative cursor-pointer hidden lg:flex-center '>
                             <IoMdHeartEmpty className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
-                            <span className=' absolute font-semibold px-[0.4rem]  py-0  text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>2</span>
-                        </div>
-                        <div className=' relative cursor-pointer flex-center ' onClick={() => dispatch(openShopCart())}>
+                            <span className=' absolute font-semibold px-[0.4rem]  py-0  text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>{wishlistLength}</span>
+                        </Link>
+                        <div className=' relative cursor-pointer flex-center ' onClick={() => {
+                            cart.length && dispatch(openShopCart())
+                        }}>
                             <IoCartOutline className={` text-2xl sm:text-3xl transition-all duration-[.5s]`} />
                             <span className=' absolute font-semibold px-[0.3rem] sm:px-[0.4rem]  py-0 text-xs  sm:text-sm -top-[6px] -right-2 text-mainBlack rounded-full bg-white'>{cart.length}</span>
                         </div>

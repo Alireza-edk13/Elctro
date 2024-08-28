@@ -1,10 +1,29 @@
 
 import NotFoundItem from '@/components/modules/NotFoundItem/NotFoundItem'
 import TopSectionPanel from '@/components/modules/UserPanel/TopSectionPanel/TopSectionPanel'
+import connectToDB from '@/configs/db';
 import React from 'react'
 import { IoIosSearch } from 'react-icons/io'
+import WishlistModel from "@/models/Wishlist"
+import ProductBox from '@/components/modules/ProductBox/ProductBox';
+import { authUser } from '@/utils/serverHelpers';
 
-export default function fav() {
+export default async function fav() {
+
+  connectToDB();
+  const user = await authUser();
+  const wishlist = await WishlistModel.find({ user: user._id }).populate({
+    path: 'product',
+    populate: {
+      path: 'categoryId',
+      model: 'Category',
+      select: "title"
+    }
+  }).lean();
+
+
+
+
   return (
     <>
       <TopSectionPanel title="لیست علاقه مندی ها" spanTitle="علاقه مندی ها" />
@@ -20,7 +39,17 @@ export default function fav() {
               </form>
             </div>
           </div>
-          <NotFoundItem text="محصولی یافت نشد!"/>
+
+          {
+            wishlist.length ?
+              <div className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8'>
+                {wishlist.map(wish => (
+                  <ProductBox key={wish._id} _id={wish.product._id.toString()} name={wish.product.name} cover={wish.product.cover} orginalPrice={wish.product.orginalPrice} discount={wish.product.discount} categoryId={wish.product.categoryId} brand={wish.product.brand} stock={wish.product.stock}  isInWishlist ={true} isProductBoxForProductsList={true} />
+                ))}
+              </div>
+              :
+              <NotFoundItem text="محصولی یافت نشد!" />
+          }
 
         </div>
 

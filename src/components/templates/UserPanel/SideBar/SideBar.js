@@ -13,8 +13,8 @@ import { useLogoutUserMutation } from '@/redux/api/authApi';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 import { FaUser } from 'react-icons/fa';
-
-export default function SideBar() {
+import { GrUserAdmin } from "react-icons/gr";
+export default function SideBar({ isAdmin }) {
 
     const isSideBarOpen = useSelector((store) => store.sideBarUserPanelSlice.isSideBarOpen)
 
@@ -77,6 +77,15 @@ export default function SideBar() {
                                 تیکت
                             </Link>
                         </li>
+                        {
+                            isAdmin &&
+                            <li onClick={() => dispatch(closeSideBar())}>
+                                <Link href={'/admin-panel'} className='flex items-center text-md gap-2 py-2 pl-2 text-white rounded-lg'>
+                                    <GrUserAdmin className=' text-2xl text-white' />
+                                    پنل مدیریت
+                                </Link>
+                            </li>
+                        }
 
                         <li onClick={() => logoutUserHandler()}>
 

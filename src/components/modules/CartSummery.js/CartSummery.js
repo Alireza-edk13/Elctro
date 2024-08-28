@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '@/redux/slice/cartSlice';
 import Btn from '../Btn/Btn';
 
-export default function CartSummery({ text }) {
+export default function CartSummery({ text , children }) {
 
     const totalPrice = useSelector(state => state.cart.totalPrice);
     const dispatch = useDispatch();
@@ -41,7 +41,9 @@ export default function CartSummery({ text }) {
                 <span className=' font-semibold'>مجموع :</span>
                 <span className='font-semibold text-main'>{totalPrice.toLocaleString()} تومان</span>
             </div>
-            <Btn href={'/checkout'} text={text} style=" w-full before:w-full bg-main" />
+            {
+                children
+            }
         </div>
     )
 }

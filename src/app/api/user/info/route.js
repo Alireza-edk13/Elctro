@@ -11,9 +11,6 @@ export async function PUT(req) {
         const body = await req.json();
         const { name, email, phone, province, city, address, postalCode } = body;
 
-        console.log(postalCode);
-        
-
         const isUser = await authUser();
 
 

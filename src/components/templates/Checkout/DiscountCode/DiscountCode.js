@@ -30,7 +30,7 @@ export default function DiscountCode() {
             </span>
           </div>
           <div className=' flex justify-end'>
-            <Button text="اعمال کردن"/>
+            <Button text="اعمال کردن" style="bg-main"/>
           </div>
         </div>
       </div>

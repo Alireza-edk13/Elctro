@@ -2,14 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaStar } from "react-icons/fa6";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { VscGitCompare } from "react-icons/vsc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import AddProductToCart from './AddProductToCart/AddProductToCart';
+import AddProductToFav from '../AddProductToFav/AddProductToFav';
 
 
 export default function ProductBox(
-    { _id, name, cover, orginalPrice, discount, brand, stock, categoryId, shortName, isProductBoxForProductsList = false, isProductBoxForRelatedProduct = false }) {
+    { _id, name, cover, orginalPrice, discount, brand, stock, categoryId, isProductBoxForProductsList = false, isInWishlist = false, isProductBoxForRelatedProduct = false }) {
+
 
 
     return (
@@ -26,10 +27,8 @@ export default function ProductBox(
                         <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl shadow-custom rounded-lg product-btn compare">
                             <VscGitCompare />
                         </div>
+                        <AddProductToFav id={_id} isInWishlist={isInWishlist} />
 
-                        <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl shadow-custom rounded-lg product-btn addToFav">
-                            <IoMdHeartEmpty />
-                        </div>
 
                         <Link href={`/product-details/${_id}`} className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl shadow-custom rounded-lg product-btn view">
                             <MdOutlineRemoveRedEye />

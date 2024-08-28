@@ -1,0 +1,31 @@
+import { wishlistValidator } from "@/validators/wishlist";
+
+const mongoose = require("mongoose");
+require("./User");
+require("./Product");
+
+const schema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    product: {
+      type: mongoose.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+schema.statics.wishlistValidation = function (body) {
+  return wishlistValidator.validate(body);
+};
+
+const model = mongoose.models.Wishlist || mongoose.model("Wishlist", schema);
+
+export default model;

@@ -48,7 +48,7 @@ export default function Login() {
                         <span className=' text-sm'>فراموشی رمز عبور</span>
                     </div>
                     <div className=' flex justify-end'>
-                        <Button text="ورود" />
+                        <Button text="ورود" style="bg-main" />
 
                     </div>
                 </div>

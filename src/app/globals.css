@@ -211,6 +211,9 @@
     .addToFav::after {
         content: 'اضافه به علاقه مندی ها';
     }
+    .removeFromFav::after {
+        content: "حدف از علاقه مندی ها";
+    }
 
     .compare::after {
         content: 'مقایسه';

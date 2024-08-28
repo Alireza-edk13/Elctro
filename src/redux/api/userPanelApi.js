@@ -14,11 +14,24 @@ export const userPanelApi = createApi({
             }),
             invalidatesTags: ['UserInfo'],
         }),
+        addToWishlist: builder.mutation({
+            query: (body) => ({
+                url: '/wishlist',
+                method: 'POST',
+                body
+            }),
+        }),
+        removeFromWishlist: builder.mutation({
+            query: (id) => ({
+                url: `/wishlist/${id}`,
+                method: 'DELETE'
+            }),
+        }),
 
 
     })
 })
 
 export const {
-    useUpdateUserInfoMutation,
+    useUpdateUserInfoMutation,useAddToWishlistMutation,useRemoveFromWishlistMutation
 } = userPanelApi

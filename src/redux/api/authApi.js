@@ -28,7 +28,7 @@ export const authApi = createApi({
                 url: '/me',
                 method: 'GET',
             }),
-            providesTags: ['UserInfo'], 
+            providesTags: ['UserInfo'],
         }),
         logoutUser: builder.mutation({
             query: (body) => ({
@@ -36,6 +36,15 @@ export const authApi = createApi({
                 method: 'POST',
                 body
             }),
+            invalidatesTags: ['UserInfo'],
+            async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+                try {
+                    await queryFulfilled;
+                    dispatch(authApi.util.resetApiState()); // ریست کردن state API
+                } catch (err) {
+                    console.error('Error during logout:', err);
+                }
+            }
 
         }),
     })

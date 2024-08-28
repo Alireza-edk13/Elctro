@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaSadTear } from "react-icons/fa";
-export default function NotFoundItem({ text }) {
+import Btn from '../Btn/Btn';
+export default function NotFoundItem({ text, isBtnNeed = false }) {
     return (
         <div className="mt-8 xl:py-16 xl:px-8">
             <div className=" px-4 mx-auto max-w-screen-xl py-8 lg:px-6">
@@ -11,6 +12,12 @@ export default function NotFoundItem({ text }) {
                     <p className="my-8 text-lg font-morabba sm:text-2xl text-main">
                         {text}
                     </p>
+                    {
+                        isBtnNeed && <div className=' flex-center'>
+                            <Btn style="bg-main" text="محصولات" href={"/products-list"} />
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
