@@ -10,6 +10,7 @@ import { shopCartSlice } from "./slice/shopCartSlice";
 import { sideBarUserPanelSlice } from "./slice/sideBarUserPanelSlice";
 import { contactApi } from "./api/contatcApi";
 import { userPanelApi } from "./api/userPanelApi";
+import { sideBarMobileSlice } from "./slice/sideBarMobileSlice";
 
 
 export const store = configureStore({
@@ -23,6 +24,7 @@ export const store = configureStore({
         [cartSlice.name]: cartSlice.reducer,
         [sideBarAdminPanelSlice.name]: sideBarAdminPanelSlice.reducer,
         [sideBarUserPanelSlice.name]: sideBarUserPanelSlice.reducer,
+        [sideBarMobileSlice.name]: sideBarMobileSlice.reducer,
         [shopCartSlice.name]: shopCartSlice.reducer,
     },
     middleware: (d) =>

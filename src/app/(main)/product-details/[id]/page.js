@@ -110,8 +110,8 @@ export default async function page({ params }) {
                                 </div>
 
                             </div>
-                            <div className=" flex items-center gap-4 sm:gap-5 mt-4 border-b border-mainBorder pb-4">
-                                <div className=' flex-center gap-2 text-main font-bold text-xl sm:text-2xl'>
+                            <div className=" flex items-center gap-3 sm:gap-5 mt-4 border-b border-mainBorder pb-4">
+                                <div className=' flex-center gap-1 sm:gap-2 text-main font-bold text-xl sm:text-2xl'>
                                     <span>
                                         {
                                             Math.floor(product.orginalPrice - ((product.orginalPrice * product.discount) / 100)).toLocaleString()
@@ -122,7 +122,8 @@ export default async function page({ params }) {
                                 <span className=" line-through text-mainGray text-sm">
                                     {product.orginalPrice.toLocaleString()}
                                 </span>
-                                <span className=" text-sm text-main">{product.discount}% تخفیف</span>
+                                <span className=" hidden sm:block text-sm text-main">{product.discount}% تخفیف</span>
+                                <span className=" block  sm:hidden text-sm text-main">{product.discount}%</span>
                             </div>
                             <div className=" mt-6 space-y-10">
                                 <div className="shop-single-descrip">
@@ -179,7 +180,7 @@ export default async function page({ params }) {
                     </div>
                 </section>
                 <Tabs />
-                <section>
+                <section className=' md:mt-32 lg:mt-0'>
                     <RelatedProducts products={JSON.parse(JSON.stringify(updatedRelatedProducts))} />
                 </section>
             </section>

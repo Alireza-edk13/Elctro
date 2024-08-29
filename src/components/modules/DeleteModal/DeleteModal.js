@@ -1,7 +1,7 @@
 import React from 'react'
 export default function DeleteModal({ onClose, onSubmit, title }) {
     return (
-        <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center h-full flex" >
+        <div className="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 justify-center items-center h-full flex px-8" >
             <div onClick={onClose} className=" absolute inset-0 bg-mainBlack opacity-[0.7]"></div>
 
             <div className="relative rounded-lg bg-white w-full max-w-md px-4 h-auto">

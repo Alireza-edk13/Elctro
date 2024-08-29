@@ -8,8 +8,8 @@ import { toast } from 'react-toastify';
 import { useDeleteCategoryMutation, useEditCategoryMutation } from '@/redux/api/categoryApi';
 import { useFormik } from 'formik';
 import categoryValidator from '@/validators/category';
-import AddModal from '@/components/modules/AddModal/AddModal';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import Modal from '@/components/modules/Modal/Modal';
 export default function CategoryTable({ categories }) {
 
 
@@ -122,8 +122,8 @@ export default function CategoryTable({ categories }) {
             {/* edit modal */}
 
             {
-                isShowEditModal && <AddModal title="ویرایش دسته بندی" onClose={() => setIsShowEditModal(false)}>
-                    <form onSubmit={editForm.handleSubmit}>
+                isShowEditModal && <Modal title="ویرایش دسته بندی" onClose={() => setIsShowEditModal(false)}>
+                    <form onSubmit={editForm.handleSubmit} className=' p-6'>
                         <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6">
                                 <label htmlFor="name" className="text-sm font-medium text-gray-900 block mb-2">عنوان</label>
@@ -149,7 +149,7 @@ export default function CategoryTable({ categories }) {
                             </div>
                         </button>
                     </form>
-                </AddModal>
+                </Modal>
             }
         </>
     )

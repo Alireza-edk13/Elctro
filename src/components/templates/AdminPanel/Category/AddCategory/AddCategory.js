@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from 'react'
 import Button from '@/components/modules/Button/Button'
-import AddModal from '@/components/modules/AddModal/AddModal';
 import { useFormik } from 'formik';
 import categoryValidator from '@/validators/category';
 import { useAddCategoryMutation } from '@/redux/api/categoryApi';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import Modal from '@/components/modules/Modal/Modal';
 
 export default function AddCategory() {
 
@@ -53,8 +53,8 @@ export default function AddCategory() {
                 <Button style=' w-[160px] bg-green-500' text="اضافه کردن دسته بندی +" isIconNeed={false} />
             </div>
             {
-                isShowAddModal && <AddModal title="اضافه کردن دست بندی" onClose={() => setIsShowAddModal(false)}>
-                    <form onSubmit={addForm.handleSubmit}>
+                isShowAddModal && <Modal title="اضافه کردن دست بندی" onClose={() => setIsShowAddModal(false)}>
+                    <form onSubmit={addForm.handleSubmit} className=' p-6'>
                         <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6">
                                 <label htmlFor="name" className="text-sm font-medium text-gray-900 block mb-2">عنوان</label>
@@ -85,7 +85,7 @@ export default function AddCategory() {
 
 
 
-                </AddModal>
+                </Modal>
             }
 
         </>

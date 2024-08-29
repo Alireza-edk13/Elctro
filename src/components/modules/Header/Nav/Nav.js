@@ -13,11 +13,12 @@ import ShopCart from '../ShopCart/ShopCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '@/redux/slice/cartSlice';
 import { closeShopCart, openShopCart } from '@/redux/slice/shopCartSlice';
+import { openSideBar } from '@/redux/slice/sideBarMobileSlice';
 export default function Nav({ isLogin, wishlistLength }) {
 
     const [isFix, setIsFix] = useState(false);
     const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false)
-    const [isNavMobileOpen, setIsNavMobileOpen] = useState(false)
+
 
 
 
@@ -91,7 +92,7 @@ export default function Nav({ isLogin, wishlistLength }) {
 
 
 
-                        <div className='block lg:hidden cursor-pointer' onClick={() => setIsNavMobileOpen(prevState => !prevState)}>
+                        <div className='block lg:hidden cursor-pointer' onClick={() => dispatch(openSideBar())}>
                             < AiOutlineMenu className={`text-xl sm:text-3xl`} />
                         </div>
 
@@ -111,7 +112,7 @@ export default function Nav({ isLogin, wishlistLength }) {
 
                 </div>
             </nav>
-            <MobileMenu isNavMobileOpen={isNavMobileOpen} setIsNavMobileOpen={setIsNavMobileOpen} />
+            <MobileMenu />
             <ShopCart />
         </>
     )

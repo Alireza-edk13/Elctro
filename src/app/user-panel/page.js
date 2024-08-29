@@ -30,7 +30,7 @@ export default async function page() {
                 <InfoBox title="تیکت ها" count={0} />
             </div>
             <div>
-                <h4 className=' mt-20  border-b-2 border-mainBlack pb-10 font-morabba text-main text-2xl'>آخرین محصولات اضافه شده به علاقه مندی ها</h4>
+                <h4 className=' mt-20  border-b-2 border-mainBlack pb-7 sm:pb-10 font-morabba text-lg text-main sm:text-2xl'>آخرین محصولات اضافه شده به علاقه مندی ها</h4>
 
                 {
                     wishlist.length ?

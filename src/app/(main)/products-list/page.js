@@ -21,7 +21,7 @@ export default async function page() {
                         <div className=' flex justify-between items-center my-8'>
                             <span className='text-sm'><span className=' ml-1 text-main'>{products.length}</span>محصول یافت شد</span>
                             <div className='text-sm flex-center gap-2'>
-                                <span>دسته بندی بر اساس :</span>
+                                <span className=' hidden sm:block'>دسته بندی بر اساس :</span>
                                 <div className=' bg-main p-3 cursor-pointer rounded-lg text-white flex-center gap-1'>
                                     <span>پرفروش ترین </span>
                                     <MdNavigateNext className=' text-xl rotate-90' />

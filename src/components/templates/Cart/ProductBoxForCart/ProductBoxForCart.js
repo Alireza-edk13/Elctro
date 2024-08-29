@@ -42,15 +42,15 @@ export default function ProductBoxForCart({ id, name, cover, price, count, brand
                     </Link>
                     <span className=' my-2 text-mainGray text-sm sm:text-base'>برند: {brand}</span>
                 </div>
-                <div className='  col-span-1 md:col-span-1'>
+                <div className='  col-span-2 md:col-span-1'>
                     <span className='text-sm sm:text-base'>{discount}%</span>
                 </div>
-                <div className=' col-span-3 md:col-span-2 flex-center gap-1 sm:gap-3'>
-                    <button onClick={reduceProduct} className="  w-6 h-7 text-center  inline-block rounded-2xl bg-mainBg pt-1">-</button>
+                <div className=' col-span-4 md:col-span-2 flex-center gap-2 sm:gap-3'>
+                    <button onClick={reduceProduct} className="  w-7 h-7 text-center  inline-block rounded-2xl bg-mainBg pt-1">-</button>
                     <span className="">{count}</span>
-                    <button onClick={increaseProduct} className=" w-6 h-7 text-center flex-center  inline-block rounded-2xl bg-mainBg pt-1">+</button>
+                    <button onClick={increaseProduct} className=" w-7 h-7 text-center flex-center  inline-block rounded-2xl bg-mainBg pt-1">+</button>
                 </div>
-                <div className=' col-span-3 md:col-span-3'>
+                <div className=' col-span-5 md:col-span-3'>
                     <span className=' text-main text-sm sm:text-base'>{price.toLocaleString()} تومان</span>
                 </div>
                 <div className=' col-span-1 md:col-span-1 cursor-pointer' onClick={removeFromCart}>
