@@ -24,7 +24,7 @@ export default function Nav({ isLogin, wishlistLength }) {
     function fixNav() {
         if (document.documentElement.scrollTop > 700) {
             setIsFix(true);
-        } else if (document.documentElement.scrollTop === 0) {
+        } else if (document.documentElement.scrollTop < 500) {
             setIsFix(false);
         }
     }

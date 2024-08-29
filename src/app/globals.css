@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer component {
+    html {
+        scroll-behavior: smooth !important;
+    }
 
     input {
         outline: none;

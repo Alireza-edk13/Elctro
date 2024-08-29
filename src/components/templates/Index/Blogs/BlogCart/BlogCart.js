@@ -9,7 +9,7 @@ export default function BlogCart({pic, title}) {
   return (
     <div className=" space-y-3 group">
       <div className="blog-img">
-        <Link href="/">
+        <Link href="/blog-details">
           <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg' src={`/images/blog/${pic}.webp`} alt="blogImg" />
         </Link>
       </div>
@@ -25,7 +25,7 @@ export default function BlogCart({pic, title}) {
       </div>
       <div className=" space-y-2">
         <h5>
-          <Link href="/" className='  transition-all duration-200 group-hover:text-main text-lg sm:text-xl line-clamp-1 font-bold'>{title}</Link>
+          <Link href="/blog-details" className='  transition-all duration-200 group-hover:text-main text-lg sm:text-xl line-clamp-1 font-bold'>{title}</Link>
         </h5>
         <p className=' text-sm sm:text-md text-mainGray'>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است که از ان استفاده میکنند

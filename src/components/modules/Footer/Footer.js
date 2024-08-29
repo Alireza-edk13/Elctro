@@ -51,35 +51,35 @@ export default function Footer() {
                         <div className='  col-span-12 sm:col-span-6  lg:col-span-2'>
                             <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">دسترسی سریع</h4>
                             <div className=" child:block child:text-sm space-y-3">
-                                <Link href="#">بلاگ</Link>
-                                <Link href="#">خرید گوشی</Link>
-                                <Link href="#">گوشی سامسونگ</Link>
-                                <Link href="#">گوشی آیفون</Link>
-                                <Link href="#">هندزفری بلوتوثی</Link>
-                                <Link href="#">لپ تاپ ایسوس</Link>
-                                <Link href="#">هارد اکسترنال</Link>
+                                <Link href="/">بلاگ</Link>
+                                <Link href="/">خرید گوشی</Link>
+                                <Link href="/">گوشی سامسونگ</Link>
+                                <Link href="/">گوشی آیفون</Link>
+                                <Link href="/">هندزفری بلوتوثی</Link>
+                                <Link href="/">لپ تاپ ایسوس</Link>
+                                <Link href="/">هارد اکسترنال</Link>
                             </div>
                         </div>
                         <div className= ' col-span-12 sm:col-span-6 lg:col-span-2'>
                             <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">درباره ما</h4>
                             <div className=" child:block child:text-sm space-y-3">
-                                <Link href="#">درباره ما</Link>
-                                <Link href="#">اهداف و تعهدهای ما</Link>
-                                <Link href="#">فروشگاه های حضوری</Link>
-                                <Link href="#">سرگذشت الکتروشاپ</Link>
-                                <Link href="#">بلاگ</Link>
-                                <Link href="#">تماس با ما</Link>
-                                <Link href="#">سوالات متداول</Link>
+                                <Link href="/">درباره ما</Link>
+                                <Link href="/">اهداف و تعهدهای ما</Link>
+                                <Link href="/">فروشگاه های حضوری</Link>
+                                <Link href="/">سرگذشت الکتروشاپ</Link>
+                                <Link href="/">بلاگ</Link>
+                                <Link href="/">تماس با ما</Link>
+                                <Link href="/">سوالات متداول</Link>
 
                             </div>
                         </div>
                         <div className='   col-span-12 sm:col-span-6 lg:col-span-2'>
                             <h4 className=" pb-5 mb-5 font-semibold text-lg footer-list-title relative">قوانین و مقررات</h4>
                             <div className=" child:block child:text-sm space-y-3">
-                                <Link href="#">قوانین و مقررات</Link>
-                                <Link href="#">حریم خصوصی کاربران</Link>
-                                <Link href="#">از زبان مشتریان</Link>
-                                <Link href="#">چراالکتروشاپ؟</Link>
+                                <Link href="/">قوانین و مقررات</Link>
+                                <Link href="/">حریم خصوصی کاربران</Link>
+                                <Link href="/">از زبان مشتریان</Link>
+                                <Link href="/">چراالکتروشاپ؟</Link>
                             </div>
                         </div>
                         <div className=" col-span-12 sm:col-span-6 lg:col-span-3">

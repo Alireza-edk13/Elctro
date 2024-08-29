@@ -19,10 +19,10 @@ export default async function page() {
                 <div className=' grid grid-cols-12 gap-6'>
                     <div className=' col-span-12 lg:col-span-9'>
                         <div className=' flex justify-between items-center my-8'>
-                            <span className='text-sm'><span className=' ml-1 text-main'>12</span>محصول یافت شد</span>
+                            <span className='text-sm'><span className=' ml-1 text-main'>{products.length}</span>محصول یافت شد</span>
                             <div className='text-sm flex-center gap-2'>
                                 <span>دسته بندی بر اساس :</span>
-                                <div className=' bg-main p-3  rounded-lg text-white flex-center gap-1'>
+                                <div className=' bg-main p-3 cursor-pointer rounded-lg text-white flex-center gap-1'>
                                     <span>پرفروش ترین </span>
                                     <MdNavigateNext className=' text-xl rotate-90' />
                                 </div>

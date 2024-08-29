@@ -6,10 +6,10 @@ import { FaCamera } from "react-icons/fa";
 import { FaLaptop } from "react-icons/fa";
 import { FaMobile } from "react-icons/fa6";
 import { PiPlugChargingFill } from "react-icons/pi";
-export default function CategoryBox({ icon, name, number }) {
+export default function CategoryBox({ icon, name, number , href }) {
     return (
         <div className=' group  rounded-lg transition-all duration-75 ease-in hover:border-x-2 hover:border-main'>
-            <Link href="/">
+            <Link href={href}>
                 <div className=" bg-mainBg space-y-1 flex-center flex-col p-2 sm:p-3 rounded-lg ">
                     <div className=' rounded-full text-3xl sm:text-4xl bg-main text-white p-5'>
                         {
