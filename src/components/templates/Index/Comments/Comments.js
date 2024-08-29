@@ -40,21 +40,23 @@ export default function Comments() {
                 >
 
                     <SwiperSlide>
-                        <CommentCart/>
+                        <CommentCart user="علی صفری" profile="person2.webp" />
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <CommentCart user="ملینا عبدی" profile="person1.webp" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CommentCart/>
+                        <CommentCart user="سارا مولایی" profile="person3.webp" />
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <CommentCart user="فریده معینی" profile="person4.webp" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CommentCart/>
+                        <CommentCart user="اکرم گرجی" profile="person1.webp" />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <CommentCart/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CommentCart/>
-                    </SwiperSlide>
-                    
+
                 </Swiper>
             </div>
         </section>

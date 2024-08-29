@@ -12,11 +12,35 @@ import PopularProducts from '@/components/templates/Index/PopularProducts/Popula
 import TrendingProducts from '@/components/templates/Index/TrendingProducts/TrendingProducts'
 import connectToDB from '@/configs/db'
 import ProductModel from "@/models/Product";
+import { authUser } from '@/utils/serverHelpers'
+import WishlistModel from "@/models/Wishlist"
 
 export default async function Home() {
-    connectToDB()
-    const lastestProducts = await ProductModel.find({}).populate("categoryId","title -_id").sort({ _id: -1 }).limit(12);
-    const popularProducts = await ProductModel.find({}).populate("categoryId","title -_id").limit(12);
+    connectToDB();
+
+    const lastestProducts = await ProductModel.find({}).populate("categoryId", "title -_id").sort({ _id: -1 }).limit(12);
+
+    const user = await authUser();
+    let wishlist = [];
+    let wishlistProductIds = [];
+
+    if (user) {
+        wishlist = await WishlistModel.find({ user: user._id }).populate({
+            path: 'product',
+            select: "_id"
+        }).lean();
+
+        wishlistProductIds = wishlist.map(item => item.product._id.toString());  // استخراج آی‌دی‌های محصولات در wishlist
+    }
+
+    // اضافه کردن ویژگی `isInWishlist` به محصولات
+    const updatedLastestProducts = lastestProducts.map(product => {
+        const productObj = product.toObject();
+        return {
+            ...productObj,
+            isInWishlist: wishlistProductIds.includes(productObj._id.toString()),  // بررسی وجود در wishlist
+        };
+    });
 
     return (
         <>
@@ -24,11 +48,11 @@ export default async function Home() {
             <InfoBoxes />
             <OfferBoxes />
             <Category />
-            <LastestProduct products={JSON.parse(JSON.stringify(lastestProducts))} />
+            <LastestProduct products={JSON.parse(JSON.stringify(updatedLastestProducts))} />
             <BigPoster />
-            <PopularProducts products={JSON.parse(JSON.stringify(popularProducts))} />
+            <PopularProducts products={JSON.parse(JSON.stringify([...updatedLastestProducts].reverse()))} />
             <DealOfDay />
-            <TrendingProducts products={JSON.parse(JSON.stringify(lastestProducts))} />
+            <LastestProduct products={JSON.parse(JSON.stringify(updatedLastestProducts))} />
             <Brands />
             <Comments />
             <Blogs />

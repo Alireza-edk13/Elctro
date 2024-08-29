@@ -2,16 +2,16 @@ import Image from 'next/image';
 import React from 'react'
 import { FaStar } from "react-icons/fa";
 import { FaCommentDots } from "react-icons/fa";
-export default function CommentCart() {
+export default function CommentCart({user,profile}) {
   return (
 
       <div className="bg-white rounded-lg p-6 mb-16">
         <div className=" flex justify-start items-center gap-3 border-b-2 border-mainBorder pb-4">
           <div className="person-img">
-            <Image src="/images/person/person3.webp" width={70} height={70} className=' rounded-full' alt="commentImg" />
+            <Image src={`/images/person/${profile}`} width={70} height={70} className=' rounded-full' alt="commentImg" />
           </div>
           <div>
-            <h5 className=' text-lg font-semibold'>علی صفری</h5>
+            <h5 className=' text-lg font-semibold'>{user}</h5>
             <p  className=' text-main'>مشتری</p>
           </div>
         </div>

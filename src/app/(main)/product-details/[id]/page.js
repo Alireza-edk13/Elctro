@@ -11,7 +11,6 @@ import Tabs from '@/components/templates/ProductDetails/Tabs/Tabs';
 import ProductModel from "@/models/Product";
 import connectToDB from "@/configs/db";
 import { VscGitCompare } from 'react-icons/vsc'
-import { IoMdHeartEmpty } from 'react-icons/io'
 import ProdcutActions from '@/components/modules/ProdcutActions/ProdcutActions'
 import mongoose from 'mongoose'
 import { redirect } from "next/navigation";
@@ -32,7 +31,30 @@ export default async function page({ params }) {
     ).lean();
 
 
-    const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5).lean();
+
+    const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5);
+    let wishlist = [];
+    let wishlistProductIds = [];
+
+    if (user) {
+        wishlist = await WishlistModel.find({ user: user._id }).populate({
+            path: 'product',
+            select: "_id"
+        }).lean();
+
+        wishlistProductIds = wishlist.map(item => item.product._id.toString());  // استخراج آی‌دی‌های محصولات در wishlist
+    }
+
+    // اضافه کردن ویژگی `isInWishlist` به محصولات
+    const updatedRelatedProducts = relatedProducts.map(product => {
+        const productObj = product.toObject();
+        return {
+            ...productObj,
+            isInWishlist: wishlistProductIds.includes(productObj._id.toString()),  // بررسی وجود در wishlist
+        };
+    });
+
+    
 
     const isInWishlist = await WishlistModel.findOne({ user: user._id, product: id });
 
@@ -158,7 +180,7 @@ export default async function page({ params }) {
                 </section>
                 <Tabs />
                 <section>
-                    <RelatedProducts products={JSON.parse(JSON.stringify(relatedProducts))} />
+                    <RelatedProducts products={JSON.parse(JSON.stringify(updatedRelatedProducts))} />
                 </section>
             </section>
 

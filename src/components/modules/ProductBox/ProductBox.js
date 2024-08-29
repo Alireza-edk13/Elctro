@@ -71,7 +71,7 @@ export default function ProductBox(
                                         Math.floor(orginalPrice - ((orginalPrice * discount) / 100)).toLocaleString()
                                     }
                                 </span>
-                                <span>تومان</span>
+                                <span className=' text-xs'>تومان</span>
                             </div>
 
                         </div>
