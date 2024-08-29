@@ -5,7 +5,7 @@ import DiscountCode from '@/components/templates/Checkout/DiscountCode/DiscountC
 import { RiLoginBoxLine } from "react-icons/ri";
 import Btn from '@/components/modules/Btn/Btn';
 import OrderFormSection from '@/components/templates/Checkout/OrderFormSection/OrderFormSection';
-import { authUser } from '@/utils/serverHelpers';
+import { authUser } from '@/app/api/utils/serverHelpers';
 export default async function checkout() {
 
 

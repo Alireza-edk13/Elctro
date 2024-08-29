@@ -1,6 +1,6 @@
 import NavBar from '@/components/templates/AdminPanel/NavBar/NavBar'
 import SideBar from '@/components/templates/AdminPanel/SideBar/SideBar'
-import { authAdmin } from '@/utils/serverHelpers';
+import { authAdmin } from '@/app/api/utils/serverHelpers';
 import { redirect } from 'next/navigation';
 import React from 'react'
 

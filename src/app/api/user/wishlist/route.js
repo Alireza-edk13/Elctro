@@ -1,6 +1,6 @@
 import connectToDB from "@/configs/db";
 import WishlistModel from "@/models/Wishlist";
-import { authUser } from "@/utils/serverHelpers";
+import { authUser } from "@/app/api/utils/serverHelpers";
 
 export async function POST(req) {
   try {

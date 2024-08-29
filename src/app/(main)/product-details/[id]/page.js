@@ -16,7 +16,7 @@ import mongoose from 'mongoose'
 import { redirect } from "next/navigation";
 import AddProductToFav from '@/components/modules/AddProductToFav/AddProductToFav'
 import WishlistModel from "@/models/Wishlist";
-import { authUser } from '@/utils/serverHelpers'
+import { authUser } from '@/app/api/utils/serverHelpers'
 
 export default async function page({ params }) {
 

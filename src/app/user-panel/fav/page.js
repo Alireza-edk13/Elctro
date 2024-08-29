@@ -6,7 +6,7 @@ import React from 'react'
 import { IoIosSearch } from 'react-icons/io'
 import WishlistModel from "@/models/Wishlist"
 import ProductBox from '@/components/modules/ProductBox/ProductBox';
-import { authUser } from '@/utils/serverHelpers';
+import { authUser } from '@/app/api/utils/serverHelpers';
 
 export default async function fav() {
 

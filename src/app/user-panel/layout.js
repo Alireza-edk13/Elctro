@@ -1,7 +1,7 @@
 
 import NavBar from '@/components/templates/UserPanel/NavBar/NavBar'
 import SideBar from '@/components/templates/UserPanel/SideBar/SideBar'
-import { authAdmin, authUser } from '@/utils/serverHelpers';
+import { authAdmin, authUser } from '@/app/api/utils/serverHelpers';
 import React from 'react'
 
 export default async function UserPanelLayout({ children }) {

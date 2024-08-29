@@ -1,6 +1,6 @@
 import connectToDB from "@/configs/db";
 import UserModel from "@/models/User";
-import { authUser } from "@/utils/serverHelpers";
+import { authUser } from "@/app/api/utils/serverHelpers";
 
 
 

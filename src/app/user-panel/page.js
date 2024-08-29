@@ -2,7 +2,7 @@ import InfoBox from '@/components/templates/AdminPanel/InfoBox/InfoBox'
 import React from 'react'
 import WishlistModel from "@/models/Wishlist"
 import ProductBox from '@/components/modules/ProductBox/ProductBox';
-import { authUser } from '@/utils/serverHelpers';
+import { authUser } from '@/app/api/utils/serverHelpers';
 import NotFoundItem from '@/components/modules/NotFoundItem/NotFoundItem'
 import connectToDB from '@/configs/db';
 

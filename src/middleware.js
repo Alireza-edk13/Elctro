@@ -66,7 +66,7 @@
 
 
 import { NextResponse } from 'next/server';
-import { verifyAccessToken, verifyRefreshToken, generateAccessToken } from './utils/auth';
+import { verifyAccessToken, verifyRefreshToken, generateAccessToken } from './app/api/utils/auth';
 // import UserModel from '@/models/User';
 // import connectToDB from '@/configs/db';
 

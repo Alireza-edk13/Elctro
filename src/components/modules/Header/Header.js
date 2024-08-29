@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from './Nav/Nav'
-import { authUser } from '@/utils/serverHelpers';
+import { authUser } from '@/app/api/utils/serverHelpers';
 import connectToDB from '@/configs/db';
 import WishlistModel from "@/models/Wishlist";
 

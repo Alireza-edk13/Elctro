@@ -1,5 +1,5 @@
 import connectToDB from "@/configs/db";
-import { authUser } from "@/utils/serverHelpers";
+import { authUser } from "@/app/api/utils/serverHelpers";
 import WishlistModel from "@/models/Wishlist";
 
 export async function DELETE(req, { params }) {

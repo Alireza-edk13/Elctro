@@ -12,7 +12,7 @@ import PopularProducts from '@/components/templates/Index/PopularProducts/Popula
 import TrendingProducts from '@/components/templates/Index/TrendingProducts/TrendingProducts'
 import connectToDB from '@/configs/db'
 import ProductModel from "@/models/Product";
-import { authUser } from '@/utils/serverHelpers'
+import { authUser } from '@/app/api/utils/serverHelpers'
 import WishlistModel from "@/models/Wishlist"
 
 export default async function Home() {

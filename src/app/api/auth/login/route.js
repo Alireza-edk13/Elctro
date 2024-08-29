@@ -2,7 +2,7 @@ import {
     generateAccessToken,
     generateRefreshToken,
     verifyPassword,
-} from "@/utils/auth";
+} from "@/app/api/utils/auth";
 import UserModel from "@/models/User";
 import connectToDB from "@/configs/db";
 

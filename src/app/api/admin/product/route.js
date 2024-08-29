@@ -1,6 +1,6 @@
 import connectToDB from "@/configs/db";
 import ProductModel from "@/models/Product";
-import { authAdmin } from "@/utils/serverHelpers";
+import { authAdmin } from "@/app/api/utils/serverHelpers";
 import { writeFile, unlink } from "fs/promises";
 import path from "path";
 

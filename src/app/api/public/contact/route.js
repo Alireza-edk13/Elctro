@@ -1,6 +1,6 @@
 import connectToDB from "@/configs/db";
 import ContactModel from "@/models/Contact";
-import { authAdmin } from "@/utils/serverHelpers";
+import { authAdmin } from "@/app/api/utils/serverHelpers";
 
 export async function POST(req) {
     try {
