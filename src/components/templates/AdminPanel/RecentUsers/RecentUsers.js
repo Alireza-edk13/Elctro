@@ -1,7 +1,7 @@
 import React from 'react'
 import Btn from '@/components/modules/Btn/Btn'
 
-export default function RecentUsers() {
+export default function RecentUsers({ users }) {
     return (
         <div className=' col-span-12  xl:col-span-5 border rounded-lg shadow'>
             <div className="flex justify-between items-center px-4 py-2 mb-2 border-b-2 ">
@@ -12,40 +12,25 @@ export default function RecentUsers() {
                 <table className='table-fixed min-w-full divide-y divide-gray-200'>
                     <thead>
                         <tr>
-                          
+
                             <th scope="col" className="py-3 text-right text-xs font-medium  uppercase tracking-wider">اسم</th>
                             <th scope="col" className="py-3 text-right text-xs font-medium  uppercase tracking-wider"> ایمیل</th>
                             <th scope="col" className="py-3 text-right text-xs font-medium  uppercase tracking-wider"> شماره همراه</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 text-xs ">
-                        <tr className='child:pl-4'>
-                            <td className="py-4 whitespace-nowrap text-xs ">علیرضا موسوی</td>
-                            <td className="py-4 whitespace-nowrap text-xs ">alireza@gmail.com</td>
-                            <td className="py-4 whitespace-nowrap text-xs  ">091345690089</td>
-                        </tr>
-                        <tr className='child:pl-4'>
-                            <td className="py-4 whitespace-nowrap text-xs ">علیرضا موسوی</td>
-                            <td className="py-4 whitespace-nowrap text-xs ">alireza@gmail.com</td>
-                            <td className="py-4 whitespace-nowrap text-xs  ">091345690089</td>
-                        </tr>
-                        <tr className='child:pl-4'>
-                            <td className="py-4 whitespace-nowrap text-xs ">علیرضا موسوی</td>
-                            <td className="py-4 whitespace-nowrap text-xs ">alireza@gmail.com</td>
-                            <td className="py-4 whitespace-nowrap text-xs  ">091345690089</td>
-                        </tr>
-                        <tr className='child:pl-4'>
-                            <td className="py-4 whitespace-nowrap text-xs ">علیرضا موسوی</td>
-                            <td className="py-4 whitespace-nowrap text-xs ">alireza@gmail.com</td>
-                            <td className="py-4 whitespace-nowrap text-xs  ">091345690089</td>
-                        </tr>
-                        <tr className='child:pl-4'>
-                            <td className="py-4 whitespace-nowrap text-xs ">علیرضا موسوی</td>
-                            <td className="py-4 whitespace-nowrap text-xs ">alireza@gmail.com</td>
-                            <td className="py-4 whitespace-nowrap text-xs  ">091345690089</td>
-                        </tr>
-                        
-                        
+
+
+                        {
+                            users.map(user => (
+                                <tr key={user._id} className='child:pl-4'>
+                                    <td className="py-4 whitespace-nowrap text-xs ">{user.name}</td>
+                                    <td className="py-4 whitespace-nowrap text-xs ">{user.email}</td>
+                                    <td className="py-4 whitespace-nowrap text-xs  ">{user.phone}</td>
+                                </tr>
+                            ))
+                        }
+
 
                     </tbody>
                 </table>

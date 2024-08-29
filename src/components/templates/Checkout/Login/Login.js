@@ -20,7 +20,7 @@ export default function Login() {
 
             <div className={` ${isUserWantToLogin ? " h-[27rem] sm:h-96 mt-8" : "h-0 mt-0"}  overflow-hidden transition-all duration-500`}>
                 <div className='p-8  space-y-6 border border-mainBorder  rounded-lg '>
-                    <p className=' text-xs sm:text-sm  text-mainGray'>اگه قبلا ثبت کردی و از ما خرید داشتی اطلاعاتت رو وارد کن ولی اگه اولین باره که از ما خرید میکنی اطلاعاتت رو داخل جزییات صورتحساب وارد کن</p>
+                    <p className=' text-xs sm:text-sm  text-mainGray'>اگه قبلا ثبت کردی و از ما خرید داشتی و همین جا اطلاعاتت رو وارد  کن تا وارد اکانت بشی</p>
                     <div className="flex flex-col relative">
                         <input type="text" id="email"
                             className="border-none outline-none text-md  h-12 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"

@@ -201,7 +201,7 @@ export default function EditFormSection({ user }) {
                 </div>
             </form>
 
-            <form className='px-4 border-t-2 border-mainBlack py-10'>
+            <div className='px-4 border-t-2 border-mainBlack py-10'>
                 <h4 className=' font-morabba text-xl pb-10 text-main '>تغییر رمز عبور</h4>
                 <div className=' grid grid-cols-12 gap-6 '>
                     <div className=' col-span-12 sm:col-span-6'>
@@ -246,7 +246,7 @@ export default function EditFormSection({ user }) {
                     </div>
 
                     <div className=' col-span-12 justify-start text-end'>
-                        <button type="submit" className=' w-[200px] mt-8' disabled={false}  >
+                        <button  className=' w-[200px] mt-8' disabled={false}  >
                             <div className={` btn w-full before:w-full ${false && "bg-mainBlack"} text-white`}>
                                 <span className=' text-sm '>
                                     {false ? "لطفا منتظر بمانید ..." : "آپدیت اطلاعات"}
@@ -259,7 +259,7 @@ export default function EditFormSection({ user }) {
                         </button>
                     </div>
                 </div>
-            </form>
+            </div>
         </>
     )
 }

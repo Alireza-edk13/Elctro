@@ -8,7 +8,7 @@ import { HiHeart } from 'react-icons/hi2';
 
 export default function InfoBox({ title, count }) {
     return (
-        <div className="flex items-center bg-mainWhite border-2 rounded-md overflow-hidden shadow">
+        <div className="flex items-center bg-white border-2 rounded-md overflow-hidden shadow">
             <div className="p-5 bg-main text-4xl h-full text-white">
                 {
                     title === "ثبت نامی‌ها" && <FaUser />
@@ -21,9 +21,9 @@ export default function InfoBox({ title, count }) {
                 }
             </div>
             <div className="px-4">
-                <h3 className="text-md mb-1 text-gray-500 tracking-wider">
+                <h3 className=" mb-1  tracking-wider">
                     {title}
-                </h3><p className="text-xl">{count}</p></div>
+                </h3><p className="text-md ">{count}</p></div>
         </div>
     )
 }

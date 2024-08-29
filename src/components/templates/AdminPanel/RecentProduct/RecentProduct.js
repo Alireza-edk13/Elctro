@@ -2,7 +2,7 @@ import Btn from '@/components/modules/Btn/Btn'
 import Link from 'next/link'
 import React from 'react'
 
-export default function RecentProduct() {
+export default function RecentProduct({ products }) {
     return (
         <div className=' col-span-12 xl:col-span-7 bg-mainWhite border rounded-lg shadow'>
             <div className="flex justify-between items-center px-4 py-2 mb-2 border-b-2 ">
@@ -13,86 +13,39 @@ export default function RecentProduct() {
                 <table className="table-fixed min-w-full divide-y divide-gray-200">
                     <thead>
                         <tr className=' child:pr-4'>
-                            
+
                             <th scope="col" className="py-3 text-right text-xs font-medium uppercase tracking-wider"> محصول</th>
-                            <th scope="col" className="py-3 text-right text-xs font-medium uppercase tracking-wider"> قیمت</th>
                             <th scope="col" className="py-3 text-right text-xs font-medium uppercase tracking-wider"> برند</th>
+                            <th scope="col" className="py-3 text-right text-xs font-medium uppercase tracking-wider"> موجودی</th>
                             <th scope="col" className="py-3 text-right text-xs font-medium uppercase tracking-wider"> وضعیت</th>
                             <th scope="col" className="py-3 text-right text-xs font-medium uppercase tracking-wider"> مشاهده</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200  text-xs">
 
-                        <tr className=' child:pr-4'>
-                            <td className="py-4 whitespace-nowrap  text-xs">هدفون</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">139 تومان</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">ایسوس</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">
-                                <span className=
-                                    {`px-2 py-1 rounded text-xs text-white  bg-main`}>
-                                    موجود
-                                </span>
-                            </td>
-                            <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن</Link>
-                            </td>
-                        </tr>
-                        <tr className=' child:pr-4'>
-                            <td className="py-4 whitespace-nowrap  text-xs">هدفون</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">139 تومان</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">ایسوس</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">
-                                <span className=
-                                    {`px-2 py-1 rounded text-xs text-white  bg-main`}>
-                                    موجود
-                                </span>
-                            </td>
-                            <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن</Link>
-                            </td>
-                        </tr>
-                        <tr className=' child:pr-4'>
-                            <td className="py-4 whitespace-nowrap  text-xs">هدفون</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">139 تومان</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">ایسوس</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">
-                                <span className=
-                                    {`px-2 py-1 rounded text-xs text-white  bg-main`}>
-                                    موجود
-                                </span>
-                            </td>
-                            <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن</Link>
-                            </td>
-                        </tr>
-                        <tr className=' child:pr-4'>
-                            <td className="py-4 whitespace-nowrap  text-xs">هدفون</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">139 تومان</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">ایسوس</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">
-                                <span className=
-                                    {`px-2 py-1 rounded text-xs text-white  bg-main`}>
-                                    موجود
-                                </span>
-                            </td>
-                            <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن</Link>
-                            </td>
-                        </tr>
-                        <tr className=' child:pr-4'>
-                            <td className="py-4 whitespace-nowrap  text-xs">هدفون</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">139 تومان</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">ایسوس</td>
-                            <td className="py-4 whitespace-nowrap  text-xs">
-                                <span className=
-                                    {`px-2 py-1 rounded text-xs text-white  bg-main`}>
-                                    موجود
-                                </span>
-                            </td>
-                            <td className="py-4 whitespace-nowrap  text-xs text-main">
-                                <Link href={'admin-panel/course-list'}>دیدن</Link>
-                            </td>
-                        </tr>
+                        {
+                            products.map(product => (
+                                <tr className=' child:pr-4' key={product._id}>
+                                    <td className="py-4 whitespace-nowrap  text-xs">{product.name}</td>
+                                    <td className="py-4 whitespace-nowrap  text-xs">{product.brand}</td>
+                                    <td className="py-4 whitespace-nowrap  text-xs">
+                                        {product.stock > 10 ? product.stock : "0" + product.stock}
+                                    </td>
+                                    <td className="py-4 whitespace-nowrap  text-xs">
+                                        <span className=
+                                            {`px-2 py-1 rounded text-xs text-white  bg-main`}>
+                                            موجود
+                                        </span>
+                                    </td>
+                                    <td className="py-4 whitespace-nowrap  text-xs text-main">
+                                        <Link href={'admin-panel/products-list'}>دیدن</Link>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+
+
+
 
 
                     </tbody>

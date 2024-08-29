@@ -13,7 +13,7 @@ export default function NavBar() {
 
     const dispatch = useDispatch();
 
-    
+
     return (
         <>
             <nav className="bg-main border-b-4 border-mainBlack p-3 fixed left-0 right-0 top-0 z-40 ">
@@ -31,8 +31,11 @@ export default function NavBar() {
                         </form>
                     </div>
                     <div className=' flex-center gap-4 ml-4 sm:ml-0 sm:gap-6 text-white child:cursor-pointer'>
-                        <FaUser className=' text-xl sm:text-2xl' />
-                        <Link href={'message'}>
+                        <Link href={'/admin-panel/users'}>
+                            <FaUser className=' text-xl sm:text-2xl' />
+                        </Link>
+
+                        <Link href={'/admin-panel/messages'}>
                             <IoIosNotifications className=' text-2xl sm:text-3xl' />
 
                         </Link>

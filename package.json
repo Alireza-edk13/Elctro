@@ -14,7 +14,6 @@
     "bcryptjs": "^2.4.3",
     "formik": "^2.4.6",
     "jose": "^5.7.0",
-    "jsonwebtoken": "^9.0.2",
     "leaflet": "^1.9.4",
     "mongoose": "^8.5.2",
     "next": "14.2.5",
