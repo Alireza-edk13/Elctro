@@ -7,9 +7,12 @@ import WishlistModel from "@/models/Wishlist";
 export default async function Header() {
 
   const user = await authUser();
-
+  let wishlist = []
   connectToDB();
-  const wishlist = await WishlistModel.find({ user: user._id }).populate("product");
+  if (user) {
+    wishlist = await WishlistModel.find({ user: user._id }).populate("product");
+  }
+  
 
 
   return (

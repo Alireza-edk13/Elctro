@@ -11,15 +11,18 @@ import { closeSideBar } from '@/redux/slice/sideBarUserPanelSlice';
 import { HiHeart } from 'react-icons/hi2';
 import { useLogoutUserMutation } from '@/redux/api/authApi';
 import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FaUser } from 'react-icons/fa';
 import { GrUserAdmin } from "react-icons/gr";
+import DeleteModal from '@/components/modules/DeleteModal/DeleteModal';
 export default function SideBar({ isAdmin }) {
 
     const isSideBarOpen = useSelector((store) => store.sideBarUserPanelSlice.isSideBarOpen)
+    const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
 
     const dispatch = useDispatch();
     const router = useRouter()
+    const pathname = usePathname()
 
     const [logoutUser] = useLogoutUserMutation()
 
@@ -30,11 +33,13 @@ export default function SideBar({ isAdmin }) {
             router.replace("/")
             router.refresh()
             dispatch(closeSideBar())
+            setIsShowDeleteModal(false)
 
         } catch (err) {
             console.error(err);
             dispatch(closeSideBar())
             toast.error('خطای سمت سرور !')
+            setIsShowDeleteModal(false)
         }
     }
 
@@ -46,33 +51,38 @@ export default function SideBar({ isAdmin }) {
                 <div className='overflow-y-auto py-3 px-3 h-full'>
                     <ul className=' space-y-4 child:cursor-pointer'>
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/user-panel'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/user-panel'} className={`flex items-center text-md gap-2 p-2 text-white rounded-lg
+                                ${pathname === "/user-panel" ? "border-b-2 pb-2 border-white" : ""}`}>
                                 <IoHomeSharp className=' text-2xl text-white' />
                                 صفحه اصلی
                             </Link>
                         </li>
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/user-panel/fav'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/user-panel/fav'} className={`flex items-center text-md gap-2 p-2 text-white rounded-lg
+                                ${pathname === "/user-panel/fav" ? "border-b-2 pb-2 border-white" : ""}`}>
                                 <HiHeart className=' text-2xl text-white' />
                                 علاقه مندی ها
                             </Link>
                         </li>
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/user-panel/orders'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/user-panel/orders'} className={`flex items-center text-md gap-2 p-2 text-white rounded-lg
+                                ${pathname === "/user-panel/orders" ? "border-b-2 pb-2 border-white" : ""}`}>
                                 <FaCartShopping className=' text-2xl text-white' />
                                 سفارشات
                             </Link>
                         </li>
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/user-panel/info'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/user-panel/info'} className={`flex items-center text-md gap-2 p-2 text-white rounded-lg
+                                ${pathname === "/user-panel/info" ? "border-b-2 pb-2 border-white" : ""}`}>
                                 <FaUser className=' text-2xl text-white' />
                                 جزئیات حساب
                             </Link>
                         </li>
 
                         <li onClick={() => dispatch(closeSideBar())}>
-                            <Link href={'/user-panel/tickets'} className='flex items-center text-md gap-2 p-2 text-white rounded-lg'>
+                            <Link href={'/user-panel/tickets'} className={`flex items-center text-md gap-2 p-2 text-white rounded-lg
+                                ${pathname === "/user-panel/tickets" ? "border-b-2 pb-2 border-white" : ""}`}>
                                 <IoTicket className=' text-2xl text-white' />
                                 تیکت
                             </Link>
@@ -87,7 +97,7 @@ export default function SideBar({ isAdmin }) {
                             </li>
                         }
 
-                        <li onClick={() => logoutUserHandler()}>
+                        <li onClick={() => setIsShowDeleteModal(true)}>
 
                             <div className='flex cursor-pointer items-center text-md gap-2 p-2 rounded-lg text-white'>
                                 <ImExit className=' text-2xl rotate-180 text-white' />
@@ -99,6 +109,12 @@ export default function SideBar({ isAdmin }) {
                     </ul>
                 </div>
             </aside>
+            {/* delete modal */}
+            {isShowDeleteModal &&
+                <DeleteModal onClose={() => setIsShowDeleteModal(false)} onSubmit={() => {
+                    logoutUserHandler()
+                }} title="از اکانت خودت میخوای خارج بشی؟" />
+            }
         </>
     )
 }
