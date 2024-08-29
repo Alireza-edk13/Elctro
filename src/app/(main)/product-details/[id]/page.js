@@ -35,13 +35,18 @@ export default async function page({ params }) {
     const relatedProducts = await ProductModel.find({}).populate("categoryId", "title -_id").limit(5);
     let wishlist = [];
     let wishlistProductIds = [];
-
+    let isInWishlist = false
     if (user) {
+
+        let product = await WishlistModel.findOne({ user: user._id, product: id });
+        if (product) {
+            isInWishlist = true
+        }
+
         wishlist = await WishlistModel.find({ user: user._id }).populate({
             path: 'product',
             select: "_id"
         }).lean();
-
         wishlistProductIds = wishlist.map(item => item.product._id.toString());  // استخراج آی‌دی‌های محصولات در wishlist
     }
 
@@ -53,11 +58,6 @@ export default async function page({ params }) {
             isInWishlist: wishlistProductIds.includes(productObj._id.toString()),  // بررسی وجود در wishlist
         };
     });
-
-    
-
-    const isInWishlist = await WishlistModel.findOne({ user: user._id, product: id });
-
 
     return (
         <>
@@ -83,7 +83,7 @@ export default async function page({ params }) {
                         <ProductDetailsSlider cover={product.cover} />
                         <div className=' absolute top-4 z-20 right-4 flex flex-col gap-4'>
                             <AddProductToFav id={id} isAddFavForProductDetails={true}
-                                isInWishlist={isInWishlist ? true : false} />
+                                isInWishlist={isInWishlist} />
                             <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl border border-mainBorder rounded-lg product-btn compare">
                                 <VscGitCompare />
                             </div>

@@ -29,7 +29,7 @@ export default async function page() {
                             </div>
                         </div>
                         <div className=' grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6'>
-                            {products.map((product) => (
+                            {JSON.parse(JSON.stringify(products)).map((product) => (
                                 <ProductBox {...product} isProductBoxForProductsList={true} key={product._id} />
                             ))}
 

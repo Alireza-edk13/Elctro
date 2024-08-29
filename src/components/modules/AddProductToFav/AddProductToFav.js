@@ -61,13 +61,13 @@ export default function AddProductToFav({ id, isAddFavForProductDetails = false,
 
             {
                 isInWishlist ?
-                    <div onClick={() => removeFromWishlistHandler(id)} className={`p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative text-red-500 hover:text-white  text-xl  rounded-lg product-btn removeFromFav ${isAddFavForProductDetails ? "border border-mainBorder" : "shadow-custom"}`}>
+                    <div onClick={() => removeFromWishlistHandler(id)} className={`p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative text-red-500 hover:text-white  text-xl  border-mainBorder rounded-lg product-btn removeFromFav ${isAddFavForProductDetails ? "border" : "sm:shadow-custom border sm:border-none"}`}>
                         <FaHeart />
                     </div>
 
                     :
 
-                    <div onClick={addToWishlist} className={`p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl  rounded-lg product-btn addToFav ${isAddFavForProductDetails ? "border border-mainBorder" : "shadow-custom"}`}>
+                    <div onClick={addToWishlist} className={`p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white border-mainBorder  text-xl  rounded-lg product-btn addToFav ${isAddFavForProductDetails ? "border" : "sm:shadow-custom  border sm:border-none"}`}>
                         <IoMdHeartEmpty />
                     </div>
 
