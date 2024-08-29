@@ -1,8 +1,11 @@
 "use client"
 import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
-import Btn from '@/components/modules/Btn/Btn'
+import dynamic from 'next/dynamic'
+const Map = dynamic(
+    () => import('@/components/templates/Contact/Map/Map'),
+    { ssr: false }
+)
 import ContactCart from '@/components/templates/Contact/ContactCart/ContactCart'
-import Map from '@/components/templates/Contact/Map/Map'
 import { useSendMessageMutation } from '@/redux/api/contatcApi'
 import { contactValidator } from '@/validators/contact'
 import { useFormik } from 'formik'

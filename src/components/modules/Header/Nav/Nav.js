@@ -31,7 +31,7 @@ export default function Nav({ isLogin, wishlistLength }) {
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', fixNav);
+        window && window.addEventListener('scroll', fixNav);
         return () => {
             window.removeEventListener('scroll', fixNav);
         };
