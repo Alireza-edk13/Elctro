@@ -40,10 +40,8 @@ const verifyAccessTokenThrowError = async (token) => {
     } catch (err) {
         // بررسی خطای انقضا
         if (err.name === 'JWTExpired') {
-            console.log("Access token expired.");
             throw new Error('TokenExpired'); // خطای خاص برای انقضای توکن
         } else {
-            console.log("Verify Access Token Error ->", err);
             throw new Error('TokenInvalid'); // خطای عمومی برای توکن نامعتبر
         }
     }
@@ -67,10 +65,8 @@ const verifyRefreshToken = async (token) => {
     } catch (err) {
         // بررسی خطای انقضا
         if (err.name === 'JWTExpired') {
-            console.log("Access token expired.");
             throw new Error('TokenExpired'); // خطای خاص برای انقضای توکن
         } else {
-            console.log("Verify Access Token Error ->", err);
             throw new Error('TokenInvalid'); // خطای عمومی برای توکن نامعتبر
         }
     }

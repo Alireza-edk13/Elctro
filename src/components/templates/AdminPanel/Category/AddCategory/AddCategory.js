@@ -19,7 +19,6 @@ export default function AddCategory() {
     const addCategoryHandler = async (title) => {
         try {
             const result = await addCategory(title).unwrap();
-            console.log(result);
             if (!isLoading) {
                 toast.success(result.message)
                 router.refresh()

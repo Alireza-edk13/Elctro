@@ -24,19 +24,11 @@ export default function login() {
     const onSubmitHandler = async (userInfo) => {
         try {
             const result = await loginUser(userInfo).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.replace("/");
             router.refresh()
-            // console.log("error =>",error?.data);
-            // console.log("data =>",data);
-            // console.log(" is loading =>",isLoading);
 
         } catch (err) {
-            console.error(err);
-            // console.log("error =>",error?.data);
-            // console.log("data =>",data);
-            // console.log(" is loading =>",isLoading);
             toast.error(err?.data?.message)
         }
     };

@@ -42,7 +42,6 @@ export default function OrderFormSection({ user }) {
         validationSchema: orderValidator,
         onSubmit: (values) => {
             // orderHandler(values)
-            console.log(values);
 
         }
     });

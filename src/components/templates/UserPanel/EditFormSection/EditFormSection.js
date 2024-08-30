@@ -22,7 +22,6 @@ export default function EditFormSection({ user }) {
     const updateUserInfoHandler = async (info) => {
         try {
             const result = await updateUserInfo(info).unwrap();
-            console.log(result);
             if (!updateUserInfoResponse.isLoading) {
                 toast.success(result.message)
                 router.refresh()

@@ -23,7 +23,6 @@ export default function contact() {
     const onSubmitHandler = async (values) => {
         try {
             const result = await sendMessage(values).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.replace("/");
             router.refresh()

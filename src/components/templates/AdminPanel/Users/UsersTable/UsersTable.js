@@ -26,7 +26,6 @@ export default function UsersTable({ users }) {
     const removeUserHandler = async (id) => {
         try {
             const result = await removeUser({ id }).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.refresh()
             setIsShowDeleteModal(false)

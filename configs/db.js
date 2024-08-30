@@ -6,10 +6,10 @@ const connectToDB = async () => {
       return true;
     } else {
       await mongoose.connect(process.env.MONGO_URL);
-      console.log("Connect To DB Successfully :))");
+      // console.log("Connect To DB Successfully :))");
     }
   } catch (err) {
-    console.log("DB Connection has error ->", err);
+    // console.log("DB Connection has error ->", err);
   }
 };
 

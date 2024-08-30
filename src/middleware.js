@@ -21,8 +21,6 @@ export async function middleware(req) {
 
     const data = await response.json();
 
-    console.log('data =>', data);
-
 
 
     // بررسی نقش کاربر

@@ -23,7 +23,6 @@ export default function register() {
     const onSubmitHandler = async (userInfo) => {
         try {
             const result = await registerUser(userInfo).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.replace("/");
             router.refresh()

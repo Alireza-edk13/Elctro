@@ -26,13 +26,11 @@ export default function ProductTable({ products,categories }) {
     const deleteProductHandler = async (id) => {
         try {
             const result = await deleteProduct({ id }).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.refresh()
             setIsShowDeleteModal(false)
 
         } catch (err) {
-            console.error(err);
             toast.error('خطای سمت سرور !')
             setIsShowDeleteModal(false)
         }
@@ -43,14 +41,12 @@ export default function ProductTable({ products,categories }) {
     const editProductHandler = async (formData) => {
         try {
             const result = await editProduct(formData).unwrap();
-            console.log(result);
             if (!isLoading) {
                 toast.success(result.message)
                 router.refresh()
                 setIsShowEditModal(false)
             }
         } catch (err) {
-            console.error(err);
             toast.error(err?.data?.message)
             setIsShowEditModal(false)
         }
@@ -73,8 +69,6 @@ export default function ProductTable({ products,categories }) {
             formData.append('brand', values.brand);
             formData.append('cover', values.cover);
             formData.append('categoryId', values.categoryId);
-
-            console.log(formData);
 
 
             editProductHandler(formData)

@@ -8,8 +8,6 @@ export async function POST(req) {
         const body = await req.json();
         const { name, email, phone, message } = body;
 
-        console.log(body);
-
 
         const validationResult = await ContactModel.contactValidation(body).catch((err) => {
             err.statusCode = 400

@@ -18,7 +18,6 @@ export default function AddProductToFav({ id, isAddFavForProductDetails = false,
     const addToWishListHandler = async (product) => {
         try {
             const result = await addToWishList({ product }).unwrap();
-            console.log(result);
             if (!addToWishListRes.isLoading) {
                 toast.success(result.message)
                 router.refresh()
@@ -33,7 +32,6 @@ export default function AddProductToFav({ id, isAddFavForProductDetails = false,
         
         try {
             const result = await removeFromWishlist(product).unwrap();
-            console.log(result);
             if (!removeFromWishlistRes.isLoading) {
                 toast.success(result.message)
                 router.refresh()

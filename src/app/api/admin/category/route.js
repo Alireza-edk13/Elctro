@@ -93,8 +93,6 @@ export async function PUT(req) {
         connectToDB();
         const body = await req.json();
         const { id, title } = body;
-
-        console.log(id,title);
         
 
         const isAdmin = await authAdmin();

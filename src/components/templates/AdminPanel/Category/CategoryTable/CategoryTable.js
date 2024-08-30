@@ -27,7 +27,6 @@ export default function CategoryTable({ categories }) {
     const deleteCategoryHandler = async (id) => {
         try {
             const result = await deleteCategory({ id }).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.refresh()
             setIsShowDeleteModal(false)
@@ -41,7 +40,6 @@ export default function CategoryTable({ categories }) {
     const editCategoryHandler = async ({title}) => {
         try {
             const result = await editCategory({id: categoryId , title}).unwrap();
-            console.log(result);
             if (!isLoading) {
                 toast.success(result.message)
                 router.refresh()

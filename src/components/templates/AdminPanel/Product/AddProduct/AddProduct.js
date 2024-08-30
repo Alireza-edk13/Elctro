@@ -19,7 +19,6 @@ export default function AddProduct({categories}) {
     const addProductHandler = async (formData) => {
         try {
             const result = await addProduct(formData).unwrap();
-            console.log(result);
             if (!isLoading) {
                 toast.success(result.message)
                 router.refresh()
@@ -47,9 +46,6 @@ export default function AddProduct({categories}) {
             formData.append('brand', values.brand);
             formData.append('cover', values.cover);
             formData.append('categoryId', values.categoryId);
-
-            console.log(formData);
-            
 
             addProductHandler(formData)
             

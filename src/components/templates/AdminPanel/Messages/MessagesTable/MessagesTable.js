@@ -21,7 +21,6 @@ export default function MessagesTable({ messages }) {
     const deleteMessageHandler = async (id) => {
         try {
             const result = await deleteMessage({ id }).unwrap();
-            console.log(result);
             toast.success(result.message)
             router.refresh()
             setIsShowDeleteModal(false)
