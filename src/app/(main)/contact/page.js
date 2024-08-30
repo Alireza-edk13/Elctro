@@ -84,7 +84,8 @@ export default function contact() {
                                         className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
                                         autoComplete="off" />
                                     <span className='absolute left-4 top-5 text-main'>
-                                        <MdEmail className=' text-2xl' />
+                                    <FaPhone className=' text-2xl' />
+
                                     </span>
                                     {
                                         form.errors.phone && form.touched.phone && <label htmlFor="phone" className='text-red-500 text-xs mt-2'>{form.errors.phone}</label>
@@ -101,7 +102,8 @@ export default function contact() {
                                         className="border-none outline-none text-md  h-16 w-full bg-[#f4f5f9] rounded-lg p-4 text-[#4f5d77]"
                                         placeholder="ایمیل" autoComplete="off" />
                                     <span className='absolute left-4 top-5 text-main'>
-                                        <FaPhone className=' text-2xl' />
+                                        <MdEmail className=' text-2xl' />
+
                                     </span>
                                     {
                                         form.errors.email && form.touched.email && <label htmlFor="email" className='text-red-500 text-xs mt-2'>{form.errors.email}</label>

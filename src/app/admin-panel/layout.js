@@ -1,17 +1,8 @@
 import NavBar from '@/components/templates/AdminPanel/NavBar/NavBar'
 import SideBar from '@/components/templates/AdminPanel/SideBar/SideBar'
-import { authAdmin } from '@/app/api/utils/serverHelpers';
-import { redirect } from 'next/navigation';
 import React from 'react'
 
 export default async function AdminPanelLayout({ children }) {
-
-    const isAdmin = await authAdmin();
-
-    if (!isAdmin) {
-        redirect("/login")
-    }
-
     return (
         <>
             <NavBar />

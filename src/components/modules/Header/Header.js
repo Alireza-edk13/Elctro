@@ -10,7 +10,7 @@ export default async function Header() {
   let wishlist = []
   connectToDB();
   if (user) {
-    wishlist = await WishlistModel.find({ user: user._id }).populate("product");
+    wishlist = await WishlistModel.find({ user: user?._id.toString() }).populate("product");
   }
   
 

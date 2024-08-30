@@ -25,7 +25,7 @@ export default async function Home() {
     let wishlistProductIds = [];
 
     if (user) {
-        wishlist = await WishlistModel.find({ user: user._id }).populate({
+        wishlist = await WishlistModel.find({ user: user?._id.toString() }).populate({
             path: 'product',
             select: "_id"
         }).lean();

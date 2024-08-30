@@ -5,11 +5,11 @@ import { verifyAccessToken } from "./auth";
 
 const authUser = async () => {
   connectToDB();
-  const token = cookies().get("token");
+  const token = cookies().get("token")?.value;
   let user = null;
 
   if (token) {
-    const tokenPayload = await verifyAccessToken(token.value);
+    const tokenPayload = await verifyAccessToken(token);
     if (tokenPayload) {
       user = await UserModel.findOne({ phone: tokenPayload.phone });
     }
@@ -20,11 +20,11 @@ const authUser = async () => {
 
 const authAdmin = async () => {
   connectToDB();
-  const token = cookies().get("token");
+  const token = cookies().get("token")?.value;
   let user = null;
 
   if (token) {
-    const tokenPayload = await verifyAccessToken(token.value);
+    const tokenPayload = await verifyAccessToken(token);
     if (tokenPayload) {
       user = await UserModel.findOne({ phone: tokenPayload.phone });
       if (user.role === "ADMIN") {

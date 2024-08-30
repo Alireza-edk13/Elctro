@@ -59,12 +59,6 @@ export async function POST(req) {
             `token=${accessToken};${cookieOptions.join(';')};expires=${accessTokenExpiration.toUTCString()}`
         );
 
-        const refreshTokenExpiration = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000); // 15 روز
-        headers.append(
-            "Set-Cookie",
-            `refresh-token=${refreshToken};${cookieOptions.join(';')};expires=${refreshTokenExpiration.toUTCString()}`
-        );
-
         return Response.json(
             { message: "ثبت نام با موفقیت انجام شد", status: 201 },
             {

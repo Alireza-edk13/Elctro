@@ -1,61 +1,3 @@
-// import { hash, compare } from "bcryptjs";
-// import { sign, verify } from "jsonwebtoken";
-
-// const hashPassword = async (password) => {
-//     const hashedPassword = await hash(password, 12);
-//     return hashedPassword;
-// };
-
-// const verifyPassword = async (password, hashedPassword) => {
-//     const isValid = await compare(password, hashedPassword);
-//     return isValid;
-// };
-
-// const generateAccessToken = (data) => {
-//     const token = sign({ ...data }, process.env.AccessTokenSecretKey, {
-//         expiresIn: "1d",
-//     });
-//     return token;
-// };
-
-// const verifyAccessToken = (token) => {
-//     try {
-//         const tokenPayload = verify(token, process.env.AccessTokenSecretKey);
-//         return tokenPayload;
-//     } catch (err) {
-//         console.log("Verify Access Token Error ->", err);
-//         return false;
-//     }
-// };
-// const verifyRefreshToken = (refreshToken) => {
-//     try {
-//         const refreshTokenPayload = verify(refreshToken, process.env.RefreshTokenSecretKey);
-//         return refreshTokenPayload;
-//     } catch (err) {
-//         console.log("Verify Access Token Error ->", err);
-//         return false;
-//     }
-// };
-
-// const generateRefreshToken = (data) => {
-//     const token = sign({ ...data }, process.env.RefreshTokenSecretKey, {
-//         expiresIn: "15d",
-//     });
-//     return token;
-// };
-
-
-// export {
-//     hashPassword,
-//     verifyPassword,
-//     generateAccessToken,
-//     verifyAccessToken,
-//     generateRefreshToken,
-//     verifyRefreshToken
-// };
-
-
-
 import { hash, compare } from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose";
 
@@ -73,7 +15,7 @@ const generateAccessToken = async (data) => {
     const secret = new TextEncoder().encode(process.env.AccessTokenSecretKey);
     const token = await new SignJWT({ ...data })
         .setProtectedHeader({ alg: "HS256" })
-        .setExpirationTime("1d")
+        .setExpirationTime("15m")
         .sign(secret);
     return token;
 };
@@ -84,16 +26,35 @@ const verifyAccessToken = async (token) => {
         const { payload } = await jwtVerify(token, secret);
         return payload;
     } catch (err) {
-        console.log("Verify Access Token Error ->", err);
         return false;
     }
 };
+
+// for refresh route
+
+const verifyAccessTokenThrowError = async (token) => {
+    try {
+        const secret = new TextEncoder().encode(process.env.AccessTokenSecretKey);
+        const { payload } = await jwtVerify(token, secret);
+        return payload;
+    } catch (err) {
+        // بررسی خطای انقضا
+        if (err.name === 'JWTExpired') {
+            console.log("Access token expired.");
+            throw new Error('TokenExpired'); // خطای خاص برای انقضای توکن
+        } else {
+            console.log("Verify Access Token Error ->", err);
+            throw new Error('TokenInvalid'); // خطای عمومی برای توکن نامعتبر
+        }
+    }
+};
+
 
 const generateRefreshToken = async (data) => {
     const secret = new TextEncoder().encode(process.env.RefreshTokenSecretKey);
     const token = await new SignJWT({ ...data })
         .setProtectedHeader({ alg: "HS256" })
-        .setExpirationTime("15d")
+        .setExpirationTime("10d")
         .sign(secret);
     return token;
 };
@@ -104,16 +65,22 @@ const verifyRefreshToken = async (token) => {
         const { payload } = await jwtVerify(token, secret);
         return payload;
     } catch (err) {
-        console.log("Verify Refresh Token Error ->", err);
-        return false;
+        // بررسی خطای انقضا
+        if (err.name === 'JWTExpired') {
+            console.log("Access token expired.");
+            throw new Error('TokenExpired'); // خطای خاص برای انقضای توکن
+        } else {
+            console.log("Verify Access Token Error ->", err);
+            throw new Error('TokenInvalid'); // خطای عمومی برای توکن نامعتبر
+        }
     }
 };
-
 export {
     hashPassword,
     verifyPassword,
     generateAccessToken,
     verifyAccessToken,
     generateRefreshToken,
-    verifyRefreshToken
+    verifyRefreshToken,
+    verifyAccessTokenThrowError
 };

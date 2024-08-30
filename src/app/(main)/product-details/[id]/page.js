@@ -38,12 +38,12 @@ export default async function page({ params }) {
     let isInWishlist = false
     if (user) {
 
-        let product = await WishlistModel.findOne({ user: user._id, product: id });
+        let product = await WishlistModel.findOne({ user: user?._id.toString(), product: id });
         if (product) {
             isInWishlist = true
         }
 
-        wishlist = await WishlistModel.find({ user: user._id }).populate({
+        wishlist = await WishlistModel.find({ user: user?._id.toString() }).populate({
             path: 'product',
             select: "_id"
         }).lean();

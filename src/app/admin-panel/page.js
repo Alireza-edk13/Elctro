@@ -7,10 +7,12 @@ import Link from 'next/link'
 import connectToDB from '@/configs/db'
 import UserModel from "@/models/User";
 import ProductModel from "@/models/Product";
+import { authAdmin } from '../api/utils/serverHelpers'
 
 export default async function page() {
 
   connectToDB();
+  const admin = await authAdmin()
   const usersCount = await UserModel.find({})
   const users = await UserModel.find({},
     "phone name email").sort({ _id: -1 }).lean().limit(5);
@@ -20,7 +22,7 @@ export default async function page() {
 
   return (
     <>
-      <h4 className=' font-morabba text-main text-2xl'>علیرضا خوش اومدی !</h4>
+      <h4 className=' font-morabba text-main text-2xl'>{admin?.name} خوش اومدی !</h4>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <InfoBox title="بازدید سایت" count={5230} />
         <InfoBox title="ثبت نامی‌ها" count={usersCount.length > 10 ? usersCount.length : "0" + usersCount.length} />

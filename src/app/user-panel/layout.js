@@ -6,13 +6,6 @@ import React from 'react'
 
 export default async function UserPanelLayout({ children }) {
     const isAdmin = await authAdmin();
-    const isUser = await authUser()
-
-
-    if (!isUser) {
-        redirect("/login")
-    }
-
     return (
         <>
             <NavBar />

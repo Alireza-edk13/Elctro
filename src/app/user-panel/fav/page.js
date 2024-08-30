@@ -12,7 +12,8 @@ export default async function fav() {
 
   connectToDB();
   const user = await authUser();
-  const wishlist = await WishlistModel.find({ user: user._id }).populate({
+  
+  const wishlist = await WishlistModel.find({ user: user?._id.toString() }).populate({
     path: 'product',
     populate: {
       path: 'categoryId',
