@@ -8,9 +8,9 @@ export default function page() {
             <Breadcrumbs destination="مقالات" />
             <section className=' container mt-16 mb-44'>
                 <div className=' grid grid-cols-1 lg:grid-cols-3 gap-10'>
-                    <BlogCart pic="Blog1" title="بهترین گوشی ها بازار از  سامسونگ تا اپل" />
-                    <BlogCart pic="Blog2" title=" دوربین چی بخرم؟ مروری بر بهترین برند ها" />
-                    <BlogCart pic="Blog3" title=" عمر مفید لب تاپ ها چقدره؟" />
+                    <BlogCart pic="blog1" title="بهترین گوشی ها بازار از  سامسونگ تا اپل" />
+                    <BlogCart pic="blog2" title=" دوربین چی بخرم؟ مروری بر بهترین برند ها" />
+                    <BlogCart pic="blog3" title=" عمر مفید لب تاپ ها چقدره؟" />
                 </div>
             </section>
         </>
