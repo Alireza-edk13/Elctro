@@ -10,7 +10,7 @@ export default function BlogCart({pic, title}) {
     <div className=" space-y-3 group">
       <div className="blog-img">
         <Link href="/blog-details">
-          <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg' src={`/images/blog/${pic}.webp`} alt="blogImg" />
+          <Image width={0} height={0} sizes='100vw' className=' w-full h-auto rounded-lg' src={`/images/blog/${pic}`} alt="blogImg" />
         </Link>
       </div>
       <div className=" flex items-center gap-2">

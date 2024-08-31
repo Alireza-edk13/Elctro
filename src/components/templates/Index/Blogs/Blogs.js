@@ -10,9 +10,9 @@ export default function Blogs() {
                     <h4 className=' font-morabba font-semibold text-xl sm:text-3xl mt-2'>آخرین اخبار و<span className=' text-main'> مقالات </span>منتشر شده</h4>
                 </div>
                 <div className=' grid grid-cols-1 lg:grid-cols-3 gap-10'>
-                    <BlogCart pic ="Blog1" title="بهترین گوشی ها بازار از  سامسونگ تا اپل"/>
-                    <BlogCart pic ="Blog2" title=" دوربین چی بخرم؟ مروری بر بهترین برند ها"/>
-                    <BlogCart pic ="Blog3" title=" عمر مفید لب تاپ ها چقدره؟"/>
+                    <BlogCart pic ="blog1.webp" title="بهترین گوشی ها بازار از  سامسونگ تا اپل"/>
+                    <BlogCart pic ="blog2.webp" title=" دوربین چی بخرم؟ مروری بر بهترین برند ها"/>
+                    <BlogCart pic ="blog3.webp" title=" عمر مفید لب تاپ ها چقدره؟"/>
                 </div>
             </div>
         </section>
