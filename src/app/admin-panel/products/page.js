@@ -6,7 +6,7 @@ import ProductTable from '@/components/templates/AdminPanel/Product/ProductTable
 import connectToDB from '@/configs/db'
 import ProductModel from "@/models/Product";
 import AddProduct from '@/components/templates/AdminPanel/Product/AddProduct/AddProduct'
-
+export const revalidate = 0
 export default async function page() {
 
   connectToDB();

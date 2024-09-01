@@ -4,6 +4,7 @@ import connectToDB from '@/configs/db'
 import ContactModel from "@/models/Contact";
 import MessagesTable from '@/components/templates/AdminPanel/Messages/MessagesTable/MessagesTable';
 import { IoIosSearch } from 'react-icons/io';
+export const revalidate = 0
 export default async function page() {
 
     connectToDB();

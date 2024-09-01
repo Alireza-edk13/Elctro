@@ -5,7 +5,7 @@ import CategoryModel from "@/models/Category";
 import CategoryTable from '@/components/templates/AdminPanel/Category/CategoryTable/CategoryTable';
 import connectToDB from '@/configs/db';
 import AddCategory from '@/components/templates/AdminPanel/Category/AddCategory/AddCategory';
-
+export const revalidate = 0
 export default async function page() {
 
   connectToDB();

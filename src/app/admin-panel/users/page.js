@@ -5,7 +5,7 @@ import React from 'react'
 import { IoIosSearch } from 'react-icons/io'
 import UserModel from "@/models/User";
 import connectToDB from '@/configs/db'
-
+export const revalidate = 0
 export default async function page() {
 
   connectToDB();
