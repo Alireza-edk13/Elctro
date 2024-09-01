@@ -11,6 +11,7 @@ export default async function page() {
   connectToDB();
   const users = await UserModel.find({},
     "-password -refreshToken -__v").sort({ _id: -1 }).lean();
+  console.log(users);
 
   return (
     <>
@@ -31,11 +32,7 @@ export default async function page() {
             </div>
           </div>
           <div className=' overflow-auto'>
-            {
-              users.length ?
-                <UsersTable users={JSON.parse(JSON.stringify(users))} />
-                : <div className=' mt-8 bg-mainBg rounded-lg p-3 text-sm'>کاربری یافت نشد !</div>
-            }
+            <UsersTable users={JSON.parse(JSON.stringify(users))} />
           </div>
         </div>
 
