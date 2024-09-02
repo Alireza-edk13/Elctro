@@ -50,7 +50,6 @@ export async function POST(req) {
             'path=/',
             'httpOnly=true',
             'secure=true', // فقط از طریق HTTPS ارسال می‌شود
-            'sameSite=lax', // به محافظت در برابر حملات CSRF کمک می‌کند
         ];
 
         const accessTokenExpiration = new Date(Date.now() + 30 * 60 * 1000); // 30 دقیقه
