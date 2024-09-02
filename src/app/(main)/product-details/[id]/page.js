@@ -122,8 +122,8 @@ export default async function page({ params }) {
                                 <span className=" line-through text-mainGray text-sm">
                                     {product.orginalPrice.toLocaleString()}
                                 </span>
-                                <span className=" hidden sm:block text-sm text-main">{product.discount}% تخفیف</span>
-                                <span className=" block  sm:hidden text-sm text-main">{product.discount}%</span>
+                                <span className=" hidden sm:block text-sm text-main">{product.discount && product.discount}% تخفیف</span>
+                                <span className=" block  sm:hidden text-sm text-main">{product.discount && product.discount}%</span>
                             </div>
                             <div className=" mt-6 space-y-10">
                                 <div className="shop-single-descrip">
