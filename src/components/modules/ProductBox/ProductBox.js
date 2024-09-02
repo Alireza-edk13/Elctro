@@ -56,14 +56,14 @@ export default function ProductBox(
                         <FaStar />
                     </div>
 
-                    <span className=" text-main font-semibold text-sm">{discount && discount + "%"}</span>
+                    <span className=" text-main font-semibold text-sm">{discount !== 0 && discount + "%"}</span>
                 </div>
                 <div className=" flex justify-between items-center mt-3 mb-5 relative">
                     <div>
 
                         <div className=''>
                             <div className="text-sm  line-through text-mainGray">
-                                {discount && orginalPrice}
+                                {orginalPrice}
                             </div>
                             <div className="font-bold flex-center gap-1 text-main mr-1 ">
                                 <span>
