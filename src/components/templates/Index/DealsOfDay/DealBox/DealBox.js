@@ -10,7 +10,7 @@ export default function DealBox({ pic, title, newPrice }) {
                 width="0"
                 height="0"
                 sizes="100vw"
-                className="w-full -scale-x-100 h-auto"
+                className="w-full -scale-x-100 rounded-lg sm:h-[500px]"
                 alt='offer'
             />
             <div className=' absolute right-6 sm:right-14 top-8 sm:top-4 md:top-12'>
