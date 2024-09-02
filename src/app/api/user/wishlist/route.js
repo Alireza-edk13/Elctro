@@ -10,12 +10,12 @@ export async function POST(req) {
 
 
     const userInfo = await authUser()
-    const user = await userInfo._id
-
+    
     if (!userInfo) {
       return Response.json({ message: "لطفا ابتدا وارد شوید", status: 403 }, { status: 403 });
     }
-
+    const user = await userInfo._id
+    
     const validationResult = await WishlistModel.wishlistValidation({ id: product }).catch((err) => {
       err.statusCode = 400
       return err;

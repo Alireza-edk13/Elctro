@@ -3,6 +3,7 @@ import ProductModel from "@/models/Product";
 import { authAdmin } from "@/app/api/utils/serverHelpers";
 import { writeFile, unlink } from "fs/promises";
 import path from "path";
+import WishlistModel from "@/models/Wishlist";
 
 export async function POST(req) {
     try {
@@ -100,6 +101,8 @@ export async function DELETE(req) {
             return res.status(404).json({ message: "محصول یافت نشد" });
         }
 
+        await WishlistModel.deleteMany({ product: { $in: id } });
+
         // Delete the old cover image
         const oldCoverPath = path.join(process.cwd(), "public/uploads/", deletedProduct.cover);
         await unlink(oldCoverPath).catch(() => { });
@@ -147,7 +150,7 @@ export async function PUT(req) {
         }
 
         // Validate the data
-        const validationResult = await ProductModel.createProductValidation({
+        const validationResult = await ProductModel.editProductValidation({
             name, shortName, orginalPrice, brand, discount, stock, categoryId, cover
         }).catch((err) => {
             err.statusCode = 400;

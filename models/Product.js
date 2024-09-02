@@ -1,4 +1,4 @@
-import { createProductValidator, removeProductValidator } from "@/validators/product";
+import { createProductValidator, editProductValidator, removeProductValidator } from "@/validators/product";
 
 const mongoose = require("mongoose");
 require("./Category");
@@ -46,6 +46,9 @@ const schema = new mongoose.Schema(
 
 schema.statics.createProductValidation = function (body) {
   return createProductValidator.validate(body);
+};
+schema.statics.editProductValidation = function (body) {
+  return editProductValidator.validate(body);
 };
 schema.statics.removeProductValidation = function (body) {
   return removeProductValidator.validate(body);

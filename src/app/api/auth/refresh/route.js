@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { verifyAccessTokenThrowError, verifyRefreshToken, generateAccessToken } from '@/app/api/utils/auth';
+import { verifyAccessTokenThrowError, verifyRefreshTokenThrowError, generateAccessToken } from '@/app/api/utils/auth';
 import connectToDB from '@/configs/db';
 import UserModel from '@/models/User';
 import { decodeJwt } from 'jose';
@@ -35,16 +35,17 @@ export async function POST(req) {
                     return NextResponse.json({ valid: false }, { status: 401 });
                 }
 
-                const { phone } = await verifyRefreshToken(user.refreshToken);
+                const { phone , exp } = await verifyRefreshTokenThrowError(user.refreshToken);
 
                 // تولید توکن دسترسی جدید
                 const newAccessToken = await generateAccessToken({ phone });
 
-                return NextResponse.json({ valid: true, newAccessToken, user }, { status: 200 });
+                return NextResponse.json({ valid: true, newAccessToken, user , exp }, { status: 200 });
 
             } catch (refreshError) {
                 // console.log('Refresh Token Invalid ->', refreshError);
                 return NextResponse.json({ valid: false }, { status: 401 });
+                
             }
         }
 

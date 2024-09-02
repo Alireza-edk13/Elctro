@@ -1,7 +1,61 @@
-
 import CategoryModel from "@/models/Category";
 import connectToDB from '@/configs/db';
 import { authAdmin } from "@/app/api/utils/serverHelpers";
+import ProductModel from "@/models/Product";
+import WishlistModel from "@/models/Wishlist";
+import path from 'path';
+import { unlink } from 'fs/promises';
+export async function DELETE(req) {
+    try {
+        await connectToDB(); // اتصال به دیتابیس باید await شود
+
+        const body = await req.json();
+        const { id } = body;
+
+        const isAdmin = await authAdmin(); // تایید ادمین بودن کاربر
+
+        if (!isAdmin) {
+            throw new Error("شما دسترسی لازم به عنوان ادمین ندارید");
+        }
+
+        // حذف دسته‌بندی
+        const deletedCategory = await CategoryModel.findOneAndDelete({
+            _id: id,
+        });
+
+        if (!deletedCategory) {
+            return new Response(JSON.stringify({ message: "دسته بندی یافت نشد" }), { status: 404 });
+        }
+
+        // یافتن و حذف محصولات مرتبط با دسته‌بندی
+        const productsToDelete = await ProductModel.find({ categoryId: id });
+
+        if (productsToDelete.length > 0) {
+            const productIds = productsToDelete.map(product => product._id);
+
+            // حذف محصولات مرتبط
+            await ProductModel.deleteMany({ _id: { $in: productIds } });
+
+            // حدف کاور
+
+            for (const product of productsToDelete) {
+                const oldCoverPath = path.join(process.cwd(), "public/uploads/", product.cover);
+                await unlink(oldCoverPath).catch(() => { });
+            }
+
+            // حذف محصولات از لیست علاقه‌مندی‌های کاربران
+            await WishlistModel.deleteMany({ product: { $in: productIds } });
+        }
+
+        return new Response(JSON.stringify({
+            message: "دسته بندی و محصولات  مرتبط با آن موفقیت حذف شدند",
+            status: 201
+        }), { status: 201 });
+
+    } catch (err) {
+        return new Response(JSON.stringify({ message: err.message }), { status: 500 });
+    }
+}
 
 export async function POST(req) {
     try {
@@ -53,47 +107,13 @@ export async function POST(req) {
     }
 }
 
-export async function DELETE(req) {
-    try {
-        connectToDB();
-        const body = await req.json();
-        const { id } = body;
-
-        const isAdmin = await authAdmin();
-
-        if (!isAdmin) {
-            throw new Error("شما دسترسی لازم به عنوان ادمین ندارید");
-        }
-
-        const deletedCategory = await CategoryModel.findOneAndDelete({
-            _id: id,
-        });
-        if (!deletedCategory) {
-            return res.status(404).json({ message: "دسته بندی یافت نشد" });
-        }
-
-        return Response.json(
-            { message: "دسته بندی با موفقیت حذف شد", status: 201 },
-            {
-                status: 201,
-            }
-        );
-    } catch (err) {
-        return Response.json(
-            { message: err.message },
-            {
-                status: 500,
-            }
-        );
-    }
-}
 
 export async function PUT(req) {
     try {
         connectToDB();
         const body = await req.json();
         const { id, title } = body;
-        
+
 
         const isAdmin = await authAdmin();
 

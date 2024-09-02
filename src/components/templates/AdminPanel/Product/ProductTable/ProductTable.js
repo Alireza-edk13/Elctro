@@ -6,11 +6,11 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { useDeleteProductMutation, useEditProductMutation } from '@/redux/api/productApi';
 import { useFormik } from 'formik';
-import { createProductValidator } from '@/validators/product';
+import { createProductValidator, editProductValidator } from '@/validators/product';
 import AddModal from '@/components/modules/AddModal/AddModal';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import Image from 'next/image';
-export default function ProductTable({ products,categories }) {
+export default function ProductTable({ products, categories }) {
 
     const [isShowEditModal, setIsShowEditModal] = useState(false)
     const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
@@ -55,15 +55,15 @@ export default function ProductTable({ products,categories }) {
 
 
     const editForm = useFormik({
-        initialValues: { name: "", shortName: "", discount: "0", orginalPrice: "", stock: "", brand: "", cover: null, categoryId: "" },
+        initialValues: { name: "", shortName: "", discount: 0, orginalPrice: "", stock: "", brand: "", cover: null, categoryId: "" },
 
-        onSubmit: (values) => {
+        onSubmit: (values) => {            
 
             let formData = new FormData();
             formData.append('id', productId);
             formData.append('name', values.name);
             formData.append('shortName', values.shortName);
-            formData.append('discount', values.discount);
+            formData.append('discount', values.discount || 0);
             formData.append('orginalPrice', values.orginalPrice);
             formData.append('stock', values.stock);
             formData.append('brand', values.brand);
@@ -75,22 +75,23 @@ export default function ProductTable({ products,categories }) {
             setIsShowEditModal(false)
         },
 
-        validationSchema: createProductValidator,
+        validationSchema: editProductValidator,
     });
 
     useEffect(() => {
         if (isShowEditModal) {
+
             editForm.setValues({
                 name: mainProductInfo.name || "",
                 shortName: mainProductInfo.shortName || "",
-                discount: mainProductInfo.discount || "",
+                discount: mainProductInfo.discount || 0,
                 orginalPrice: mainProductInfo.orginalPrice || "",
                 stock: mainProductInfo.stock || "",
                 brand: mainProductInfo.brand || "",
                 cover: "",
                 categoryId: mainProductInfo.categoryId._id || "",
             });
-            
+
         }
     }, [isShowEditModal, mainProductInfo]);
 
@@ -114,7 +115,7 @@ export default function ProductTable({ products,categories }) {
                     {products?.map((product, index) => (
                         <tr key={product._id} className=' child:p-4 child:text-sm'>
                             <td>
-                                <Image src={`/uploads/${product.cover}`} width={45} height={45} alt='product'/>
+                                <Image src={`/uploads/${product.cover}`} width={45} height={45} alt='product' />
                             </td>
                             <td>{product.name}</td>
                             <td>{product.brand}</td>
@@ -252,7 +253,7 @@ export default function ProductTable({ products,categories }) {
                                 }
                             </div>
                             <div className="col-span-6 sm:col-span-3">
-                                <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="file_input">کاور محصول</label>
+                                <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="file_input">تغییر کاور</label>
                                 <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-2.5 cursor-pointer bg-gray-50 dark:text-gray-400"
                                     type="file"
                                     id="cover"
@@ -270,7 +271,7 @@ export default function ProductTable({ products,categories }) {
                         <button type="submit" className=' w-full mt-8' disabled={isLoading}  >
                             <div className={` btn w-full before:w-full ${isLoading && "bg-mainBlack"} text-white`}>
                                 <span className=' text-sm '>
-                                    {isLoading ? "لطفا منتظر بمانید ..." : "اضافه کردن"}
+                                    {isLoading ? "لطفا منتظر بمانید ..." : "ویرایش"}
                                 </span>
                                 {
                                     !isLoading &&

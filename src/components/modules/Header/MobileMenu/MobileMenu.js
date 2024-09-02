@@ -37,7 +37,7 @@ export default function MobileMenu() {
                         </li>
                         <MobileMenuItem title="مصولات">
                             <MobileSubMenuItem title="لیست محصولات" href="/products-list" />
-                            <MobileSubMenuItem title="جزییات محصولات" href="/product-details/66c76807575dff5a2f5d0e0d" />
+                            <MobileSubMenuItem title="جزییات محصولات" href="/product-details/66d4e5030074983ab956f59d" />
                         </MobileMenuItem>
                         <MobileMenuItem title="مقاله">
                             <MobileSubMenuItem title="لیست مقالات" href="/blogs-list" />

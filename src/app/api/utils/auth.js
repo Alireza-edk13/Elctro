@@ -63,6 +63,15 @@ const verifyRefreshToken = async (token) => {
         const { payload } = await jwtVerify(token, secret);
         return payload;
     } catch (err) {
+        return false
+    }
+};
+const verifyRefreshTokenThrowError = async (token) => {
+    try {
+        const secret = new TextEncoder().encode(process.env.RefreshTokenSecretKey);
+        const { payload } = await jwtVerify(token, secret);
+        return payload;
+    } catch (err) {
         // بررسی خطای انقضا
         if (err.name === 'JWTExpired') {
             throw new Error('TokenExpired'); // خطای خاص برای انقضای توکن
@@ -78,5 +87,6 @@ export {
     verifyAccessToken,
     generateRefreshToken,
     verifyRefreshToken,
-    verifyAccessTokenThrowError
+    verifyAccessTokenThrowError,
+    verifyRefreshTokenThrowError
 };

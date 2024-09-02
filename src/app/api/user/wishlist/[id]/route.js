@@ -7,12 +7,12 @@ export async function DELETE(req, { params }) {
     connectToDB();
 
     const userInfo = await authUser()
-    const user = await userInfo._id
-
+    
     if (!userInfo) {
       return Response.json({ message: "لطفا ابتدا وارد شوید", status: 403 }, { status: 403 });
     }
-
+    
+    const user = await userInfo._id
     const productId = await params.id;
 
     const validationResult = await WishlistModel.wishlistValidation({ id: productId }).catch((err) => {
