@@ -15,7 +15,7 @@ const generateAccessToken = async (data) => {
     const secret = new TextEncoder().encode(process.env.AccessTokenSecretKey);
     const token = await new SignJWT({ ...data })
         .setProtectedHeader({ alg: "HS256" })
-        .setExpirationTime("15m")
+        .setExpirationTime("1m")
         .sign(secret);
     return token;
 };
@@ -52,7 +52,7 @@ const generateRefreshToken = async (data) => {
     const secret = new TextEncoder().encode(process.env.RefreshTokenSecretKey);
     const token = await new SignJWT({ ...data })
         .setProtectedHeader({ alg: "HS256" })
-        .setExpirationTime("10d")
+        .setExpirationTime("3m")
         .sign(secret);
     return token;
 };

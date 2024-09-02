@@ -4,69 +4,35 @@ import connectToDB from "@/configs/db";
 import { verifyAccessToken, verifyRefreshToken } from "./auth";
 import { decodeJwt } from "jose";
 
+const  testRefreshToken = async (token) => {
+  const payloadToken = decodeJwt(token);
+  if (!payloadToken) return null;
+
+  const user = await UserModel.findOne({ phone: payloadToken.phone });
+  if (!user) return null;
+
+  const isRefreshTokenValid = await verifyRefreshToken(user.refreshToken);
+  return isRefreshTokenValid ? user : null;
+};
+
 const authUser = async () => {
   await connectToDB();
-  let token = cookies().get("token")?.value;
-  if (token) {
-    let tokenPayload = await verifyAccessToken(token);
+  const token = cookies().get("token")?.value;
+  if (!token) return null;
 
-    if (!tokenPayload) {
-      const payloadToken = decodeJwt(token);
-      if (payloadToken) {
-        const userInfo = await UserModel.findOne({ phone: payloadToken.phone });
-        if (userInfo) {
-          const payloadRefreshToken = await verifyRefreshToken(userInfo.refreshToken);
-          if (payloadRefreshToken) {
-            return userInfo
-          }
-          return null
-        }
-        return null
-      }
-      return null
-    }
-
-    if (tokenPayload) {
-      const user = await UserModel.findOne({ phone: tokenPayload.phone });
-      return user
-    }
-  }
-
-  return null
+  const tokenPayload = await verifyAccessToken(token);
+  return tokenPayload ? await UserModel.findOne({ phone: tokenPayload.phone }) : await  testRefreshToken(token);
 };
 
 const authAdmin = async () => {
-  connectToDB();
+  await connectToDB();
   const token = cookies().get("token")?.value;
+  if (!token) return null;
 
-  if (token) {
-    let tokenPayload = await verifyAccessToken(token);
-    if (!tokenPayload) {
-      const payloadToken = decodeJwt(token);
-      if (payloadToken) {
-        const userInfo = await UserModel.findOne({ phone: payloadToken.phone });
-        if (userInfo) {
-          const payloadRefreshToken = await verifyRefreshToken(userInfo.refreshToken);
-          if (payloadRefreshToken) {
-            if (userInfo.role === "ADMIN") {
-              return userInfo
-            }
-            return null
-          }
-          return null
-        }
-        return null
-      }
-      return null
-    } else {
-      const user = await UserModel.findOne({ phone: tokenPayload.phone });
-      if (user.role === "ADMIN") {
-        return user;
-      }
-      return null;
-    }
-  }
-  return null;
+  const tokenPayload = await verifyAccessToken(token);
+  const user = tokenPayload ? await UserModel.findOne({ phone: tokenPayload.phone }) : await  testRefreshToken(token);
+  
+  return user && user.role === "ADMIN" ? user : null;
 };
 
 export { authUser, authAdmin };

@@ -1,7 +1,8 @@
 import connectToDB from "@/configs/db";
-import { verifyAccessToken } from "@/app/api/utils/auth";
+import { verifyAccessToken, verifyRefreshToken } from "@/app/api/utils/auth";
 import { cookies } from "next/headers";
 import UserModel from "@/models/User";
+import { decodeJwt } from "jose";
 
 export async function GET(req) {
     try {
@@ -27,8 +28,27 @@ export async function GET(req) {
                         }
                     );
                 }
+                return Response.json(user);
+            } else {
+                const payloadToken = decodeJwt(token);
+                
+                if (!payloadToken) {
+                    return Response.json(user);
+                }
+
+                const userInfo = await UserModel.findOne({ phone: payloadToken.phone });
+                if (!userInfo) {
+                    return Response.json(user);
+                }
+
+                const payloadRefreshToken = await verifyRefreshToken(userInfo.refreshToken);
+
+                if (!payloadRefreshToken) {
+                    return Response.json(user);
+                }
+                return Response.json(userInfo);
+
             }
-            return Response.json(user);
         } else {
             return Response.json(
                 {

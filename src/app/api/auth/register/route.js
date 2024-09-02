@@ -53,7 +53,7 @@ export async function POST(req) {
             'sameSite=lax', // به محافظت در برابر حملات CSRF کمک می‌کند
         ];
 
-        const accessTokenExpiration = new Date(Date.now() + 15 * 60 * 1000); // 15 دقیقه
+        const accessTokenExpiration = new Date(Date.now() + 30 * 60 * 1000); // 30 دقیقه
         headers.append(
             "Set-Cookie",
             `token=${accessToken};${cookieOptions.join(';')};expires=${accessTokenExpiration.toUTCString()}`
