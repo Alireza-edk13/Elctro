@@ -39,7 +39,7 @@ export default function NavBar() {
                             <IoIosNotifications className=' text-2xl sm:text-3xl' />
 
                         </Link>
-                        < AiOutlineMenu className=' text-xl sm:text-2xl 2xl:hidden block' onClick={() => dispatch(openSideBar())} />
+                        < AiOutlineMenu className=' text-xl sm:text-2xl xxl:hidden block' onClick={() => dispatch(openSideBar())} />
                     </div>
                 </div>
             </nav>

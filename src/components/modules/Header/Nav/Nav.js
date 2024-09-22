@@ -52,7 +52,7 @@ export default function Nav({ isLogin, wishlistLength }) {
         <>
             <nav className={`${isFix ? 'fix-nav-active shadow-custom' : ' block'} z-40 py-4 bg-main  top-0 left-0 w-full text-white`}>
                 <div className=' container flex justify-between items-center'>
-                    <div className=' flex-center gap-10 2xl:gap-20'>
+                    <div className=' flex-center gap-10 xxl:gap-20'>
                         <div>
                             <Link href={'/'} className=' flex-center text-2xl md:text-3xl'>
                                 <PiShoppingCartSimpleFill className=' text-3xl md:text-4xl' />

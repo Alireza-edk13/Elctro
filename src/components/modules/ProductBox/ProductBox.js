@@ -23,7 +23,7 @@ export default function ProductBox(
                     <Link href={`/product-details/${_id}`} className="product-img">
                         <Image src={`/uploads/${cover}`} className=' sm:group-hover:scale-110 transition-all duration-200 ease-in' width={352} height={352} alt="product" />
                     </Link>
-                    <div className={`flex flex-col-reverse justify-center items-center sm:flex-row sm:opacity-0 transition-all duration-200 ease-in sm:group-hover:opacity-100 z-20 absolute right-0 top-8 left-auto sm:inset-0 gap-4 sm:gap-2 ${isProductBoxForProductsList ? "" : "xxl:bottom-auto xxl:right-auto xxl:top-24 xxl:left-7"}`}>
+                    <div className={`flex flex-col-reverse justify-center items-center sm:flex-row sm:opacity-0 transition-all duration-200 ease-in sm:group-hover:opacity-100 z-20 absolute right-0 top-8 left-auto sm:inset-0 gap-4 sm:gap-2 ${isProductBoxForProductsList ? "" : "xxl:bottom-auto xxl:right-auto xxl:top-24 xxl:left-6"}`}>
                         <div className="p-3 bg-white cursor-pointer transition-all duration-200 ease-in hover:bg-main relative hover:text-white  text-xl border sm:border-none border-mainBorder sm:shadow-custom rounded-lg product-btn compare">
                             <VscGitCompare />
                         </div>

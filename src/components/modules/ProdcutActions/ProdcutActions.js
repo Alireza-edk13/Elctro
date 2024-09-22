@@ -41,7 +41,7 @@ export default function ProdcutActions({ product }) {
             {items.find(item => item.id === product._id) ? (
                 <div className='flex items-center gap-8'>
                     <div onClick={removeFromCart}>
-                        <Button isIconNeed={false} text="حذف از سبد خرید" style="w-full md:w-48 bg-red-500" />
+                        <Button isIconNeed={false} text="حذف از سبد خرید" style="w-full md:w-48 bg-red-500 p-4" />
                     </div>
                     <div className='flex items-center gap-2'>
                         <button className="size-8 text-lg text-center inline-block rounded-2xl bg-mainBg pt-1 cursor-pointer" onClick={reduceProduct}>-</button>

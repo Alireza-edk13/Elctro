@@ -49,8 +49,8 @@ export default function SideBar() {
 
     return (
         <>
-            <div className={`${isSideBarOpen ? '' : ' hidden'} fixed inset-0 bg-mainBlack z-30 h-screen opacity-[0.2] 2xl:hidden`} onClick={() => dispatch(closeSideBar())} ></div>
-            <aside className={`${isSideBarOpen ? 'mobile-nav--active' : ''} fixed  z-30 w-48  2xl:w-60 top-0 right-0  h-screen pt-[4.5rem]  bg-main translate-x-[100%] 2xl:translate-x-0 2xl:visible 2xl:opacity-100 mobile-nav-transition border-l-4 border-mainBlack invisible`}>
+            <div className={`${isSideBarOpen ? '' : ' hidden'} fixed inset-0 bg-mainBlack z-30 h-screen opacity-[0.2] xxl:hidden`} onClick={() => dispatch(closeSideBar())} ></div>
+            <aside className={`${isSideBarOpen ? 'mobile-nav--active' : ''} fixed  z-30 w-48  xxl:w-60 top-0 right-0  h-screen pt-[4.5rem]  bg-main translate-x-[100%] xxl:translate-x-0 xxl:visible xxl:opacity-100 mobile-nav-transition border-l-4 border-mainBlack invisible`}>
                 <div className='overflow-y-auto py-3 px-3 h-full'>
                     <ul className=' space-y-4 child:cursor-pointer'>
                         <li onClick={() => dispatch(closeSideBar())}>

@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import { verifyAccessTokenThrowError, verifyRefreshTokenThrowError, generateAccessToken } from '@/app/api/utils/auth';
 import connectToDB from '@/configs/db';
 import UserModel from '@/models/User';
@@ -16,10 +15,10 @@ export async function POST(req) {
         const user = await UserModel.findOne({ phone });
 
         if (!user) {
-            return NextResponse.json({ valid: false }, { status: 401 });
+            return Response.json({ valid: false }, { status: 401 });
         }
 
-        return NextResponse.json({ valid: true, message: "for user", user }, { status: 200 });
+        return Response.json({ valid: true, message: "for user", user }, { status: 200 });
 
     } catch (error) {
         if (error.message === 'TokenExpired') {
@@ -32,23 +31,23 @@ export async function POST(req) {
 
 
                 if (!user) {
-                    return NextResponse.json({ valid: false }, { status: 401 });
+                    return Response.json({ valid: false }, { status: 401 });
                 }
 
-                const { phone , exp } = await verifyRefreshTokenThrowError(user.refreshToken);
+                const { phone, exp } = await verifyRefreshTokenThrowError(user.refreshToken);
 
                 // تولید توکن دسترسی جدید
                 const newAccessToken = await generateAccessToken({ phone });
 
-                return NextResponse.json({ valid: true, newAccessToken, user , exp }, { status: 200 });
+                return Response.json({ valid: true, newAccessToken, user, exp }, { status: 200 });
 
             } catch (refreshError) {
                 // console.log('Refresh Token Invalid ->', refreshError);
-                return NextResponse.json({ valid: false }, { status: 401 });
-                
+                return Response.json({ valid: false }, { status: 401 });
+
             }
         }
 
-        return NextResponse.json({ valid: false }, { status: 401 });
+        return Response.json({ valid: false }, { status: 401 });
     }
 }

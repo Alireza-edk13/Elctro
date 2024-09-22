@@ -28,7 +28,7 @@ export default async function page() {
                                 </div>
                             </div>
                         </div>
-                        <div className=' grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6'>
+                        <div className=' grid grid-cols-1 sm:grid-cols-2 xxl:grid-cols-3 gap-6'>
                             {JSON.parse(JSON.stringify(products)).map((product) => (
                                 <ProductBox {...product} isProductBoxForProductsList={true} key={product._id} />
                             ))}
